@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+>
+<LinearLayout
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+>
+<TextView
+android:id="@+id/lblPlantilla"
+android:layout_width="wrap_content"
+android:layout_height="-3px"
+android:text="@string/ORI_ML00136"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtPlantilla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<Button
+android:id="@+id/botExaminarFondo"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00124"
+>
+</Button>
+<TextView
+android:id="@+id/lblBoceto"
+android:layout_width="wrap_content"
+android:layout_height="-3px"
+android:text="@string/ORI_ML00137"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtBoceto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<Button
+android:id="@+id/botExaminarBoceto"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00124"
+>
+</Button>
+
+    <CheckBox
+        android:id="@+id/chkCalidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="@string/ORI_ML00167"></CheckBox>
+<TextView
+android:id="@+id/lblCX"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00139"
+>
+</TextView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:id="@+id/txtCX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:minHeight="48dp"
+            android:text="500000"
+            android:textSize="18sp">
+        </EditText>
+        <EditText
+            android:id="@+id/txtCY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:minHeight="48dp"
+            android:text="4789000"
+            android:textSize="18sp">
+        </EditText>
+        <TextView
+            android:id="@+id/lblZona"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00122">
+        </TextView>
+
+        <EditText
+            android:id="@+id/txtZona"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxWidth="200dp"
+            android:minWidth="75dp"
+            android:minHeight="48dp"
+            android:text="29"
+            android:textSize="18sp"></EditText>
+    </LinearLayout>
+<TextView
+android:id="@+id/lblCX2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00140"
+>
+</TextView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:id="@+id/txtCX2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:minHeight="48dp"
+            android:text="500000"
+            android:textSize="18sp">
+        </EditText>
+        <EditText
+            android:id="@+id/txtCY2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:minHeight="48dp"
+            android:text="4789000"
+            android:textSize="18sp">
+        </EditText>
+    </LinearLayout>
+        <TextView
+        android:id="@+id/lblAlternativa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ORI_ML00165"
+        >
+        </TextView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/lblFactorX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00141">
+        </TextView>
+        <EditText
+            android:id="@+id/txtFactorX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number|numberDecimal|numberSigned"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:minHeight="48dp"
+            android:text="1.0"
+            android:textSize="18sp">
+        </EditText>
+        <TextView
+            android:id="@+id/lblFactorY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00142">
+        </TextView>
+        <EditText
+            android:id="@+id/txtFactorY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number|numberDecimal|numberSigned"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:minHeight="48dp"
+            android:text="1.0"
+            android:textSize="18sp">
+        </EditText>
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

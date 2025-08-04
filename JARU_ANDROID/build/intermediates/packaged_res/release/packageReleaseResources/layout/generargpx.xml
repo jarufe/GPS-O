@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+>
+<LinearLayout
+    android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+>
+
+    <CheckBox
+        android:id="@+id/chkUsarDual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="300dp"
+        android:minHeight="48dp"
+        android:text="@string/ORI_ML00200"
+        android:textSize="16sp"></CheckBox>
+</LinearLayout>
+</ScrollView>

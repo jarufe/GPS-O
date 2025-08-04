@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GPS-O</string>
+    <string name="app_desg">Breakdown of runners</string>
+    <string name="ORI_ML00000">Event Management</string>
+    <string name="ORI_ML00001">Yes</string>
+    <string name="ORI_ML00002">No</string>
+    <string name="ORI_ML00003">Accept</string>
+    <string name="ORI_ML00004">Cancel</string>
+    <string name="ORI_ML00005">Exit</string>
+    <string name="ORI_ML00006">Stop</string>
+    <string name="ORI_ML00007">Tx</string>
+    <string name="ORI_ML00008">Save</string>
+    <string name="ORI_ML00010">dd/MM/yyyy</string>
+    <string name="ORI_ML00011">yyyy-MM-dd 00:00:00.000</string>
+    <string name="ORI_ML00012">yyyy-MM-dd HH:mm:ss.S</string>
+    <string name="ORI_ML00013">MMM, yyyy</string>
+    <string name="ORI_ML00014">dd/MM/yyyy HH:mm:ss</string>
+    <string name="ORI_ML00015">HH:mm:ss</string>
+    <string name="ORI_ML00016">yyyyMMdd_HHmmss</string>
+    <string name="ORI_ML00020">Results list</string>
+    <string name="ORI_ML00021">List</string>
+    <string name="ORI_ML00022">Edit runners</string>
+    <string name="ORI_ML00023">Number</string>
+    <string name="ORI_ML00024">Class</string>
+    <string name="ORI_ML00025">Surname</string>
+    <string name="ORI_ML00026">Name</string>
+    <string name="ORI_ML00027">Club</string>
+    <string name="ORI_ML00028">Start</string>
+    <string name="ORI_ML00029">Finish</string>
+    <string name="ORI_ML00030">Time</string>
+    <string name="ORI_ML00031">License</string>
+    <string name="ORI_ML00032">Edit</string>
+    <string name="ORI_ML00033">Edit parameters</string>
+    <string name="ORI_ML00034">Server</string>
+    <string name="ORI_ML00035">Port</string>
+    <string name="ORI_ML00036">XML Path</string>
+    <string name="ORI_ML00037">Configure</string>
+    <string name="ORI_ML00038">Breakdown of runners</string>
+    <string name="ORI_ML00039">Runner</string>
+    <string name="ORI_ML00040">Event</string>
+    <string name="ORI_ML00041">Place</string>
+    <string name="ORI_ML00042">Points</string>
+    <string name="ORI_ML00043">Average</string>
+    <string name="ORI_ML00044">Correction</string>
+    <string name="ORI_ML00045">Total</string>
+    <string name="ORI_ML00046">HTML</string>
+    <string name="ORI_ML00047">Calendar</string>
+    <string name="ORI_ML00048">Management</string>
+    <string name="ORI_ML00049">Reading</string>
+    <string name="ORI_ML00050">Centroid</string>
+    <string name="ORI_ML00051">Mo</string>
+    <string name="ORI_ML00052">Tu</string>
+    <string name="ORI_ML00053">We</string>
+    <string name="ORI_ML00054">Th</string>
+    <string name="ORI_ML00055">Fr</string>
+    <string name="ORI_ML00056">Sa</string>
+    <string name="ORI_ML00057">Su</string>
+    <string name="ORI_ML00058">Record</string>
+    <string name="ORI_ML00059">File</string>
+    <string name="ORI_ML00060">Months</string>
+    <string name="ORI_ML00061">January</string>
+    <string name="ORI_ML00062">February</string>
+    <string name="ORI_ML00063">March</string>
+    <string name="ORI_ML00064">April</string>
+    <string name="ORI_ML00065">May</string>
+    <string name="ORI_ML00066">June</string>
+    <string name="ORI_ML00067">July</string>
+    <string name="ORI_ML00068">August</string>
+    <string name="ORI_ML00069">September</string>
+    <string name="ORI_ML00070">October</string>
+    <string name="ORI_ML00071">November</string>
+    <string name="ORI_ML00072">December</string>
+    <string name="ORI_ML00073">Save</string>
+    <string name="ORI_ML00074">Delete all records</string>
+    <string name="ORI_ML00075">Generate OCAD</string>
+    <string name="ORI_ML00076">GPS-O</string>
+    <string name="ORI_ML00077">240</string>
+    <string name="ORI_ML00078">320</string>
+    <string name="ORI_ML00079">COM Port</string>
+    <string name="ORI_ML00080">Bauds</string>
+    <string name="ORI_ML00081">Word Bits</string>
+    <string name="ORI_ML00082">Stop Bits</string>
+    <string name="ORI_ML00083">Parity</string>
+    <string name="ORI_ML00084">Refresh</string>
+    <string name="ORI_ML00085">Close</string>
+    <string name="ORI_ML00086">Longitude</string>
+    <string name="ORI_ML00087">Latitude</string>
+    <string name="ORI_ML00088">Altitude</string>
+    <string name="ORI_ML00089">Datum</string>
+    <string name="ORI_ML00090">Time</string>
+    <string name="ORI_ML00091">Receiving...</string>
+    <string name="ORI_ML00092">CENTROID</string>
+    <string name="ORI_ML00093">Add</string>
+    <string name="ORI_ML00094">Point</string>
+    <string name="ORI_ML00095">Líne</string>
+    <string name="ORI_ML00096">Area</string>
+    <string name="ORI_ML00097">Id</string>
+    <string name="ORI_ML00098">Type</string>
+    <string name="ORI_ML00099">OCAD Type</string>
+    <string name="ORI_ML00100">Description</string>
+    <string name="ORI_ML00101">#Records:</string>
+    <string name="ORI_ML00102">Mapa.ocd</string>
+    <string name="ORI_ML00103">plantillaV7.ocd</string>
+    <string name="ORI_ML00104">Scale</string>
+    <string name="ORI_ML00105">Open Port</string>
+    <string name="ORI_ML00106">Rec.</string>
+    <string name="ORI_ML00107">Stop</string>
+    <string name="ORI_ML00108">Fix</string>
+    <string name="ORI_ML00109">Sat.</string>
+    <string name="ORI_ML00110">HDOP</string>
+    <string name="ORI_ML00111">O-Foot Paths</string>
+    <string name="ORI_ML00112">MTBO Paths</string>
+    <string name="ORI_ML00113">Interval mseg</string>
+    <string name="ORI_ML00114">Version</string>
+    <string name="ORI_ML00115">plantillaV6.ocd</string>
+    <string name="ORI_ML00116">Generate GPX</string>
+    <string name="ORI_ML00117">OCAD 6</string>
+    <string name="ORI_ML00118">OCAD 7</string>
+    <string name="ORI_ML00119">Coordinates</string>
+    <string name="ORI_ML00120">Paper</string>
+    <string name="ORI_ML00121">Real World</string>
+    <string name="ORI_ML00122">UTM Zone</string>
+    <string name="ORI_ML00123">Import GPX</string>
+    <string name="ORI_ML00124">Browse file</string>
+    <string name="ORI_ML00125">OCAD type in</string>
+    <string name="ORI_ML00126">name</string>
+    <string name="ORI_ML00127">desc</string>
+    <string name="ORI_ML00128">none</string>
+    <string name="ORI_ML00129">Default OCAD Objects</string>
+    <string name="ORI_ML00130">Overwrite records</string>
+    <string name="ORI_ML00131">File to import</string>
+    <string name="ORI_ML00132">Fieldwork</string>
+    <string name="ORI_ML00133">Configuration</string>
+    <string name="ORI_ML00134">Editor</string>
+    <string name="ORI_ML00135">Compass</string>
+    <string name="ORI_ML00136">Background Image</string>
+    <string name="ORI_ML00137">Sketch</string>
+    <string name="ORI_ML00138">Create new</string>
+    <string name="ORI_ML00139">UTM Top-Left</string>
+    <string name="ORI_ML00140">UTM Bottom-Right</string>
+    <string name="ORI_ML00141">Factor X</string>
+    <string name="ORI_ML00142">Factor Y</string>
+    <string name="ORI_ML00143">Zoom level</string>
+    <string name="ORI_ML00144">UTM X Central</string>
+    <string name="ORI_ML00145">UTM Y Central</string>
+    <string name="ORI_ML00146">Layers</string>
+    <string name="ORI_ML00147">Points/Lines</string>
+    <string name="ORI_ML00148">Areas</string>
+    <string name="ORI_ML00149">Dirty</string>
+    <string name="ORI_ML00150">Color</string>
+    <string name="ORI_ML00151">Black</string>
+    <string name="ORI_ML00152">Green</string>
+    <string name="ORI_ML00153">Red</string>
+    <string name="ORI_ML00154">Blue</string>
+    <string name="ORI_ML00155">Gray</string>
+    <string name="ORI_ML00156">Rubber</string>
+    <string name="ORI_ML00157">Pencil</string>
+    <string name="ORI_ML00158">Move</string>
+    <string name="ORI_ML00159">Zoom in</string>
+    <string name="ORI_ML00160">Zoom out</string>
+    <string name="ORI_ML00161">Initial size</string>
+    <string name="ORI_ML00162">Activate/Deactivate GPS</string>
+    <string name="ORI_ML00163">Distance</string>
+    <string name="ORI_ML00164">Angle</string>
+    <string name="ORI_ML00165">or</string>
+    <string name="ORI_ML00166">Place in</string>
+    <string name="ORI_ML00167">Prioritize quality</string>
+    <string name="ORI_ML00168">Thickness</string>
+    <string name="ORI_ML00169">Thin</string>
+    <string name="ORI_ML00170">Thick</string>
+    <string name="ORI_ML00171">Vector data</string>
+    <string name="ORI_ML00172">Drawing mode</string>
+    <string name="ORI_ML00173">Raster</string>
+    <string name="ORI_ML00174">Vector</string>
+    <string name="ORI_ML00175">yyyy-MM-dd</string>
+    <string name="ORI_ML00176">HH:mm:ss.S</string>
+    <string name="ORI_ML00177">Delete</string>
+    <string name="ORI_ML00178">New ID</string>
+    <string name="ORI_ML00179">Choose Baudrate</string>
+
+    <string-array name="ORI_ML00180">
+        <item>1200</item>
+        <item>2400</item>
+        <item>4800</item>
+        <item>9600</item>
+        <item>14400</item>
+        <item>19200</item>
+        <item>38400</item>
+        <item>57600</item>
+        <item>115200</item>
+        <item>128000</item>
+    </string-array>
+
+    <string name="ORI_ML00181">Choose WordBits</string>
+
+    <string-array name="ORI_ML00182">
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <string name="ORI_ML00183">Choose StopBits</string>
+
+    <string-array name="ORI_ML00184">
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+    </string-array>
+
+    <string name="ORI_ML00185">Choose Parity</string>
+
+    <string-array name="ORI_ML00186">
+        <item>none</item>
+        <item>even</item>
+        <item>odd</item>
+    </string-array>
+
+    <string name="ORI_ML00187">Choose Scale</string>
+
+    <string-array name="ORI_ML00188">
+        <item>500</item>
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>7500</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>20000</item>
+        <item>25000</item>
+    </string-array>
+
+    <string name="ORI_ML00189">Choose Delay</string>
+
+    <string-array name="ORI_ML00190">
+        <item>500</item>
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>20000</item>
+        <item>25000</item>
+    </string-array>
+
+    <string name="ORI_ML00191">Drawing on</string>
+    <string name="ORI_ML00192">Export sketches</string>
+    <string name="ORI_ML00193">Use internal GPS</string>
+    <string name="ORI_ML00194">GPS Settings</string>
+    <string name="ORI_ML00195">Cloud</string>
+    <string name="ORI_ML00196">Load Cloud</string>
+    <string name="ORI_ML00197">Save Cloud</string>
+    <string name="ORI_ML00198">Generate ASCII Grid</string>
+    <string name="ORI_ML00199">Configure Cloud</string>
+    <string name="ORI_ML00200">Use MTBO dual value on paths</string>
+    <string name="ORI_ML00201">Dual Foot-O, MTBO</string>
+    <string name="ORI_ML00202">Calibrate</string>
+    <string name="ORI_ML00203">Show</string>
+    <string name="ORI_ML00204">Calibration mode</string>
+    <string name="ORI_ML00205">Accelerometer</string>
+    <string name="ORI_ML00206">No sensor</string>
+    <string name="ORI_ML00207">Rotation</string>
+    <string name="ORI_ML00208">Locate</string>
+    <string name="ORI_ML00209">Test conn.</string>
+    <string name="ORI_ML00210">Show map</string>
+    <string name="ORI_ML00211">Select Ids</string>
+    <string name="ORI_ML00212">Show me</string>
+    <string name="ORI_ML00213">Hide me</string>
+    <string name="ORI_ML00214">Show track</string>
+    <string name="ORI_ML00215">Hide track</string>
+    <string name="ORI_ML00216">Servlet</string>
+    <string name="ORI_ML00217">Delay (sec.)</string>
+    <string name="ORI_ML00218">Waiting...</string>
+    <string name="ORI_ML00219">Type:</string>
+    <string name="ORI_ML00220">Normal</string>
+    <string name="ORI_ML00221">Satellite</string>
+    <string name="ORI_ML00222">Terrain</string>
+    <string name="ORI_ML00223">Hybrid</string>
+
+
+    <string name="ORI_TPRINCIPAL">Welcome to GPS-O</string>
+    <string name="ORI_TSPLASH">Welcome to GPS-O</string>
+    <string name="ORI_TPARAM">Configuration</string>
+    <string name="ORI_TLECTURA">GPS Reading</string>
+    <string name="ORI_TCENTROIDE">Centroid</string>
+    <string name="ORI_TLOG">Points log</string>
+    <string name="ORI_TDUAL">Dual log of paths</string>
+    <string name="ORI_TLISTANMEA">Open port</string>
+    <string name="ORI_TVISTAOCAD">OCAD View</string>
+    <string name="ORI_TEXPOCAD">Export to OCAD</string>
+    <string name="ORI_TIMPGPX">Import from GPX</string>
+    <string name="ORI_TEXPGPX">Export to GPX</string>
+    <string name="ORI_TCONFCAMPO">Editor configuration</string>
+    <string name="ORI_TEDITOR">Fieldwork editor</string>
+    <string name="ORI_TBRUJULA">Compass</string>
+    <string name="ORI_TSELOCAD">OCAD object selection</string>
+    <string name="ORI_TELIMINARLOG">Delete vector records</string>
+    <string name="ORI_TFILECHOOSER">Select file</string>
+    <string name="ORI_TPRINCIPALDESGLOSE">Welcome to Breakdown of runners</string>
+    <string name="ORI_TSPLASHDESGLOSE">Loading data, please wait...</string>
+    <string name="ORI_TVERMAPA">Show map</string>
+    <string name="ORI_TSELIDS">Select IDs</string>
+    <string name="ORI_TCONFLOCALIZA">Locate configuration</string>
+    <string name="ORI_TTESTCONN">Test connection</string>
+
+    <string name="ORI_MI00000">Data exist. Do you want to import them?</string>
+    <string name="ORI_MI00001">Do you want to export data?</string>
+    <string name="ORI_MI00002">Error in Tx</string>
+    <string name="ORI_MI00003">Include data from screen?</string>
+    <string name="ORI_MI00004">Saved Ok</string>
+    <string name="ORI_MI00005">Incorrect saving</string>
+    <string name="ORI_MI00006">Confirm that you want to delete</string>
+    <string name="ORI_MI00007">OCAD file successfully created</string>
+    <string name="ORI_MI00008">Error creating OCAD file</string>
+    <string name="ORI_MI00009">GPX file successfully created.</string>
+    <string name="ORI_MI00010">Error creating GPX file</string>
+    <string name="ORI_MI00011">Choose UTM zone where you are. Choosing another one is only useful if you are located near the limit between 2 zones</string>
+    <string name="ORI_MI00012">Choose UTM zone where you are</string>
+    <string name="ORI_MI00013">Error loading images. See configuration form.</string>
+    <string name="ORI_MI00014">Do you want to save changes?</string>
+    <string name="ORI_MI00015">Error exporting sketch files</string>
+    <string name="ORI_MI00016">GPS is not enabled. Do you want to go to settings menu?</string>
+    <string name="ORI_MI00017">Do you want to remove existing records?</string>
+    <string name="ORI_MI00018">Existing records removed</string>
+
+    <string name="ORI_ML00990">1300</string>
+    <string name="ORI_ML00991">1311</string>
+    <string name="ORI_ML00992">1350</string>
+    <string name="ORI_ML00993">1357</string>
+    <string name="ORI_ML00994">1000</string>
+    <string name="ORI_ML00995">1048</string>
+    <string name="ORI_ML00996">1100</string>
+    <string name="ORI_ML00997">1178</string>
+    <string name="ORI_ML00998">1200</string>
+    <string name="ORI_ML00999">1233</string>
+    <string name="ORI_ML01000">105.0 Contour value</string>
+    <string name="ORI_ML01001">112.0 Small knoll</string>
+    <string name="ORI_ML01002">113.0 Elongated knoll</string>
+    <string name="ORI_ML01003">115.0 Small depression</string>
+    <string name="ORI_ML01004">116.0 Pit</string>
+    <string name="ORI_ML01005">117.0 Broken ground</string>
+    <string name="ORI_ML01006">118.0 Special landform feature</string>
+    <string name="ORI_ML01007">204.0 Rocky pit</string>
+    <string name="ORI_ML01008">205.0 Cave</string>
+    <string name="ORI_ML01009">206.0 Boulder</string>
+    <string name="ORI_ML01010">207.0 Large boulder</string>
+    <string name="ORI_ML01011">208.0 Boulder field</string>
+    <string name="ORI_ML01012">208.1 Boulder field</string>
+    <string name="ORI_ML01013">209.0 Boulder cluster</string>
+    <string name="ORI_ML01014">210.0 Stony ground</string>
+    <string name="ORI_ML01015">303.0 Waterhole</string>
+    <string name="ORI_ML01016">310.1 Small marsh</string>
+    <string name="ORI_ML01017">312.0 Well</string>
+    <string name="ORI_ML01018">313.0 Spring</string>
+    <string name="ORI_ML01019">314.0 Special water feature</string>
+    <string name="ORI_ML01020">412.1 Orchard: single dot</string>
+    <string name="ORI_ML01021">418.0 Special vegetation feature</string>
+    <string name="ORI_ML01022">419.0 Special vegetation feature</string>
+    <string name="ORI_ML01023">420.0 Special vegetation feature</string>
+    <string name="ORI_ML01024">512.0 Footbridge</string>
+    <string name="ORI_ML01025">518.1 Small tunnel</string>
+    <string name="ORI_ML01026">525.0 Crossing point</string>
+    <string name="ORI_ML01027">526.1 Small building</string>
+    <string name="ORI_ML01028">530.1 Small ruin</string>
+    <string name="ORI_ML01029">532.0 Grave</string>
+    <string name="ORI_ML01030">535.0 High tower</string>
+    <string name="ORI_ML01031">536.0 Small tower</string>
+    <string name="ORI_ML01032">537.0 Cairn</string>
+    <string name="ORI_ML01033">538.0 Fodder rack</string>
+    <string name="ORI_ML01034">539.0 Special man-made feature</string>
+    <string name="ORI_ML01035">540.0 Special man-made feature</string>
+    <string name="ORI_ML01036">602.0 Registration mark</string>
+    <string name="ORI_ML01037">603.0 Spot height value</string>
+    <string name="ORI_ML01038">701.0 Start</string>
+    <string name="ORI_ML01039">702.0 Control point</string>
+    <string name="ORI_ML01040">706.0 Finish</string>
+    <string name="ORI_ML01041">708.0 Crossing point</string>
+    <string name="ORI_ML01042">711.0 Forbidden route</string>
+    <string name="ORI_ML01043">712.0 First aid post</string>
+    <string name="ORI_ML01044">713.0 Refreshment point</string>
+    <string name="ORI_ML01045">714.0 MTBO. Dangerous objects across tracks</string>
+    <string name="ORI_ML01046">831.0 Passable step</string>
+    <string name="ORI_ML01047">832.0 Impassable step</string>
+    <string name="ORI_ML01048">844.0 MTBO. Uncrossable barrier/forbidden</string>
+    <string name="ORI_ML01100">101.0 Contour</string>
+    <string name="ORI_ML01101">102.0 Index contour</string>
+    <string name="ORI_ML01102">103.0 Form line</string>
+    <string name="ORI_ML01103">104.0 Slope line</string>
+    <string name="ORI_ML01104">106.0 Earth bank</string>
+    <string name="ORI_ML01105">106.1 Earth bank: main line</string>
+    <string name="ORI_ML01106">106.2 Earth bank: tag line</string>
+    <string name="ORI_ML01107">107.0 Earth wall</string>
+    <string name="ORI_ML01108">108.0 Small earth wall</string>
+    <string name="ORI_ML01109">109.0 Erosion gully</string>
+    <string name="ORI_ML01110">110.0 Small erosion gully</string>
+    <string name="ORI_ML01111">201.0 Impassable cliff</string>
+    <string name="ORI_ML01112">201.1 Impassable cliff</string>
+    <string name="ORI_ML01113">203.0 Passable rock face</string>
+    <string name="ORI_ML01114">203.1 Passable rock face</string>
+    <string name="ORI_ML01115">301.1 Bank line</string>
+    <string name="ORI_ML01116">305.0 Crossable watercourse</string>
+    <string name="ORI_ML01117">306.0 Crossable small watercourse</string>
+    <string name="ORI_ML01118">307.0 Minor water channel</string>
+    <string name="ORI_ML01119">308.0 Narrow marsh</string>
+    <string name="ORI_ML01120">309.1 Bank line</string>
+    <string name="ORI_ML01121">414.0 Distinct cultivation boundary</string>
+    <string name="ORI_ML01122">416.0 Distinct vegetation boundary</string>
+    <string name="ORI_ML01123">501.0 Motorway</string>
+    <string name="ORI_ML01124">501.1 Motorway under construction</string>
+    <string name="ORI_ML01125">502.0 Major road</string>
+    <string name="ORI_ML01126">502.1 Major road under construction</string>
+    <string name="ORI_ML01127">503.0 Minor road</string>
+    <string name="ORI_ML01128">503.1 Minor road under construction</string>
+    <string name="ORI_ML01129">504.0 Road</string>
+    <string name="ORI_ML01130">505.0 Vehicle track</string>
+    <string name="ORI_ML01131">506.0 Footpath</string>
+    <string name="ORI_ML01132">507.0 Small footpath</string>
+    <string name="ORI_ML01133">508.0 Less distinct small path</string>
+    <string name="ORI_ML01134">509.0 Narrow ride</string>
+    <string name="ORI_ML01135">515.0 Railway</string>
+    <string name="ORI_ML01136">516.0 Power line</string>
+    <string name="ORI_ML01137">517.0 Major power line</string>
+    <string name="ORI_ML01138">518.0 Tunnel</string>
+    <string name="ORI_ML01139">519.0 Stone wall</string>
+    <string name="ORI_ML01140">520.0 Ruined stone wall</string>
+    <string name="ORI_ML01141">521.0 High stone wall</string>
+    <string name="ORI_ML01142">522.0 Fence</string>
+    <string name="ORI_ML01143">523.0 Ruined fence</string>
+    <string name="ORI_ML01144">524.0 High fence</string>
+    <string name="ORI_ML01145">528.1 Bounding line</string>
+    <string name="ORI_ML01146">529.1 Bounding line</string>
+    <string name="ORI_ML01147">530.0 Ruin</string>
+    <string name="ORI_ML01148">531.0 Firing range</string>
+    <string name="ORI_ML01149">531.1 Firing range: target</string>
+    <string name="ORI_ML01150">533.0 Crossable pipeline</string>
+    <string name="ORI_ML01151">534.0 Uncrossable pipeline</string>
+    <string name="ORI_ML01152">601.0 Magnetic north line</string>
+    <string name="ORI_ML01153">601.1 Magnetic north line</string>
+    <string name="ORI_ML01154">704.0 Line</string>
+    <string name="ORI_ML01155">705.0 Marked route</string>
+    <string name="ORI_ML01156">707.0 Uncrossable boundary</string>
+    <string name="ORI_ML01157">801.0 Track > 2m</string>
+    <string name="ORI_ML01158">802.0 Track 1-2m</string>
+    <string name="ORI_ML01159">803.0 Track 0.8-1m</string>
+    <string name="ORI_ML01160">804.0 Road covered with snow</string>
+    <string name="ORI_ML01161">805.0 Sanded or snowless road</string>
+    <string name="ORI_ML01162">831.0 Track: fast riding</string>
+    <string name="ORI_ML01163">832.0 Path: fast riding</string>
+    <string name="ORI_ML01164">833.0 Track: medium riding</string>
+    <string name="ORI_ML01165">834.0 Path: medium riding</string>
+    <string name="ORI_ML01166">835.0 Track: slow riding</string>
+    <string name="ORI_ML01167">836.0 Path: slow riding</string>
+    <string name="ORI_ML01168">837.0 Track: difficult to ride</string>
+    <string name="ORI_ML01169">838.0 Path: difficult to ride</string>
+    <string name="ORI_ML01170">853.0 Building outline</string>
+    <string name="ORI_ML01171">861.0 Road without car traffic</string>
+    <string name="ORI_ML01172">861.1 Road without car traffic</string>
+    <string name="ORI_ML01173">861.2 Road without car tr. under cons</string>
+    <string name="ORI_ML01174">861.3 Road without car tr. under cons</string>
+    <string name="ORI_ML01175">861.5 Bounding line</string>
+    <string name="ORI_ML01176">861.6 Bounding line</string>
+    <string name="ORI_ML01177">862.0 Stairway</string>
+    <string name="ORI_ML01178">862.1 Stairway</string>
+    <string name="ORI_ML01200">202.0 Rock pillar/cliff</string>
+    <string name="ORI_ML01201">211.0 Open sandy ground</string>
+    <string name="ORI_ML01202">212.0 Bare rock</string>
+    <string name="ORI_ML01203">301.0 Lake</string>
+    <string name="ORI_ML01204">302.0 Pond</string>
+    <string name="ORI_ML01205">309.0 Uncrossable marsh</string>
+    <string name="ORI_ML01206">310.0 Marsh</string>
+    <string name="ORI_ML01207">311.0 Indistinct marsh</string>
+    <string name="ORI_ML01208">401.0 Open land</string>
+    <string name="ORI_ML01209">402.0 Open land with scattered trees</string>
+    <string name="ORI_ML01210">403.0 Rough open land</string>
+    <string name="ORI_ML01211">404.0 Rough open land with scattered trees</string>
+    <string name="ORI_ML01212">406.0 Forest:slow running</string>
+    <string name="ORI_ML01213">407.0 Undergrowth: slow running</string>
+    <string name="ORI_ML01214">408.0 Forest: difficult to run</string>
+    <string name="ORI_ML01215">409.0 Undergrowth: difficult to run</string>
+    <string name="ORI_ML01216">410.0 Vegetation: very diffic. to run</string>
+    <string name="ORI_ML01217">411.0 Forest runnable in one dir.</string>
+    <string name="ORI_ML01218">411.1 Forest runnable in one dir.</string>
+    <string name="ORI_ML01219">411.2 Forest runnable in one dir.</string>
+    <string name="ORI_ML01220">412.0 Orchard</string>
+    <string name="ORI_ML01221">413.0 Vineyard</string>
+    <string name="ORI_ML01222">415.0 Cultivated land</string>
+    <string name="ORI_ML01223">526.0 Building</string>
+    <string name="ORI_ML01224">527.0 Settlement</string>
+    <string name="ORI_ML01225">527.1 Settlement</string>
+    <string name="ORI_ML01226">528.0 Permanently out of bounds</string>
+    <string name="ORI_ML01227">529.0 Paved area</string>
+    <string name="ORI_ML01228">709.0 Out-of-bounds area</string>
+    <string name="ORI_ML01229">710.0 Dangerous area</string>
+    <string name="ORI_ML01230">806.0 Prepared areas</string>
+    <string name="ORI_ML01231">851.0 Building</string>
+    <string name="ORI_ML01232">852.0 Building pass-through</string>
+    <string name="ORI_ML01233">861.4 Paved area without car traffic</string>
+    <string name="ORI_ML01300">501.0 Motorway</string>
+    <string name="ORI_ML01301">501.1 Motorway under construction</string>
+    <string name="ORI_ML01302">502.0 Major road</string>
+    <string name="ORI_ML01303">502.1 Major road under construction</string>
+    <string name="ORI_ML01304">503.0 Minor road</string>
+    <string name="ORI_ML01305">503.1 Minor road under construction</string>
+    <string name="ORI_ML01306">504.0 Road</string>
+    <string name="ORI_ML01307">505.0 Vehicle track</string>
+    <string name="ORI_ML01308">506.0 Footpath</string>
+    <string name="ORI_ML01309">507.0 Small footpath</string>
+    <string name="ORI_ML01310">508.0 Less distinct small path</string>
+    <string name="ORI_ML01311">509.0 Narrow ride</string>
+    <string name="ORI_ML01350">831.0 Track: fast riding</string>
+    <string name="ORI_ML01351">832.0 Path: fast riding</string>
+    <string name="ORI_ML01352">833.0 Track: medium riding</string>
+    <string name="ORI_ML01353">834.0 Path: medium riding</string>
+    <string name="ORI_ML01354">835.0 Track: slow riding</string>
+    <string name="ORI_ML01355">836.0 Path: slow riding</string>
+    <string name="ORI_ML01356">837.0 Track: difficult to ride</string>
+    <string name="ORI_ML01357">838.0 Path: difficult to ride</string>
+
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/lblTipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00098"></TextView>
+
+        <Spinner
+            android:id="@+id/lstTipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="200dp"
+            android:minHeight="48dp"></Spinner>
+
+        <TextView
+            android:id="@+id/lblTipoOCAD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00099"></TextView>
+
+        <Spinner
+            android:id="@+id/lstTipoOCAD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="300dp"
+            android:minHeight="48dp"></Spinner>
+
+        <TextView
+            android:id="@+id/lblDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00100"></TextView>
+
+        <EditText
+            android:id="@+id/txtDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textSize="18sp"></EditText>
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+>
+<jaru.ori.gui.gpslog.android.AEditorCampoView
+android:id="@+id/imgPlantilla"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+/>
+<LinearLayout
+    android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+>
+
+    <ImageButton
+        android:id="@+id/botDibujar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00172"
+        android:src="@drawable/ori_gldibu"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botBorrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00177"
+        android:src="@drawable/ori_glgoma"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botSeleccionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00032"
+        android:src="@drawable/ori_glfle1"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botMover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00158"
+        android:src="@drawable/ori_glmano"></ImageButton>
+</LinearLayout>
+<LinearLayout
+    android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+>
+
+    <ImageButton
+        android:id="@+id/botAcercar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00159"
+        android:src="@drawable/ori_glacer"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botAlejar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00160"
+        android:src="@drawable/ori_glalej"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botVerTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00161"
+        android:src="@drawable/ori_gltodo"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botSatelite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00162"
+        android:src="@drawable/ori_glsate"></ImageButton>
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/lblCapas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ORI_ML00146"></TextView>
+</LinearLayout>

@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "jaru.ori.gui.gpslog.android.JARU_ANDROID-mergeReleaseResources-32:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\javier.arufe\\.gradle\\caches\\8.13\\transforms\\42209e6bd64014d675f6273e3ec98130\\transformed\\material-1.12.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        }
+    ]
+}

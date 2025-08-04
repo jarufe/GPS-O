@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/archivo0"
+            android:icon="@drawable/ori_glarch"
+            android:title="@string/ORI_ML00059">
+        <menu>
+            <item android:id="@+id/grabar0"
+                  android:title="@string/ORI_ML00073" />
+            <item android:id="@+id/reiniciar0"
+                  android:title="@string/ORI_ML00074" />
+            <item android:id="@+id/importarGpx0"
+                  android:title="@string/ORI_ML00123" />
+            <item android:id="@+id/generarOcad0"
+                  android:title="@string/ORI_ML00075" />
+            <item android:id="@+id/generarGpx0"
+                  android:title="@string/ORI_ML00116" />
+        </menu>
+    </item>
+    <item android:id="@+id/gestionar0"
+        android:icon="@drawable/ori_glgest"
+        android:title="@string/ORI_ML00048" >
+        <menu>
+            <item android:id="@+id/abrir0"
+                  android:title="@string/ORI_ML00105" />
+            <item android:id="@+id/lectura0"
+                  android:title="@string/ORI_ML00049" />
+            <item android:id="@+id/centroide0"
+                  android:title="@string/ORI_ML00050" />
+            <item android:id="@+id/registro0"
+                  android:title="@string/ORI_ML00058" />
+            <item android:id="@+id/dual0"
+                  android:title="@string/ORI_ML00201" />
+            <item android:id="@+id/eliminar0"
+                  android:title="@string/ORI_ML00177" />
+            <item android:id="@+id/configurarGps0"
+                  android:title="@string/ORI_ML00037" />
+        </menu>
+    </item>
+    <item android:id="@+id/brujula0"
+        android:icon="@drawable/ori_glbrui"
+        android:title="@string/ORI_ML00135" >
+        <menu>
+            <item android:id="@+id/calibrarBrujula0"
+                  android:title="@string/ORI_ML00202" />
+            <item android:id="@+id/mostrarBrujula0"
+                  android:title="@string/ORI_ML00203" />
+        </menu>
+    </item>
+    <item android:id="@+id/campo0"
+        android:icon="@drawable/ori_gltrab"
+        android:title="@string/ORI_ML00132" >
+        <menu>
+            <item android:id="@+id/configurarCampo0"
+                android:title="@string/ORI_ML00037" />
+            <item android:id="@+id/editorCampo0"
+                android:title="@string/ORI_ML00134" />
+            <item android:id="@+id/exportarBocetos0"
+                android:title="@string/ORI_ML00192" />
+        </menu>
+    </item>
+    <item android:id="@+id/nube0"
+        android:icon="@drawable/ori_glnube"
+        android:title="@string/ORI_ML00195" >
+        <menu>
+            <item android:id="@+id/cargarNube0"
+                  android:title="@string/ORI_ML00196" />
+            <item android:id="@+id/grabarNube0"
+                  android:title="@string/ORI_ML00197" />
+            <item android:id="@+id/generarASCII0"
+                  android:title="@string/ORI_ML00198" />
+            <item android:id="@+id/configurarNube0"
+                  android:title="@string/ORI_ML00199" />
+        </menu>
+    </item>
+    <item android:id="@+id/localizacion0"
+        android:icon="@drawable/ori_glloca"
+        android:title="@string/ORI_ML00208" >
+        <menu>
+            <item android:id="@+id/configurarLoc0"
+                android:title="@string/ORI_ML00037" />
+            <item android:id="@+id/grabarLoc0"
+                android:title="@string/ORI_ML00106" />
+            <item android:id="@+id/verLoc0"
+                android:title="@string/ORI_ML00210" />
+            <item android:id="@+id/testLoc0"
+                android:title="@string/ORI_ML00209" />
+            <item android:id="@+id/seleccionarIds0"
+                android:title="@string/ORI_ML00211" >
+            </item>
+        </menu>
+    </item>
+    <item android:id="@+id/salir0"
+        android:icon="@drawable/ori_glsali"
+        android:title="@string/ORI_ML00005" 
+    />
+</menu>

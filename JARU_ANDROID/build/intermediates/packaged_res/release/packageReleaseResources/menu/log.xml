@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/grabar6"
+        android:icon="@drawable/ori_glgrab"
+        android:title="@string/ORI_ML00073" >
+    </item>
+    <item android:id="@+id/cerrar6"
+        android:icon="@drawable/ori_glcerr"
+        android:title="@string/ORI_ML00085" >
+    </item>
+</menu>

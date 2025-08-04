@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/aceptar3"
+            android:icon="@drawable/ori_glacep"
+            android:title="@string/ORI_ML00003">
+    </item>
+    <item android:id="@+id/cancelar3"
+        android:icon="@drawable/ori_glcanc"
+        android:title="@string/ORI_ML00004" >
+    </item>
+    <item android:id="@+id/ver3"
+        android:icon="@drawable/ori_gl_ojo"
+        android:title="@string/ORI_ML00210" >
+    </item>
+</menu>

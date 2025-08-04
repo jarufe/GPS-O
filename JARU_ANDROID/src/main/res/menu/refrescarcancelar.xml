@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/refrescar7"
+            android:icon="@drawable/ori_glrefr"
+            android:title="@string/ORI_ML00084">
+    </item>
+    <item android:id="@+id/cancelar7"
+        android:icon="@drawable/ori_glcanc"
+        android:title="@string/ORI_ML00004" >
+    </item>
+</menu>

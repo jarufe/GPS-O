@@ -1,0 +1,660 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-208:12
+INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-208:12
+INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-208:12
+INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-208:12
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\42209e6bd64014d675f6273e3ec98130\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:17:1-44:12
+MERGED from [com.google.android.gms:play-services-vision:20.1.3] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\c2d1edb150e3713f235691b13b2bd7de\transformed\jetified-play-services-vision-20.1.3\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.3] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\79417663ab63d09f1fe16bcc2fe34e65\transformed\jetified-play-services-vision-common-19.1.3\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\824cf5bb14e7c20b8e7589f717ace9d4\transformed\jetified-play-services-clearcut-17.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-flags:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\b4dfe1e1b0b7bc385ea2c34c4a130455\transformed\jetified-play-services-flags-17.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8c67db9f6d93d604512fe5a7b52835ae\transformed\jetified-play-services-phenotype-17.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\a498e472d92641a11b15f60851ba968e\transformed\jetified-play-services-tasks-18.2.0\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\64308c9fae058390fe4627fe0847b6a1\transformed\jetified-play-services-basement-18.5.0\AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\56bc80e241e8fdfb71415aa34aa7208a\transformed\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\4e839f8b139235777d83848e88822a3c\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\5c9eeb8ad490d66326337f50443853d6\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\861364df04b55941738f3276d858b503\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\958c9256775b03de1ce3e3117f16e7da\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.8.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\6ba8d9fdbb799edc5651a9f709c8f017\transformed\jetified-activity-1.8.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\26f5fac288920d2db865bbe6beb5f546\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\91466eb7a777da928fd9140a8ec5368f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\77566b8aa112c8119afdee5bf93fa43c\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\31b83b558baf5254fe6a2747e91ccc2e\transformed\transition-1.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\388637c1ea98326e7d593e0f55cc5205\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\1563b21a87ab5286431d62dd86b25f4e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\3a56cbd9cbb80713035621d91ec58f08\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\407e5a3d2f986b252d837864d44854f4\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\c502017747fbca0d0da22ab7e44d9bed\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\00c64ed6f2d1a0b765d56c21eda2b338\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\a545105cb5b85b8577e8121b1fbc0e90\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8da6a9fbb3173d34d726bc0e830b2881\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\7083f97885903c58a8beada455bc278b\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\0e0be2773a76c9cc868e5f0ec7dc3aa8\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\826261cef33a1ec75fedd53d3c790f3b\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\bf279d6b9c96d47fe805ca7c69bf810e\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\bc50c0690db2c4189f935a1d1e2b648b\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\e52b495bc996f26bed9ba6717a8cf246\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\612a7e88121545506f4054f694efc9a6\transformed\jetified-core-ktx-1.13.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\ca42e1076b452b1a8e43c04bbce3e51e\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\0f1843571d00269736121ee3f7835f3b\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\660e34e76de73cd582a2f415991ef520\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\7c6a98b3145dd5cac4d15c7534957b22\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\6e2c761cc9d44895488fe0d38e58a4f3\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\ce653f8863c3fbf410ee4005eff7faa8\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\932c354b5ca26e7cdd41679ae8758315\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\34d07ae734d044be1f2f8350ff8a6a20\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\cbc45f84034dde73c1d6f758ff63ad01\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\103a6da68a9bdcd2d041e34422a192eb\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\f0cc9e51ea0cd497ebbada0fe6f94a7f\transformed\jetified-annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
+	package
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:3:5-42
+		INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:4:29-54
+		INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml
+uses-permission#android.permission.BLUETOOTH
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:6:5-68
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:6:22-65
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:7:5-98
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:7:22-95
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:8:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:9:22-76
+uses-permission#android.permission.INTERNET
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:10:5-67
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:10:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:11:5-79
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:11:22-76
+permission#jaru.ori.gui.gpslog.android.permission.MAPS_RECEIVE
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:13:5-15:47
+	android:protectionLevel
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:15:9-44
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:14:9-75
+uses-permission#jaru.ori.gui.gpslog.android.permission.MAPS_RECEIVE
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:16:5-91
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:16:22-88
+uses-feature#0x00020000
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:18:5-20:35
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:26:5-28:35
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:19:9-41
+	android:required
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:20:9-32
+application
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:22:5-206:19
+INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:22:5-206:19
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\42209e6bd64014d675f6273e3ec98130\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\42209e6bd64014d675f6273e3ec98130\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-vision:20.1.3] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\c2d1edb150e3713f235691b13b2bd7de\transformed\jetified-play-services-vision-20.1.3\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision:20.1.3] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\c2d1edb150e3713f235691b13b2bd7de\transformed\jetified-play-services-vision-20.1.3\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.3] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\79417663ab63d09f1fe16bcc2fe34e65\transformed\jetified-play-services-vision-common-19.1.3\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.3] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\79417663ab63d09f1fe16bcc2fe34e65\transformed\jetified-play-services-vision-common-19.1.3\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\824cf5bb14e7c20b8e7589f717ace9d4\transformed\jetified-play-services-clearcut-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\824cf5bb14e7c20b8e7589f717ace9d4\transformed\jetified-play-services-clearcut-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8c67db9f6d93d604512fe5a7b52835ae\transformed\jetified-play-services-phenotype-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8c67db9f6d93d604512fe5a7b52835ae\transformed\jetified-play-services-phenotype-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\a498e472d92641a11b15f60851ba968e\transformed\jetified-play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\a498e472d92641a11b15f60851ba968e\transformed\jetified-play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\64308c9fae058390fe4627fe0847b6a1\transformed\jetified-play-services-basement-18.5.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\64308c9fae058390fe4627fe0847b6a1\transformed\jetified-play-services-basement-18.5.0\AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\56bc80e241e8fdfb71415aa34aa7208a\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\56bc80e241e8fdfb71415aa34aa7208a\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\0f1843571d00269736121ee3f7835f3b\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\0f1843571d00269736121ee3f7835f3b\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\6e2c761cc9d44895488fe0d38e58a4f3\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\6e2c761cc9d44895488fe0d38e58a4f3\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:24:9-41
+	android:icon
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:23:9-45
+activity#jaru.ori.gui.gpslog.android.APrincipal
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:25:9-33:20
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:27:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:26:13-39
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:28:13-32:29
+action#android.intent.action.MAIN
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:29:17-69
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:29:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:31:17-77
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:31:27-74
+activity#jaru.ori.gui.gpslog.android.ACambiaParametros
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:35:9-43:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:37:13-47
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:38:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:36:13-73
+intent-filter#action:name:jaru.ori.gui.gpslog.android.ACambiaParametros+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:39:13-42:29
+action#jaru.ori.gui.gpslog.android.ACambiaParametros
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:40:17-88
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:40:25-85
+category#android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
+activity#jaru.ori.gui.gpslog.android.ACentroide
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:44:9-52:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:46:13-51
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:47:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:45:13-66
+intent-filter#action:name:jaru.ori.gui.gpslog.android.ACentroide+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:48:13-51:29
+action#jaru.ori.gui.gpslog.android.ACentroide
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:49:17-81
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:49:25-78
+activity#jaru.ori.gui.gpslog.android.AConfCampo
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:53:9-61:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:55:13-51
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:56:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:54:13-66
+intent-filter#action:name:jaru.ori.gui.gpslog.android.AConfCampo+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:57:13-60:29
+action#jaru.ori.gui.gpslog.android.AConfCampo
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:58:17-81
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:58:25-78
+activity#jaru.ori.gui.gpslog.android.AConfLocaliza
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:62:9-70:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:64:13-54
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:65:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:63:13-69
+intent-filter#action:name:jaru.ori.gui.gpslog.android.AConfLocaliza+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:66:13-69:29
+action#jaru.ori.gui.gpslog.android.AConfLocaliza
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:67:17-84
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:67:25-81
+activity#jaru.ori.gui.gpslog.android.ADual
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:71:9-79:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:73:13-46
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:74:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:72:13-61
+intent-filter#action:name:jaru.ori.gui.gpslog.android.ADual+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:75:13-78:29
+action#jaru.ori.gui.gpslog.android.ADual
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:76:17-76
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:76:25-73
+activity#jaru.ori.gui.gpslog.android.AEditorCampo
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:80:9-88:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:82:13-48
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:83:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:81:13-68
+intent-filter#action:name:jaru.ori.gui.gpslog.android.AEditorCampo+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:84:13-87:29
+action#jaru.ori.gui.gpslog.android.AEditorCampo
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:85:17-83
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:85:25-80
+activity#jaru.ori.gui.gpslog.android.AEliminarRegistros
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:89:9-97:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:91:13-53
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:92:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:90:13-74
+intent-filter#action:name:jaru.ori.gui.gpslog.android.AEliminarRegistros+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:93:13-96:29
+action#jaru.ori.gui.gpslog.android.AEliminarRegistros
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:94:17-89
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:94:25-86
+activity#jaru.ori.gui.gpslog.android.AGenerarGPX
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:98:9-106:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:100:13-48
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:101:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:99:13-67
+intent-filter#action:name:jaru.ori.gui.gpslog.android.AGenerarGPX+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:102:13-105:29
+action#jaru.ori.gui.gpslog.android.AGenerarGPX
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:103:17-82
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:103:25-79
+activity#jaru.ori.gui.gpslog.android.AGenerarOCAD
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:107:9-115:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:109:13-49
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:110:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:108:13-68
+intent-filter#action:name:jaru.ori.gui.gpslog.android.AGenerarOCAD+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:111:13-114:29
+action#jaru.ori.gui.gpslog.android.AGenerarOCAD
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:112:17-83
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:112:25-80
+activity#jaru.ori.gui.gpslog.android.AImportarGPX
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:116:9-124:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:118:13-48
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:119:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:117:13-68
+intent-filter#action:name:jaru.ori.gui.gpslog.android.AImportarGPX+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:120:13-123:29
+action#jaru.ori.gui.gpslog.android.AImportarGPX
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:121:17-83
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:121:25-80
+activity#jaru.ori.gui.gpslog.android.ALectura
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:125:9-133:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:127:13-49
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:128:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:126:13-64
+intent-filter#action:name:jaru.ori.gui.gpslog.android.ALectura+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:129:13-132:29
+action#jaru.ori.gui.gpslog.android.ALectura
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:130:17-79
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:130:25-76
+activity#jaru.ori.gui.gpslog.android.AListadoNMEA
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:134:9-142:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:136:13-51
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:137:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:135:13-68
+intent-filter#action:name:jaru.ori.gui.gpslog.android.AListadoNMEA+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:138:13-141:29
+action#jaru.ori.gui.gpslog.android.AListadoNMEA
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:139:17-83
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:139:25-80
+activity#jaru.ori.gui.gpslog.android.ALog
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:143:9-151:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:145:13-45
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:146:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:144:13-60
+intent-filter#action:name:jaru.ori.gui.gpslog.android.ALog+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:147:13-150:29
+action#jaru.ori.gui.gpslog.android.ALog
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:148:17-75
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:148:25-72
+activity#jaru.ori.gui.gpslog.android.ASelIds
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:152:9-160:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:154:13-48
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:155:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:153:13-63
+intent-filter#action:name:jaru.ori.gui.gpslog.android.ASelIds+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:156:13-159:29
+action#jaru.ori.gui.gpslog.android.ASelIds
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:157:17-78
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:157:25-75
+activity#jaru.ori.gui.gpslog.android.ASelOCAD
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:161:9-169:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:163:13-49
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:164:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:162:13-64
+intent-filter#action:name:jaru.ori.gui.gpslog.android.ASelOCAD+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:165:13-168:29
+action#jaru.ori.gui.gpslog.android.ASelOCAD
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:166:17-79
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:166:25-76
+activity#jaru.ori.gui.gpslog.android.ASplashScreen
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:170:9-178:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:172:13-48
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:173:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:171:13-69
+intent-filter#action:name:jaru.ori.gui.gpslog.android.ASplashScreen+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:174:13-177:29
+action#jaru.ori.gui.gpslog.android.ASplashScreen
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:175:17-84
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:175:25-81
+activity#jaru.ori.gui.gpslog.android.ATestConn
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:179:9-187:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:181:13-50
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:182:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:180:13-65
+intent-filter#action:name:jaru.ori.gui.gpslog.android.ATestConn+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:183:13-186:29
+action#jaru.ori.gui.gpslog.android.ATestConn
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:184:17-80
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:184:25-77
+activity#jaru.ori.gui.gpslog.android.AVerMapa
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:188:9-196:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:190:13-49
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:191:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:189:13-64
+intent-filter#action:name:jaru.ori.gui.gpslog.android.AVerMapa+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:192:13-195:29
+action#jaru.ori.gui.gpslog.android.AVerMapa
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:193:17-79
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:193:25-76
+meta-data#com.google.android.gms.version
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:199:9-201:69
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\64308c9fae058390fe4627fe0847b6a1\transformed\jetified-play-services-basement-18.5.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\64308c9fae058390fe4627fe0847b6a1\transformed\jetified-play-services-basement-18.5.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:201:13-66
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:200:13-58
+meta-data#com.google.android.maps.v2.API_KEY
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:202:9-204:71
+	android:value
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:204:13-68
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:203:13-62
+uses-sdk
+INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml
+INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\42209e6bd64014d675f6273e3ec98130\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\42209e6bd64014d675f6273e3ec98130\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-vision:20.1.3] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\c2d1edb150e3713f235691b13b2bd7de\transformed\jetified-play-services-vision-20.1.3\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision:20.1.3] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\c2d1edb150e3713f235691b13b2bd7de\transformed\jetified-play-services-vision-20.1.3\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.3] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\79417663ab63d09f1fe16bcc2fe34e65\transformed\jetified-play-services-vision-common-19.1.3\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.3] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\79417663ab63d09f1fe16bcc2fe34e65\transformed\jetified-play-services-vision-common-19.1.3\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\824cf5bb14e7c20b8e7589f717ace9d4\transformed\jetified-play-services-clearcut-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\824cf5bb14e7c20b8e7589f717ace9d4\transformed\jetified-play-services-clearcut-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\b4dfe1e1b0b7bc385ea2c34c4a130455\transformed\jetified-play-services-flags-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\b4dfe1e1b0b7bc385ea2c34c4a130455\transformed\jetified-play-services-flags-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8c67db9f6d93d604512fe5a7b52835ae\transformed\jetified-play-services-phenotype-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8c67db9f6d93d604512fe5a7b52835ae\transformed\jetified-play-services-phenotype-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\a498e472d92641a11b15f60851ba968e\transformed\jetified-play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\a498e472d92641a11b15f60851ba968e\transformed\jetified-play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\64308c9fae058390fe4627fe0847b6a1\transformed\jetified-play-services-basement-18.5.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\64308c9fae058390fe4627fe0847b6a1\transformed\jetified-play-services-basement-18.5.0\AndroidManifest.xml:18:5-43
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\56bc80e241e8fdfb71415aa34aa7208a\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\56bc80e241e8fdfb71415aa34aa7208a\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\4e839f8b139235777d83848e88822a3c\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\4e839f8b139235777d83848e88822a3c\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\5c9eeb8ad490d66326337f50443853d6\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\5c9eeb8ad490d66326337f50443853d6\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\861364df04b55941738f3276d858b503\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\861364df04b55941738f3276d858b503\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\958c9256775b03de1ce3e3117f16e7da\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\958c9256775b03de1ce3e3117f16e7da\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.8.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\6ba8d9fdbb799edc5651a9f709c8f017\transformed\jetified-activity-1.8.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\6ba8d9fdbb799edc5651a9f709c8f017\transformed\jetified-activity-1.8.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\26f5fac288920d2db865bbe6beb5f546\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\26f5fac288920d2db865bbe6beb5f546\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\91466eb7a777da928fd9140a8ec5368f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\91466eb7a777da928fd9140a8ec5368f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\77566b8aa112c8119afdee5bf93fa43c\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\77566b8aa112c8119afdee5bf93fa43c\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\31b83b558baf5254fe6a2747e91ccc2e\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\31b83b558baf5254fe6a2747e91ccc2e\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\388637c1ea98326e7d593e0f55cc5205\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\388637c1ea98326e7d593e0f55cc5205\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\1563b21a87ab5286431d62dd86b25f4e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\1563b21a87ab5286431d62dd86b25f4e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\3a56cbd9cbb80713035621d91ec58f08\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\3a56cbd9cbb80713035621d91ec58f08\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\407e5a3d2f986b252d837864d44854f4\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\407e5a3d2f986b252d837864d44854f4\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\c502017747fbca0d0da22ab7e44d9bed\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\c502017747fbca0d0da22ab7e44d9bed\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\00c64ed6f2d1a0b765d56c21eda2b338\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\00c64ed6f2d1a0b765d56c21eda2b338\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\a545105cb5b85b8577e8121b1fbc0e90\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\a545105cb5b85b8577e8121b1fbc0e90\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8da6a9fbb3173d34d726bc0e830b2881\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8da6a9fbb3173d34d726bc0e830b2881\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\7083f97885903c58a8beada455bc278b\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\7083f97885903c58a8beada455bc278b\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\0e0be2773a76c9cc868e5f0ec7dc3aa8\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\0e0be2773a76c9cc868e5f0ec7dc3aa8\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\826261cef33a1ec75fedd53d3c790f3b\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\826261cef33a1ec75fedd53d3c790f3b\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\bf279d6b9c96d47fe805ca7c69bf810e\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\bf279d6b9c96d47fe805ca7c69bf810e\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\bc50c0690db2c4189f935a1d1e2b648b\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\bc50c0690db2c4189f935a1d1e2b648b\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\e52b495bc996f26bed9ba6717a8cf246\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\e52b495bc996f26bed9ba6717a8cf246\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\612a7e88121545506f4054f694efc9a6\transformed\jetified-core-ktx-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\612a7e88121545506f4054f694efc9a6\transformed\jetified-core-ktx-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\ca42e1076b452b1a8e43c04bbce3e51e\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\ca42e1076b452b1a8e43c04bbce3e51e\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\0f1843571d00269736121ee3f7835f3b\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\0f1843571d00269736121ee3f7835f3b\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\660e34e76de73cd582a2f415991ef520\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\660e34e76de73cd582a2f415991ef520\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\7c6a98b3145dd5cac4d15c7534957b22\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\7c6a98b3145dd5cac4d15c7534957b22\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\6e2c761cc9d44895488fe0d38e58a4f3\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\6e2c761cc9d44895488fe0d38e58a4f3\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\ce653f8863c3fbf410ee4005eff7faa8\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\ce653f8863c3fbf410ee4005eff7faa8\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\932c354b5ca26e7cdd41679ae8758315\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\932c354b5ca26e7cdd41679ae8758315\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\34d07ae734d044be1f2f8350ff8a6a20\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\34d07ae734d044be1f2f8350ff8a6a20\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\cbc45f84034dde73c1d6f758ff63ad01\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\cbc45f84034dde73c1d6f758ff63ad01\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\103a6da68a9bdcd2d041e34422a192eb\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\103a6da68a9bdcd2d041e34422a192eb\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\f0cc9e51ea0cd497ebbada0fe6f94a7f\transformed\jetified-annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\f0cc9e51ea0cd497ebbada0fe6f94a7f\transformed\jetified-annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+	android:targetSdkVersion
+		INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml
+queries
+ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:30:5-34:15
+package#com.google.android.apps.maps
+ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:33:9-64
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:33:18-61
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:39:9-41:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:41:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:40:13-50
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\0f1843571d00269736121ee3f7835f3b\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\0f1843571d00269736121ee3f7835f3b\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+permission#jaru.ori.GpsLogOri.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+uses-permission#jaru.ori.GpsLogOri.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92

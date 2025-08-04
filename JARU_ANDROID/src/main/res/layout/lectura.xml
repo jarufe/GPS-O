@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+>
+<LinearLayout
+    android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+>
+<TextView
+android:id="@+id/lblLongitud"
+android:layout_width="wrap_content"
+android:layout_height="-3px"
+android:text="@string/ORI_ML00086"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtLongitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="200dp"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<TextView
+android:id="@+id/lblLatitud"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00087"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtLatitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="200dp"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<TextView
+android:id="@+id/lblAltura"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00088"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100dp"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<TextView
+android:id="@+id/lblDatum"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00089"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtDatum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100dp"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<TextView
+android:id="@+id/lblHora"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00090"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="150dp"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<TextView
+android:id="@+id/lblFix"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00108"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtFix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="75dp"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<TextView
+android:id="@+id/lblSatelites"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00109"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtSatelites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="75dp"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<TextView
+android:id="@+id/lblHdop"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00110"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtHdop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="75dp"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onNormalMap"
+        android:text="@string/ORI_ML00220" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onSatelliteMap"
+        android:text="@string/ORI_ML00221" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onTerrainMap"
+        android:text="@string/ORI_ML00222" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onHybridMap"
+        android:text="@string/ORI_ML00223" />
+</LinearLayout>
+<fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.MapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+</LinearLayout>

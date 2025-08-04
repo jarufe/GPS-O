@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+>
+<jaru.ori.gui.gpslog.android.AEditorCampoView
+android:id="@+id/imgPlantilla"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+/>
+<LinearLayout
+    android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/imgPlantilla"
+android:id="@+id/layBotonera1"
+>
+
+    <ImageButton
+        android:id="@+id/botDibujar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00172"
+        android:src="@drawable/ori_gldibu"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botBorrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00177"
+        android:src="@drawable/ori_glgoma"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botSeleccionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00032"
+        android:src="@drawable/ori_glfle1"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botMover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00158"
+        android:src="@drawable/ori_glmano"></ImageButton>
+
+    <TextView
+        android:id="@+id/lblEditorCoordX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="500000"
+        android:textSize="12sp"></TextView>
+</LinearLayout>
+<LinearLayout
+    android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/layBotonera1"
+android:id="@+id/layBotonera2"
+>
+
+    <ImageButton
+        android:id="@+id/botAcercar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00159"
+        android:src="@drawable/ori_glacer"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botAlejar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00160"
+        android:src="@drawable/ori_glalej"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botVerTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00161"
+        android:src="@drawable/ori_gltodo"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/botSatelite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00162"
+        android:src="@drawable/ori_glsate"></ImageButton>
+
+    <TextView
+        android:id="@+id/lblEditorCoordY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:text="4789000"
+        android:textSize="12sp"></TextView>
+</LinearLayout>
+<LinearLayout
+    android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/layBotonera2"
+android:id="@+id/layBotonera3"
+>
+
+    <TextView
+        android:id="@+id/lblEditorDistancia"
+        android:layout_width="wrap_content"
+        android:layout_height="-3px"
+        android:text="@string/ORI_ML00163"
+        android:textSize="12sp"></TextView>
+
+    <EditText
+        android:id="@+id/txtEditorDistancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:minWidth="75dp"
+        android:minHeight="32dp"
+        android:textSize="12sp"></EditText>
+
+    <TextView
+        android:id="@+id/lblEditorRumbo"
+        android:layout_width="wrap_content"
+        android:layout_height="-3px"
+        android:text="@string/ORI_ML00164"
+        android:textSize="12sp"></TextView>
+
+    <EditText
+        android:id="@+id/txtEditorRumbo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number|numberDecimal"
+        android:minWidth="50dp"
+        android:minHeight="32dp"
+        android:textSize="12sp"></EditText>
+
+    <Button
+        android:id="@+id/botEditorTrazar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ORI_ML00093"
+        android:text="@string/ORI_ML00093"></Button>
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/lblCapas"
+        android:layout_width="wrap_content"
+        android:layout_height="-3px"
+        android:layout_alignTop="@id/imgPlantilla"
+        android:layout_toRightOf="@id/imgPlantilla"
+        android:text="@string/ORI_ML00191"
+        android:textSize="12sp"></TextView>
+
+    <Spinner
+        android:id="@+id/lstEditorCapas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblCapas"
+        android:layout_marginTop="-3sp"
+        android:layout_toRightOf="@id/imgPlantilla"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00146"></Spinner>
+
+    <CheckBox
+        android:id="@+id/chkEditorPuntos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lstEditorCapas"
+        android:layout_marginTop="-3sp"
+        android:layout_toRightOf="@id/imgPlantilla"
+        android:minHeight="48dp"
+        android:text="@string/ORI_ML00147"
+        android:textSize="12sp"></CheckBox>
+
+    <CheckBox
+        android:id="@+id/chkEditorAreas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chkEditorPuntos"
+        android:layout_marginTop="-3sp"
+        android:layout_toRightOf="@id/imgPlantilla"
+        android:minHeight="48dp"
+        android:text="@string/ORI_ML00148"
+        android:textSize="12sp"></CheckBox>
+
+    <CheckBox
+        android:id="@+id/chkEditorSucio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chkEditorAreas"
+        android:layout_marginTop="-3sp"
+        android:layout_toRightOf="@id/imgPlantilla"
+        android:minHeight="48dp"
+        android:text="@string/ORI_ML00149"
+        android:textSize="12sp"></CheckBox>
+
+    <CheckBox
+        android:id="@+id/chkEditorFondo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chkEditorSucio"
+        android:layout_marginTop="-3sp"
+        android:layout_toRightOf="@id/imgPlantilla"
+        android:minHeight="48dp"
+        android:text="@string/ORI_ML00136"
+        android:textSize="12sp"></CheckBox>
+
+    <CheckBox
+        android:id="@+id/chkEditorRegistros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chkEditorFondo"
+        android:layout_marginTop="-3sp"
+        android:layout_toRightOf="@id/imgPlantilla"
+        android:minHeight="48dp"
+        android:text="@string/ORI_ML00171"
+        android:textSize="12sp"></CheckBox>
+
+    <Spinner
+        android:id="@+id/lstEditorColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chkEditorRegistros"
+        android:layout_marginTop="-3sp"
+        android:layout_toRightOf="@id/imgPlantilla"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00150"></Spinner>
+
+    <Spinner
+        android:id="@+id/lstEditorGrosor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lstEditorColor"
+        android:layout_marginTop="-3sp"
+        android:layout_toRightOf="@id/imgPlantilla"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00168"></Spinner>
+
+    <Spinner
+        android:id="@+id/lstEditorModo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lstEditorGrosor"
+        android:layout_marginTop="-3sp"
+        android:layout_toRightOf="@id/imgPlantilla"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00172"></Spinner>
+</RelativeLayout>

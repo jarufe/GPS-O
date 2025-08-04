@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+>
+<LinearLayout
+    android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+>
+<TextView
+android:id="@+id/lblFichero"
+android:layout_width="wrap_content"
+android:layout_height="-3px"
+android:text="@string/ORI_ML00131"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtFichero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<Button
+android:id="@+id/botFichero"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00124"
+>
+</Button>
+<TextView
+android:id="@+id/lblTipoOcadEn"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00125"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstTipoOcadEn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="300dp"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00179"></Spinner>
+<TextView
+android:id="@+id/lblDefecto"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00129"
+>
+</TextView>
+<TextView
+android:id="@+id/lblPuntos"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00094"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstPuntos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="300dp"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00094"></Spinner>
+<TextView
+android:id="@+id/lblLineas"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00095"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstLineas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="300dp"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00095"></Spinner>
+<TextView
+android:id="@+id/lblSobreescribir"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00130"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstSobreescribir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="300dp"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00130"></Spinner>
+</LinearLayout>
+</ScrollView>

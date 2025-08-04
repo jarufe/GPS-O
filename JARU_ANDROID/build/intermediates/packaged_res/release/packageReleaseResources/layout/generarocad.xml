@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+>
+<LinearLayout
+    android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+>
+<TextView
+android:id="@+id/lblVersion"
+android:layout_width="wrap_content"
+android:layout_height="-3px"
+android:text="@string/ORI_ML00114"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="250dp"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00114"></Spinner>
+<TextView
+android:id="@+id/lblCoordenadas"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00119"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstCoordenadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="250dp"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00119"></Spinner>
+<TextView
+android:id="@+id/lblZona"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00122"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstZona"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="125dp"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00122"></Spinner>
+</LinearLayout>
+</ScrollView>

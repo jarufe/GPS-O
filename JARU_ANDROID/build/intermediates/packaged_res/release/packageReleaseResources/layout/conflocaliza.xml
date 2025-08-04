@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/lblServidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00034" />
+
+        <EditText
+            android:id="@+id/txtServidor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/lblPuerto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00035" />
+
+        <EditText
+            android:id="@+id/txtPuerto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/lblServlet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00216" />
+
+        <EditText
+            android:id="@+id/txtServlet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/lblRetardo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00217" />
+
+        <EditText
+            android:id="@+id/txtRetardo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/lblEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00040" />
+
+        <EditText
+            android:id="@+id/txtEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/lblCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00024" />
+
+        <EditText
+            android:id="@+id/txtCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxWidth="250dp"
+            android:minWidth="150dp"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/lblDorsal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00023" />
+
+        <EditText
+            android:id="@+id/txtDorsal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/lblNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00026" />
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxWidth="300dp"
+            android:minWidth="200dp"
+            android:minHeight="48dp" />
+    </LinearLayout>
+</ScrollView>

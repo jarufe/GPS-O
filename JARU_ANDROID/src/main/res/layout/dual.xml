@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        >
+
+            <TextView
+                android:id="@+id/lblId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="30dp"
+                android:text="@string/ORI_ML00097"></TextView>
+            <EditText
+                android:id="@+id/txtId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxWidth="200dp"
+                android:minWidth="100dp"
+                android:minHeight="48dp"
+                android:textSize="18sp"></EditText>
+            <Button
+                android:id="@+id/botNuevo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ORI_ML00178">
+            </Button>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/lblTipoOCAD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00111">
+        </TextView>
+
+        <Spinner
+            android:id="@+id/lstTipoOCAD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="250dp"
+            android:minHeight="48dp"></Spinner>
+
+        <TextView
+            android:id="@+id/lblTipoOBM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00112">
+        </TextView>
+
+        <Spinner
+            android:id="@+id/lstTipoOBM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="250dp"
+            android:minHeight="48dp"></Spinner>
+
+        <TextView
+            android:id="@+id/lblDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00100">
+        </TextView>
+
+        <EditText
+            android:id="@+id/txtDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textSize="18sp"></EditText>
+
+        <TextView
+            android:id="@+id/lblSatelites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:minHeight="32dp"
+            android:text="---"></TextView>
+
+        <TextView
+            android:id="@+id/lblRegistros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="250dp"
+            android:minWidth="150dp"
+            android:minHeight="32dp"
+            android:text="@string/ORI_ML00101"></TextView>
+
+        <Button
+            android:id="@+id/botLogAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ORI_ML00106">
+        </Button>
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+>
+<LinearLayout
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+>
+
+    <CheckBox
+        android:id="@+id/chkGpsInterno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ORI_ML00193"></CheckBox>
+<TextView
+android:id="@+id/lblPuerto"
+android:layout_width="wrap_content"
+android:layout_height="-3px"
+android:text="@string/ORI_ML00079"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtPuerto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<TextView
+android:id="@+id/lblBaudios"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00080"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstBaudios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00179"></Spinner>
+<TextView
+android:id="@+id/lblBitsPalabra"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00081"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstBitsPalabra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00181"></Spinner>
+<TextView
+android:id="@+id/lblBitsStop"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00082"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstBitsStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00183"></Spinner>
+<TextView
+android:id="@+id/lblParidad"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00083"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstParidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00185"></Spinner>
+<TextView
+android:id="@+id/lblPath"
+android:layout_width="wrap_content"
+android:layout_height="-3px"
+android:text="@string/ORI_ML00036"
+>
+</TextView>
+
+    <EditText
+        android:id="@+id/txtPath"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:labelFor="@id/lblPath"
+        android:minHeight="48dp"
+        android:textSize="18sp"></EditText>
+<TextView
+android:id="@+id/lblEscala"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00104"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstEscala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00187"></Spinner>
+<TextView
+android:id="@+id/lblTick"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/ORI_ML00113"
+>
+</TextView>
+
+    <Spinner
+        android:id="@+id/lstTick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:prompt="@string/ORI_ML00189"></Spinner>
+</LinearLayout>
+</ScrollView>

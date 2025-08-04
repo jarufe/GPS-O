@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/seleccionar8"
+        android:icon="@drawable/ori_glacep"
+        android:title="@string/ORI_ML00211" >
+    </item>
+    <item android:id="@+id/posicionPropia8"
+        android:icon="@drawable/ori_glloca"
+        android:title="@string/ORI_ML00212" >
+    </item>
+    <item android:id="@+id/verTrack8"
+        android:icon="@drawable/ori_glsate"
+        android:title="@string/ORI_ML00214" >
+    </item>
+    <item android:id="@+id/cerrar8"
+        android:icon="@drawable/ori_glcerr"
+        android:title="@string/ORI_ML00085" >
+    </item>
+</menu>

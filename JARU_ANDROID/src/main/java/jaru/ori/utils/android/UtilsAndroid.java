@@ -4,6 +4,11 @@ import android.content.Context;
 import android.content.res.*;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
 
 /**
  * Clase con utilidades comunes para aplicaciones Android
@@ -54,4 +59,39 @@ public class UtilsAndroid {
         }
         return isConnected;
     }
+    public static void listarTodosLosArchivos(Context context, String nombreCarpeta) {
+        String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+        Uri collection = MediaStore.Files.getContentUri("external");
+
+        String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=?";
+        String[] selectionArgs = new String[] { relativePath };
+
+        Cursor cursor = context.getContentResolver().query(
+                collection,
+                new String[] {
+                        MediaStore.MediaColumns.DISPLAY_NAME,
+                        MediaStore.MediaColumns.MIME_TYPE,
+                        MediaStore.MediaColumns.SIZE,
+                        MediaStore.MediaColumns.DATE_MODIFIED
+                },
+                selection,
+                selectionArgs,
+                MediaStore.MediaColumns.DATE_MODIFIED + " DESC"
+        );
+
+        if (cursor != null) {
+            Log.i("GPS-O", "Archivos en " + relativePath + ":");
+            while (cursor.moveToNext()) {
+                String nombre = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME));
+                String tipo = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.MIME_TYPE));
+                long tamano = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.SIZE));
+                long fechaMod = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATE_MODIFIED));
+                Log.i("GPS-O", " - " + nombre + " | Tipo: " + tipo + " | Tamaño: " + tamano + " bytes | Modificado: " + fechaMod);
+            }
+            cursor.close();
+        } else {
+            Log.i("GPS-O", "No se encontraron archivos en " + relativePath);
+        }
+    }
+
 }

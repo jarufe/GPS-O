@@ -377,7 +377,7 @@ public class APrincipal extends Activity {
         }
         */
         setContentView(R.layout.principal);
-        Log.i("Info","Entrando en la aplicación");
+        Log.i("GPS-O","Entrando en la aplicación");
         //Pide permisos si no los tiene asignados todavía
         if (!PermisosUtil.tieneTodosLosPermisos(this)) {
             PermisosUtil.solicitarPermisos(this);
@@ -398,6 +398,7 @@ public class APrincipal extends Activity {
         cMeridiano = "W";
         //Recupera parámetros de configuración y datos
         if (bEntrada) {
+            Log.i("GPS-O","Procesamiento de entrada y carga de XML");
             //Recupera los parámetros de configuración
             Vector vvParams = ParametrosXMLHandler.obtenerDatosXML(this, cPathAplica, "Parametros.xml");
             if (vvParams.size()>0)
@@ -450,7 +451,7 @@ public class APrincipal extends Activity {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.i("Info","Saliendo de la aplicación");
+        Log.i("GPS-O","Saliendo de la aplicación");
         //Si se está grabando localización periódica, para el hilo
         if (bGrabaLoc) {
             oTickerLoc.stop();

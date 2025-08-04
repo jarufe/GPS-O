@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
@@ -108,7 +109,9 @@ public class ParametrosXMLHandler extends DefaultHandler
     public static Vector obtenerDatosXML(Context context, String nombreCarpeta, String nombreArchivo) {
         Vector vvResul = new Vector();
 
+        Log.i("GPS-O", "Comienza carga de parámetros en XML");
         try {
+            Log.i("GPS-O", "Buscando archivo");
             // Buscar el archivo en MediaStore
             Uri collection = MediaStore.Files.getContentUri("external");
 
@@ -128,6 +131,7 @@ public class ParametrosXMLHandler extends DefaultHandler
             );
 
             if (cursor != null && cursor.moveToFirst()) {
+                Log.i("GPS-O", "Archivo encontrado");
                 int idColumn = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns._ID);
                 long id = cursor.getLong(idColumn);
                 Uri uri = ContentUris.withAppendedId(collection, id);
@@ -143,8 +147,9 @@ public class ParametrosXMLHandler extends DefaultHandler
                 InputStream inputStream = context.getContentResolver().openInputStream(uri);
                 InputSource source = new InputSource(inputStream);
                 parser.parse(source, handler);
-
+                Log.i("GPS-O", "Archivo procesado.");
                 vvResul = handler.getVRegistros();
+                Log.i("GPS-O", "Número de registros: " + (vvResul!=null?vvResul.size():0));
                 inputStream.close();
             }
 
@@ -153,7 +158,7 @@ public class ParametrosXMLHandler extends DefaultHandler
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error cargando XML", e);
             vvResul.removeAllElements();
         }
 
@@ -174,10 +179,11 @@ public class ParametrosXMLHandler extends DefaultHandler
         try {
             // Buscar y eliminar archivo existente
             Uri collection = MediaStore.Files.getContentUri("external");
+
             String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=? AND " +
                     MediaStore.MediaColumns.DISPLAY_NAME + "=?";
             String[] selectionArgs = new String[] {
-                    Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta,
+                    Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta + "/", // Asegúrate del "/" final
                     nombreArchivo
             };
 
@@ -190,10 +196,13 @@ public class ParametrosXMLHandler extends DefaultHandler
             );
 
             if (cursor != null && cursor.moveToFirst()) {
-                int idColumn = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns._ID);
-                long id = cursor.getLong(idColumn);
-                Uri uriExistente = ContentUris.withAppendedId(collection, id);
-                context.getContentResolver().delete(uriExistente, null, null);
+                do {
+                    int idColumn = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns._ID);
+                    long id = cursor.getLong(idColumn);
+                    Uri uriExistente = ContentUris.withAppendedId(collection, id);
+                    context.getContentResolver().delete(uriExistente, null, null);
+                } while (cursor.moveToNext());
+
                 cursor.close();
             }
             // Crear entrada en MediaStore

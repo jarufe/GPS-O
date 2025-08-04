@@ -1,534 +1,537 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="jaru.ori.GpsLogOri"
-4    android:versionCode="1"
-5    android:versionName="0.1" >
+4    android:versionCode="2"
+5    android:versionName="0.2" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="26"
 9        android:targetSdkVersion="34" />
 10
-11    <uses-permission android:name="android.permission.BLUETOOTH" />
-11-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:6:5-68
-11-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:6:22-65
-12    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-12-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:7:5-98
-12-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:7:22-95
-13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-13-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:8:5-81
-13-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:8:22-78
-14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-14-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:9:5-79
-14-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:9:22-76
-15    <uses-permission android:name="android.permission.INTERNET" />
-15-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:10:5-67
-15-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:10:22-64
-16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:11:5-79
-16-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:11:22-76
-17
-18    <permission
-18-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:13:5-15:47
-19        android:name="jaru.ori.gui.gpslog.android.permission.MAPS_RECEIVE"
-19-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:14:9-75
-20        android:protectionLevel="signature" />
-20-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:15:9-44
-21
-22    <uses-permission android:name="jaru.ori.gui.gpslog.android.permission.MAPS_RECEIVE" />
-22-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:16:5-91
-22-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:16:22-88
-23
-24    <uses-feature
-24-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:18:5-20:35
-25        android:glEsVersion="0x00020000"
-25-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:19:9-41
-26        android:required="true" />
-26-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:20:9-32
-27
-28    <queries>
-28-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:30:5-34:15
-29
-30        <!-- Needs to be explicitly declared on Android R+ -->
-31        <package android:name="com.google.android.apps.maps" />
-31-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:33:9-64
-31-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:33:18-61
-32    </queries>
-33
-34    <permission
-34-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
-35        android:name="jaru.ori.GpsLogOri.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-35-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
-36        android:protectionLevel="signature" />
-36-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
-37
-38    <uses-permission android:name="jaru.ori.GpsLogOri.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-38-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
-38-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
-39
-40    <application
-40-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:22:5-206:19
-41        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-41-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
-42        android:extractNativeLibs="false"
-43        android:icon="@drawable/ic_launcher"
-43-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:23:9-45
-44        android:label="@string/app_name" >
-44-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:24:9-41
-45        <activity
-45-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:25:9-33:20
-46            android:name="jaru.ori.gui.gpslog.android.APrincipal"
-46-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:26:13-39
-47            android:exported="true" >
-47-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:27:13-36
-48            <intent-filter>
-48-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:28:13-32:29
-49                <action android:name="android.intent.action.MAIN" />
-49-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:29:17-69
-49-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:29:25-66
-50
-51                <category android:name="android.intent.category.LAUNCHER" />
-51-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:31:17-77
-51-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:31:27-74
-52            </intent-filter>
-53        </activity>
-54        <activity
-54-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:35:9-43:20
-55            android:name="jaru.ori.gui.gpslog.android.ACambiaParametros"
-55-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:36:13-73
-56            android:exported="true"
-56-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:38:13-36
-57            android:label="@string/ORI_TPARAM" >
-57-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:37:13-47
-58            <intent-filter>
-58-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:39:13-42:29
-59                <action android:name="jaru.ori.gui.gpslog.android.ACambiaParametros" />
-59-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:40:17-88
-59-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:40:25-85
-60
-61                <category android:name="android.intent.category.DEFAULT" />
-61-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-61-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-62            </intent-filter>
-63        </activity>
-64        <activity
-64-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:44:9-52:20
-65            android:name="jaru.ori.gui.gpslog.android.ACentroide"
-65-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:45:13-66
-66            android:exported="true"
-66-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:47:13-36
-67            android:label="@string/ORI_TCENTROIDE" >
-67-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:46:13-51
-68            <intent-filter>
-68-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:48:13-51:29
-69                <action android:name="jaru.ori.gui.gpslog.android.ACentroide" />
-69-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:49:17-81
-69-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:49:25-78
-70
-71                <category android:name="android.intent.category.DEFAULT" />
-71-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-71-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-72            </intent-filter>
-73        </activity>
-74        <activity
-74-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:53:9-61:20
-75            android:name="jaru.ori.gui.gpslog.android.AConfCampo"
-75-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:54:13-66
-76            android:exported="true"
-76-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:56:13-36
-77            android:label="@string/ORI_TCONFCAMPO" >
-77-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:55:13-51
-78            <intent-filter>
-78-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:57:13-60:29
-79                <action android:name="jaru.ori.gui.gpslog.android.AConfCampo" />
-79-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:58:17-81
-79-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:58:25-78
-80
-81                <category android:name="android.intent.category.DEFAULT" />
-81-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-81-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-82            </intent-filter>
-83        </activity>
-84        <activity
-84-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:62:9-70:20
-85            android:name="jaru.ori.gui.gpslog.android.AConfLocaliza"
-85-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:63:13-69
-86            android:exported="true"
-86-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:65:13-36
-87            android:label="@string/ORI_TCONFLOCALIZA" >
-87-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:64:13-54
-88            <intent-filter>
-88-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:66:13-69:29
-89                <action android:name="jaru.ori.gui.gpslog.android.AConfLocaliza" />
-89-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:67:17-84
-89-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:67:25-81
-90
-91                <category android:name="android.intent.category.DEFAULT" />
-91-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-91-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-92            </intent-filter>
-93        </activity>
-94        <activity
-94-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:71:9-79:20
-95            android:name="jaru.ori.gui.gpslog.android.ADual"
-95-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:72:13-61
-96            android:exported="true"
-96-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:74:13-36
-97            android:label="@string/ORI_TDUAL" >
-97-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:73:13-46
-98            <intent-filter>
-98-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:75:13-78:29
-99                <action android:name="jaru.ori.gui.gpslog.android.ADual" />
-99-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:76:17-76
-99-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:76:25-73
-100
-101                <category android:name="android.intent.category.DEFAULT" />
-101-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-101-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-102            </intent-filter>
-103        </activity>
-104        <activity
-104-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:80:9-88:20
-105            android:name="jaru.ori.gui.gpslog.android.AEditorCampo"
-105-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:81:13-68
-106            android:exported="true"
-106-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:83:13-36
-107            android:label="@string/ORI_TEDITOR" >
-107-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:82:13-48
-108            <intent-filter>
-108-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:84:13-87:29
-109                <action android:name="jaru.ori.gui.gpslog.android.AEditorCampo" />
-109-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:85:17-83
-109-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:85:25-80
-110
-111                <category android:name="android.intent.category.DEFAULT" />
-111-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-111-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-112            </intent-filter>
-113        </activity>
-114        <activity
-114-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:89:9-97:20
-115            android:name="jaru.ori.gui.gpslog.android.AEliminarRegistros"
-115-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:90:13-74
-116            android:exported="true"
-116-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:92:13-36
-117            android:label="@string/ORI_TELIMINARLOG" >
-117-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:91:13-53
-118            <intent-filter>
-118-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:93:13-96:29
-119                <action android:name="jaru.ori.gui.gpslog.android.AEliminarRegistros" />
-119-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:94:17-89
-119-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:94:25-86
-120
-121                <category android:name="android.intent.category.DEFAULT" />
-121-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-121-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-122            </intent-filter>
-123        </activity>
-124        <activity
-124-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:98:9-106:20
-125            android:name="jaru.ori.gui.gpslog.android.AGenerarGPX"
-125-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:99:13-67
-126            android:exported="true"
-126-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:101:13-36
-127            android:label="@string/ORI_TEXPGPX" >
-127-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:100:13-48
-128            <intent-filter>
-128-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:102:13-105:29
-129                <action android:name="jaru.ori.gui.gpslog.android.AGenerarGPX" />
-129-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:103:17-82
-129-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:103:25-79
-130
-131                <category android:name="android.intent.category.DEFAULT" />
-131-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-131-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-132            </intent-filter>
-133        </activity>
-134        <activity
-134-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:107:9-115:20
-135            android:name="jaru.ori.gui.gpslog.android.AGenerarOCAD"
-135-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:108:13-68
-136            android:exported="true"
-136-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:110:13-36
-137            android:label="@string/ORI_TEXPOCAD" >
-137-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:109:13-49
-138            <intent-filter>
-138-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:111:13-114:29
-139                <action android:name="jaru.ori.gui.gpslog.android.AGenerarOCAD" />
-139-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:112:17-83
-139-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:112:25-80
-140
-141                <category android:name="android.intent.category.DEFAULT" />
-141-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-141-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-142            </intent-filter>
-143        </activity>
-144        <activity
-144-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:116:9-124:20
-145            android:name="jaru.ori.gui.gpslog.android.AImportarGPX"
-145-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:117:13-68
-146            android:exported="true"
-146-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:119:13-36
-147            android:label="@string/ORI_TIMPGPX" >
-147-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:118:13-48
-148            <intent-filter>
-148-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:120:13-123:29
-149                <action android:name="jaru.ori.gui.gpslog.android.AImportarGPX" />
-149-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:121:17-83
-149-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:121:25-80
-150
-151                <category android:name="android.intent.category.DEFAULT" />
-151-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-151-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-152            </intent-filter>
-153        </activity>
-154        <activity
-154-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:125:9-133:20
-155            android:name="jaru.ori.gui.gpslog.android.ALectura"
-155-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:126:13-64
-156            android:exported="true"
-156-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:128:13-36
-157            android:label="@string/ORI_TLECTURA" >
-157-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:127:13-49
-158            <intent-filter>
-158-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:129:13-132:29
-159                <action android:name="jaru.ori.gui.gpslog.android.ALectura" />
-159-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:130:17-79
-159-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:130:25-76
-160
-161                <category android:name="android.intent.category.DEFAULT" />
-161-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-161-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-162            </intent-filter>
-163        </activity>
-164        <activity
-164-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:134:9-142:20
-165            android:name="jaru.ori.gui.gpslog.android.AListadoNMEA"
-165-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:135:13-68
-166            android:exported="true"
-166-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:137:13-36
-167            android:label="@string/ORI_TLISTANMEA" >
-167-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:136:13-51
-168            <intent-filter>
-168-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:138:13-141:29
-169                <action android:name="jaru.ori.gui.gpslog.android.AListadoNMEA" />
-169-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:139:17-83
-169-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:139:25-80
-170
-171                <category android:name="android.intent.category.DEFAULT" />
-171-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-171-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-172            </intent-filter>
-173        </activity>
-174        <activity
-174-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:143:9-151:20
-175            android:name="jaru.ori.gui.gpslog.android.ALog"
-175-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:144:13-60
-176            android:exported="true"
-176-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:146:13-36
-177            android:label="@string/ORI_TLOG" >
-177-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:145:13-45
-178            <intent-filter>
-178-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:147:13-150:29
-179                <action android:name="jaru.ori.gui.gpslog.android.ALog" />
-179-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:148:17-75
-179-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:148:25-72
-180
-181                <category android:name="android.intent.category.DEFAULT" />
-181-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-181-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-182            </intent-filter>
-183        </activity>
-184        <activity
-184-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:152:9-160:20
-185            android:name="jaru.ori.gui.gpslog.android.ASelIds"
-185-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:153:13-63
-186            android:exported="true"
-186-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:155:13-36
-187            android:label="@string/ORI_TSELIDS" >
-187-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:154:13-48
-188            <intent-filter>
-188-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:156:13-159:29
-189                <action android:name="jaru.ori.gui.gpslog.android.ASelIds" />
-189-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:157:17-78
-189-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:157:25-75
-190
-191                <category android:name="android.intent.category.DEFAULT" />
-191-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-191-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-192            </intent-filter>
-193        </activity>
-194        <activity
-194-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:161:9-169:20
-195            android:name="jaru.ori.gui.gpslog.android.ASelOCAD"
-195-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:162:13-64
-196            android:exported="true"
-196-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:164:13-36
-197            android:label="@string/ORI_TSELOCAD" >
-197-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:163:13-49
-198            <intent-filter>
-198-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:165:13-168:29
-199                <action android:name="jaru.ori.gui.gpslog.android.ASelOCAD" />
-199-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:166:17-79
-199-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:166:25-76
-200
-201                <category android:name="android.intent.category.DEFAULT" />
-201-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-201-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-202            </intent-filter>
-203        </activity>
-204        <activity
-204-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:170:9-178:20
-205            android:name="jaru.ori.gui.gpslog.android.ASplashScreen"
-205-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:171:13-69
-206            android:exported="true"
-206-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:173:13-36
-207            android:label="@string/ORI_TSPLASH" >
-207-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:172:13-48
-208            <intent-filter>
-208-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:174:13-177:29
-209                <action android:name="jaru.ori.gui.gpslog.android.ASplashScreen" />
-209-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:175:17-84
-209-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:175:25-81
-210
-211                <category android:name="android.intent.category.DEFAULT" />
-211-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-211-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-212            </intent-filter>
-213        </activity>
-214        <activity
-214-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:179:9-187:20
-215            android:name="jaru.ori.gui.gpslog.android.ATestConn"
-215-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:180:13-65
-216            android:exported="true"
-216-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:182:13-36
-217            android:label="@string/ORI_TTESTCONN" >
-217-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:181:13-50
-218            <intent-filter>
-218-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:183:13-186:29
-219                <action android:name="jaru.ori.gui.gpslog.android.ATestConn" />
-219-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:184:17-80
-219-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:184:25-77
-220
-221                <category android:name="android.intent.category.DEFAULT" />
-221-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-221-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-222            </intent-filter>
-223        </activity>
-224        <activity
-224-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:188:9-196:20
-225            android:name="jaru.ori.gui.gpslog.android.AVerMapa"
-225-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:189:13-64
-226            android:exported="true"
-226-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:191:13-36
-227            android:label="@string/ORI_TVERMAPA" >
-227-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:190:13-49
-228            <intent-filter>
-228-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:192:13-195:29
-229                <action android:name="jaru.ori.gui.gpslog.android.AVerMapa" />
-229-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:193:17-79
-229-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:193:25-76
-230
-231                <category android:name="android.intent.category.DEFAULT" />
-231-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-76
-231-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:27-73
-232            </intent-filter>
-233        </activity>
-234
-235        <meta-data
-235-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:199:9-201:69
-236            android:name="com.google.android.gms.version"
-236-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:200:13-58
-237            android:value="@integer/google_play_services_version" />
-237-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:201:13-66
-238        <meta-data
-238-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:202:9-204:71
-239            android:name="com.google.android.maps.v2.API_KEY"
-239-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:203:13-62
-240            android:value="AIzaSyD0wpOyLys1yv3JD1aoiRBiNZfdCpTmFWQ" />
-240-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:204:13-68
-241
-242        <!-- Needs to be explicitly declared on P+ -->
-243        <uses-library
-243-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:39:9-41:40
-244            android:name="org.apache.http.legacy"
-244-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:40:13-50
-245            android:required="false" />
-245-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:41:13-37
-246
-247        <activity
-247-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:9-173
-248            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-248-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:19-85
-249            android:exported="false"
-249-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:146-170
-250            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-250-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:86-145
-251
-252        <provider
-252-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-253            android:name="androidx.startup.InitializationProvider"
-253-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-254            android:authorities="jaru.ori.GpsLogOri.androidx-startup"
-254-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-255            android:exported="false" >
-255-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-256            <meta-data
-256-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-257                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-257-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-258                android:value="androidx.startup" />
-258-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-259            <meta-data
-259-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-260                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-260-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-261                android:value="androidx.startup" />
-261-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-262            <meta-data
-262-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-263                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-263-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-264                android:value="androidx.startup" />
-264-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-265        </provider>
-266
-267        <receiver
-267-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-268            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-268-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-269            android:directBootAware="false"
-269-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-270            android:enabled="true"
-270-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-271            android:exported="true"
-271-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-272            android:permission="android.permission.DUMP" >
-272-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-273            <intent-filter>
-273-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-274                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-274-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-274-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-275            </intent-filter>
-276            <intent-filter>
-276-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-277                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-277-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-277-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-278            </intent-filter>
-279            <intent-filter>
-279-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-280                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-280-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-280-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-281            </intent-filter>
-282            <intent-filter>
-282-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-283                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-283-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-283-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-284            </intent-filter>
-285        </receiver>
-286    </application>
-287
-288</manifest>
+11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:6:5-79
+11-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:6:22-77
+12    <uses-permission android:name="android.permission.BLUETOOTH" />
+12-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:7:5-68
+12-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:7:22-65
+13    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+13-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:8:5-98
+13-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:8:22-95
+14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+14-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:9:5-81
+14-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:9:22-78
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:10:5-79
+15-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:10:22-76
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:11:5-67
+16-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:11:22-64
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:12:5-79
+17-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:12:22-76
+18
+19    <permission
+19-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:14:5-16:47
+20        android:name="jaru.ori.gui.gpslog.android.permission.MAPS_RECEIVE"
+20-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:15:9-75
+21        android:protectionLevel="signature" />
+21-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:16:9-44
+22
+23    <uses-permission android:name="jaru.ori.gui.gpslog.android.permission.MAPS_RECEIVE" />
+23-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:17:5-91
+23-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:17:22-88
+24
+25    <uses-feature
+25-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:19:5-21:35
+26        android:glEsVersion="0x00020000"
+26-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:20:9-41
+27        android:required="true" />
+27-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:21:9-32
+28
+29    <queries>
+29-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:30:5-34:15
+30
+31        <!-- Needs to be explicitly declared on Android R+ -->
+32        <package android:name="com.google.android.apps.maps" />
+32-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:33:9-64
+32-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:33:18-61
+33    </queries>
+34
+35    <permission
+35-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+36        android:name="jaru.ori.GpsLogOri.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+36-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+37        android:protectionLevel="signature" />
+37-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+38
+39    <uses-permission android:name="jaru.ori.GpsLogOri.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+39-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+39-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+40
+41    <application
+41-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:23:5-207:19
+42        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+42-->[androidx.core:core:1.13.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\30db6c443081febeeef871c115f1f40e\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+43        android:extractNativeLibs="false"
+44        android:icon="@drawable/ic_launcher"
+44-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:24:9-45
+45        android:label="@string/app_name" >
+45-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:25:9-41
+46        <activity
+46-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:26:9-34:20
+47            android:name="jaru.ori.gui.gpslog.android.APrincipal"
+47-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:27:13-39
+48            android:exported="true" >
+48-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:28:13-36
+49            <intent-filter>
+49-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:29:13-33:29
+50                <action android:name="android.intent.action.MAIN" />
+50-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:30:17-69
+50-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:30:25-66
+51
+52                <category android:name="android.intent.category.LAUNCHER" />
+52-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:32:17-77
+52-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:32:27-74
+53            </intent-filter>
+54        </activity>
+55        <activity
+55-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:36:9-44:20
+56            android:name="jaru.ori.gui.gpslog.android.ACambiaParametros"
+56-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:37:13-73
+57            android:exported="true"
+57-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:39:13-36
+58            android:label="@string/ORI_TPARAM" >
+58-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:38:13-47
+59            <intent-filter>
+59-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:40:13-43:29
+60                <action android:name="jaru.ori.gui.gpslog.android.ACambiaParametros" />
+60-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:17-88
+60-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:41:25-85
+61
+62                <category android:name="android.intent.category.DEFAULT" />
+62-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+62-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+63            </intent-filter>
+64        </activity>
+65        <activity
+65-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:45:9-53:20
+66            android:name="jaru.ori.gui.gpslog.android.ACentroide"
+66-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:46:13-66
+67            android:exported="true"
+67-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:48:13-36
+68            android:label="@string/ORI_TCENTROIDE" >
+68-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:47:13-51
+69            <intent-filter>
+69-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:49:13-52:29
+70                <action android:name="jaru.ori.gui.gpslog.android.ACentroide" />
+70-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:50:17-81
+70-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:50:25-78
+71
+72                <category android:name="android.intent.category.DEFAULT" />
+72-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+72-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+73            </intent-filter>
+74        </activity>
+75        <activity
+75-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:54:9-62:20
+76            android:name="jaru.ori.gui.gpslog.android.AConfCampo"
+76-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:55:13-66
+77            android:exported="true"
+77-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:57:13-36
+78            android:label="@string/ORI_TCONFCAMPO" >
+78-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:56:13-51
+79            <intent-filter>
+79-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:58:13-61:29
+80                <action android:name="jaru.ori.gui.gpslog.android.AConfCampo" />
+80-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:59:17-81
+80-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:59:25-78
+81
+82                <category android:name="android.intent.category.DEFAULT" />
+82-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+82-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+83            </intent-filter>
+84        </activity>
+85        <activity
+85-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:63:9-71:20
+86            android:name="jaru.ori.gui.gpslog.android.AConfLocaliza"
+86-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:64:13-69
+87            android:exported="true"
+87-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:66:13-36
+88            android:label="@string/ORI_TCONFLOCALIZA" >
+88-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:65:13-54
+89            <intent-filter>
+89-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:67:13-70:29
+90                <action android:name="jaru.ori.gui.gpslog.android.AConfLocaliza" />
+90-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:68:17-84
+90-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:68:25-81
+91
+92                <category android:name="android.intent.category.DEFAULT" />
+92-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+92-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+93            </intent-filter>
+94        </activity>
+95        <activity
+95-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:72:9-80:20
+96            android:name="jaru.ori.gui.gpslog.android.ADual"
+96-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:73:13-61
+97            android:exported="true"
+97-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:75:13-36
+98            android:label="@string/ORI_TDUAL" >
+98-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:74:13-46
+99            <intent-filter>
+99-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:76:13-79:29
+100                <action android:name="jaru.ori.gui.gpslog.android.ADual" />
+100-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:77:17-76
+100-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:77:25-73
+101
+102                <category android:name="android.intent.category.DEFAULT" />
+102-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+102-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+103            </intent-filter>
+104        </activity>
+105        <activity
+105-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:81:9-89:20
+106            android:name="jaru.ori.gui.gpslog.android.AEditorCampo"
+106-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:82:13-68
+107            android:exported="true"
+107-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:84:13-36
+108            android:label="@string/ORI_TEDITOR" >
+108-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:83:13-48
+109            <intent-filter>
+109-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:85:13-88:29
+110                <action android:name="jaru.ori.gui.gpslog.android.AEditorCampo" />
+110-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:86:17-83
+110-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:86:25-80
+111
+112                <category android:name="android.intent.category.DEFAULT" />
+112-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+112-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+113            </intent-filter>
+114        </activity>
+115        <activity
+115-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:90:9-98:20
+116            android:name="jaru.ori.gui.gpslog.android.AEliminarRegistros"
+116-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:91:13-74
+117            android:exported="true"
+117-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:93:13-36
+118            android:label="@string/ORI_TELIMINARLOG" >
+118-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:92:13-53
+119            <intent-filter>
+119-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:94:13-97:29
+120                <action android:name="jaru.ori.gui.gpslog.android.AEliminarRegistros" />
+120-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:95:17-89
+120-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:95:25-86
+121
+122                <category android:name="android.intent.category.DEFAULT" />
+122-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+122-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+123            </intent-filter>
+124        </activity>
+125        <activity
+125-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:99:9-107:20
+126            android:name="jaru.ori.gui.gpslog.android.AGenerarGPX"
+126-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:100:13-67
+127            android:exported="true"
+127-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:102:13-36
+128            android:label="@string/ORI_TEXPGPX" >
+128-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:101:13-48
+129            <intent-filter>
+129-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:103:13-106:29
+130                <action android:name="jaru.ori.gui.gpslog.android.AGenerarGPX" />
+130-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:104:17-82
+130-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:104:25-79
+131
+132                <category android:name="android.intent.category.DEFAULT" />
+132-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+132-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+133            </intent-filter>
+134        </activity>
+135        <activity
+135-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:108:9-116:20
+136            android:name="jaru.ori.gui.gpslog.android.AGenerarOCAD"
+136-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:109:13-68
+137            android:exported="true"
+137-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:111:13-36
+138            android:label="@string/ORI_TEXPOCAD" >
+138-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:110:13-49
+139            <intent-filter>
+139-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:112:13-115:29
+140                <action android:name="jaru.ori.gui.gpslog.android.AGenerarOCAD" />
+140-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:113:17-83
+140-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:113:25-80
+141
+142                <category android:name="android.intent.category.DEFAULT" />
+142-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+142-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+143            </intent-filter>
+144        </activity>
+145        <activity
+145-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:117:9-125:20
+146            android:name="jaru.ori.gui.gpslog.android.AImportarGPX"
+146-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:118:13-68
+147            android:exported="true"
+147-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:120:13-36
+148            android:label="@string/ORI_TIMPGPX" >
+148-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:119:13-48
+149            <intent-filter>
+149-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:121:13-124:29
+150                <action android:name="jaru.ori.gui.gpslog.android.AImportarGPX" />
+150-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:122:17-83
+150-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:122:25-80
+151
+152                <category android:name="android.intent.category.DEFAULT" />
+152-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+152-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+153            </intent-filter>
+154        </activity>
+155        <activity
+155-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:126:9-134:20
+156            android:name="jaru.ori.gui.gpslog.android.ALectura"
+156-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:127:13-64
+157            android:exported="true"
+157-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:129:13-36
+158            android:label="@string/ORI_TLECTURA" >
+158-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:128:13-49
+159            <intent-filter>
+159-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:130:13-133:29
+160                <action android:name="jaru.ori.gui.gpslog.android.ALectura" />
+160-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:131:17-79
+160-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:131:25-76
+161
+162                <category android:name="android.intent.category.DEFAULT" />
+162-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+162-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+163            </intent-filter>
+164        </activity>
+165        <activity
+165-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:135:9-143:20
+166            android:name="jaru.ori.gui.gpslog.android.AListadoNMEA"
+166-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:136:13-68
+167            android:exported="true"
+167-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:138:13-36
+168            android:label="@string/ORI_TLISTANMEA" >
+168-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:137:13-51
+169            <intent-filter>
+169-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:139:13-142:29
+170                <action android:name="jaru.ori.gui.gpslog.android.AListadoNMEA" />
+170-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:140:17-83
+170-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:140:25-80
+171
+172                <category android:name="android.intent.category.DEFAULT" />
+172-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+172-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+173            </intent-filter>
+174        </activity>
+175        <activity
+175-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:144:9-152:20
+176            android:name="jaru.ori.gui.gpslog.android.ALog"
+176-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:145:13-60
+177            android:exported="true"
+177-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:147:13-36
+178            android:label="@string/ORI_TLOG" >
+178-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:146:13-45
+179            <intent-filter>
+179-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:148:13-151:29
+180                <action android:name="jaru.ori.gui.gpslog.android.ALog" />
+180-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:149:17-75
+180-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:149:25-72
+181
+182                <category android:name="android.intent.category.DEFAULT" />
+182-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+182-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+183            </intent-filter>
+184        </activity>
+185        <activity
+185-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:153:9-161:20
+186            android:name="jaru.ori.gui.gpslog.android.ASelIds"
+186-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:154:13-63
+187            android:exported="true"
+187-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:156:13-36
+188            android:label="@string/ORI_TSELIDS" >
+188-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:155:13-48
+189            <intent-filter>
+189-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:157:13-160:29
+190                <action android:name="jaru.ori.gui.gpslog.android.ASelIds" />
+190-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:158:17-78
+190-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:158:25-75
+191
+192                <category android:name="android.intent.category.DEFAULT" />
+192-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+192-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+193            </intent-filter>
+194        </activity>
+195        <activity
+195-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:162:9-170:20
+196            android:name="jaru.ori.gui.gpslog.android.ASelOCAD"
+196-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:163:13-64
+197            android:exported="true"
+197-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:165:13-36
+198            android:label="@string/ORI_TSELOCAD" >
+198-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:164:13-49
+199            <intent-filter>
+199-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:166:13-169:29
+200                <action android:name="jaru.ori.gui.gpslog.android.ASelOCAD" />
+200-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:167:17-79
+200-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:167:25-76
+201
+202                <category android:name="android.intent.category.DEFAULT" />
+202-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+202-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+203            </intent-filter>
+204        </activity>
+205        <activity
+205-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:171:9-179:20
+206            android:name="jaru.ori.gui.gpslog.android.ASplashScreen"
+206-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:172:13-69
+207            android:exported="true"
+207-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:174:13-36
+208            android:label="@string/ORI_TSPLASH" >
+208-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:173:13-48
+209            <intent-filter>
+209-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:175:13-178:29
+210                <action android:name="jaru.ori.gui.gpslog.android.ASplashScreen" />
+210-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:176:17-84
+210-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:176:25-81
+211
+212                <category android:name="android.intent.category.DEFAULT" />
+212-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+212-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+213            </intent-filter>
+214        </activity>
+215        <activity
+215-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:180:9-188:20
+216            android:name="jaru.ori.gui.gpslog.android.ATestConn"
+216-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:181:13-65
+217            android:exported="true"
+217-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:183:13-36
+218            android:label="@string/ORI_TTESTCONN" >
+218-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:182:13-50
+219            <intent-filter>
+219-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:184:13-187:29
+220                <action android:name="jaru.ori.gui.gpslog.android.ATestConn" />
+220-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:185:17-80
+220-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:185:25-77
+221
+222                <category android:name="android.intent.category.DEFAULT" />
+222-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+222-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+223            </intent-filter>
+224        </activity>
+225        <activity
+225-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:189:9-197:20
+226            android:name="jaru.ori.gui.gpslog.android.AVerMapa"
+226-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:190:13-64
+227            android:exported="true"
+227-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:192:13-36
+228            android:label="@string/ORI_TVERMAPA" >
+228-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:191:13-49
+229            <intent-filter>
+229-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:193:13-196:29
+230                <action android:name="jaru.ori.gui.gpslog.android.AVerMapa" />
+230-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:194:17-79
+230-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:194:25-76
+231
+232                <category android:name="android.intent.category.DEFAULT" />
+232-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:17-76
+232-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:42:27-73
+233            </intent-filter>
+234        </activity>
+235
+236        <meta-data
+236-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:200:9-202:69
+237            android:name="com.google.android.gms.version"
+237-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:201:13-58
+238            android:value="@integer/google_play_services_version" />
+238-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:202:13-66
+239        <meta-data
+239-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:203:9-205:71
+240            android:name="com.google.android.maps.v2.API_KEY"
+240-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:204:13-62
+241            android:value="AIzaSyD0wpOyLys1yv3JD1aoiRBiNZfdCpTmFWQ" />
+241-->D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:205:13-68
+242
+243        <!-- Needs to be explicitly declared on P+ -->
+244        <uses-library
+244-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:39:9-41:40
+245            android:name="org.apache.http.legacy"
+245-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:40:13-50
+246            android:required="false" />
+246-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:41:13-37
+247
+248        <activity
+248-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+249            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+249-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+250            android:exported="false"
+250-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+251            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+251-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9c015d6fe8332ebd31ae7b8184e11b12\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+252
+253        <provider
+253-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+254            android:name="androidx.startup.InitializationProvider"
+254-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+255            android:authorities="jaru.ori.GpsLogOri.androidx-startup"
+255-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+256            android:exported="false" >
+256-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+257            <meta-data
+257-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+258                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+258-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+259                android:value="androidx.startup" />
+259-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\9cbef6ff98b193b4fa4313e79a063d1e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+260            <meta-data
+260-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+261                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+261-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+262                android:value="androidx.startup" />
+262-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\d429247fbd80948a6d22c7faa49a6e90\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+263            <meta-data
+263-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+264                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+264-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+265                android:value="androidx.startup" />
+265-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+266        </provider>
+267
+268        <receiver
+268-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+269            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+269-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+270            android:directBootAware="false"
+270-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+271            android:enabled="true"
+271-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+272            android:exported="true"
+272-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+273            android:permission="android.permission.DUMP" >
+273-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+274            <intent-filter>
+274-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+275                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+275-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+275-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+276            </intent-filter>
+277            <intent-filter>
+277-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+278                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+278-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+278-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+279            </intent-filter>
+280            <intent-filter>
+280-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+281                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+281-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+281-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+282            </intent-filter>
+283            <intent-filter>
+283-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+284                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+284-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+284-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\32c4d7d283576492c30eddea1f6c5f72\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+285            </intent-filter>
+286        </receiver>
+287    </application>
+288
+289</manifest>

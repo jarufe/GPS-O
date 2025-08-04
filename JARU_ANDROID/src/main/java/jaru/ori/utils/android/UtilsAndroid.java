@@ -2,6 +2,7 @@ package jaru.ori.utils.android;
 
 import android.content.Context;
 import android.content.res.*;
+import android.media.MediaScannerConnection;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.database.Cursor;
@@ -9,6 +10,8 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+
+import java.io.File;
 
 /**
  * Clase con utilidades comunes para aplicaciones Android
@@ -91,6 +94,62 @@ public class UtilsAndroid {
             cursor.close();
         } else {
             Log.i("GPS-O", "No se encontraron archivos en " + relativePath);
+        }
+    }
+    public static void depurarArchivosEnCarpeta(Context context, String nombreCarpeta) {
+        String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+        File carpeta = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), nombreCarpeta);
+
+        if (!carpeta.exists()) {
+            Log.i("GPS-O", "La carpeta no existe: " + carpeta.getAbsolutePath());
+            return;
+        }
+
+        File[] archivos = carpeta.listFiles();
+        if (archivos == null || archivos.length == 0) {
+            Log.i("GPS-O", "No hay archivos en la carpeta: " + carpeta.getAbsolutePath());
+            return;
+        }
+
+        Log.i("GPS-O", "Archivos encontrados en el sistema de archivos:");
+        for (File archivo : archivos) {
+            Log.i("GPS-O", " - " + archivo.getName());
+
+            // Forzar indexación en MediaStore
+            MediaScannerConnection.scanFile(
+                    context,
+                    new String[] { archivo.getAbsolutePath() },
+                    null,
+                    (path, uri) -> Log.i("GPS-O", "Indexado en MediaStore: " + path)
+            );
+        }
+
+        // Comprobación en MediaStore
+        Uri collection = MediaStore.Files.getContentUri("external");
+        String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=?";
+        String[] selectionArgs = new String[] { relativePath };
+
+        Cursor cursor = context.getContentResolver().query(
+                collection,
+                new String[] {
+                        MediaStore.MediaColumns.DISPLAY_NAME,
+                        MediaStore.MediaColumns.RELATIVE_PATH
+                },
+                selection,
+                selectionArgs,
+                null
+        );
+
+        if (cursor != null) {
+            Log.i("GPS-O", "Archivos registrados en MediaStore:");
+            while (cursor.moveToNext()) {
+                String nombre = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME));
+                String ruta = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.RELATIVE_PATH));
+                Log.i("GPS-O", " - " + ruta + nombre);
+            }
+            cursor.close();
+        } else {
+            Log.i("GPS-O", "No se encontraron archivos en MediaStore para: " + relativePath);
         }
     }
 

@@ -1,4 +1,4 @@
-#Mon Aug 04 13:35:52 CEST 2025
+#Mon Aug 04 13:48:22 CEST 2025
 base.0=D\:\\Programacion\\ProyectosAndroidStudio\\JARU_ANDROID\\JARU_ANDROID\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 base.1=D\:\\Programacion\\ProyectosAndroidStudio\\JARU_ANDROID\\JARU_ANDROID\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes2.dex
 path.0=classes.dex

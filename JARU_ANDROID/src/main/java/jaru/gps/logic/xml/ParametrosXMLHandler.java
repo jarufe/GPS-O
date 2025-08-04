@@ -111,14 +111,15 @@ public class ParametrosXMLHandler extends DefaultHandler
 
         Log.i("GPS-O", "Comienza carga de parámetros en XML");
         try {
-            Log.i("GPS-O", "Buscando archivo");
-            // Buscar el archivo en MediaStore
+            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+            Log.i("GPS-O", "Buscando archivo en: " + relativePath + "/" + nombreArchivo);
+
             Uri collection = MediaStore.Files.getContentUri("external");
 
             String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=? AND " +
                     MediaStore.MediaColumns.DISPLAY_NAME + "=?";
             String[] selectionArgs = new String[] {
-                    Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta,
+                    relativePath,
                     nombreArchivo
             };
 
@@ -136,7 +137,6 @@ public class ParametrosXMLHandler extends DefaultHandler
                 long id = cursor.getLong(idColumn);
                 Uri uri = ContentUris.withAppendedId(collection, id);
 
-                // Parsear el XML desde el InputStream
                 SAXParserFactory spf = SAXParserFactory.newInstance();
                 spf.setValidating(false);
                 spf.setNamespaceAware(true);
@@ -147,15 +147,14 @@ public class ParametrosXMLHandler extends DefaultHandler
                 InputStream inputStream = context.getContentResolver().openInputStream(uri);
                 InputSource source = new InputSource(inputStream);
                 parser.parse(source, handler);
-                Log.i("GPS-O", "Archivo procesado.");
                 vvResul = handler.getVRegistros();
-                Log.i("GPS-O", "Número de registros: " + (vvResul!=null?vvResul.size():0));
+                Log.i("GPS-O", "Archivo procesado. Registros: " + (vvResul != null ? vvResul.size() : 0));
                 inputStream.close();
+            } else {
+                Log.e("GPS-O", "Archivo no encontrado en MediaStore");
             }
 
-            if (cursor != null) {
-                cursor.close();
-            }
+            if (cursor != null) cursor.close();
 
         } catch (Exception e) {
             Log.e("GPS-O", "Error cargando XML", e);
@@ -177,13 +176,13 @@ public class ParametrosXMLHandler extends DefaultHandler
         PrintStream pStr = null;
 
         try {
-            // Buscar y eliminar archivo existente
+            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
             Uri collection = MediaStore.Files.getContentUri("external");
 
             String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=? AND " +
                     MediaStore.MediaColumns.DISPLAY_NAME + "=?";
             String[] selectionArgs = new String[] {
-                    Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta + "/", // Asegúrate del "/" final
+                    relativePath,
                     nombreArchivo
             };
 
@@ -201,29 +200,28 @@ public class ParametrosXMLHandler extends DefaultHandler
                     long id = cursor.getLong(idColumn);
                     Uri uriExistente = ContentUris.withAppendedId(collection, id);
                     context.getContentResolver().delete(uriExistente, null, null);
+                    Log.i("GPS-O", "Archivo existente borrado: " + uriExistente.toString());
                 } while (cursor.moveToNext());
 
                 cursor.close();
             }
-            // Crear entrada en MediaStore
+
             ContentValues values = new ContentValues();
             values.put(MediaStore.MediaColumns.DISPLAY_NAME, nombreArchivo);
             values.put(MediaStore.MediaColumns.MIME_TYPE, "text/xml");
-            values.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta);
+            values.put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath);
 
-            Uri uri = context.getContentResolver().insert(MediaStore.Files.getContentUri("external"), values);
+            Uri uri = context.getContentResolver().insert(collection, values);
 
             if (uri != null) {
                 os = context.getContentResolver().openOutputStream(uri);
                 pStr = new PrintStream(new BufferedOutputStream(os), true, "ISO-8859-1");
 
-                // Cabecera XML
                 pStr.println("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>");
                 pStr.println("<!--<!DOCTYPE Parametros SYSTEM \"Parametros.dtd\">-->");
                 pStr.println("<Parametros>");
 
-                for (int i = 0; i < pvRegistros.size(); i++) {
-                    Parametro voRegistro = pvRegistros.elementAt(i);
+                for (Parametro voRegistro : pvRegistros) {
                     pStr.println("  <Parametro>");
                     pStr.println("    <cPathXML>" + voRegistro.getCPathXML() + "</cPathXML>");
                     pStr.println("    <cEscala>" + voRegistro.getCEscala() + "</cEscala>");
@@ -239,10 +237,12 @@ public class ParametrosXMLHandler extends DefaultHandler
 
                 pStr.println("</Parametros>");
             } else {
+                Log.e("GPS-O", "No se pudo crear el archivo en MediaStore");
                 resultado = false;
             }
+
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error escribiendo XML", e);
             resultado = false;
         } finally {
             if (pStr != null) pStr.close();

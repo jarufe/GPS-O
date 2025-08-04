@@ -152,5 +152,63 @@ public class UtilsAndroid {
             Log.i("GPS-O", "No se encontraron archivos en MediaStore para: " + relativePath);
         }
     }
+    public static void depurarArchivosEnDocumentsJARU(Context context) {
+        String nombreCarpeta = "JARU";
+        String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+        File carpeta = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), nombreCarpeta);
+
+        Log.i("GPS-O", "📁 Ruta física: " + carpeta.getAbsolutePath());
+
+        // 1. Listar archivos físicos
+        File[] archivos = carpeta.listFiles();
+        if (archivos == null || archivos.length == 0) {
+            Log.i("GPS-O", "No hay archivos físicos en la carpeta.");
+        } else {
+            Log.i("GPS-O", "Archivos físicos encontrados:");
+            for (File archivo : archivos) {
+                Log.i("GPS-O", " - " + archivo.getName());
+
+                // 2. Forzar indexación en MediaStore
+                MediaScannerConnection.scanFile(
+                        context,
+                        new String[] { archivo.getAbsolutePath() },
+                        null,
+                        (path, uri) -> Log.i("GPS-O", "Indexado en MediaStore: " + path)
+                );
+            }
+        }
+
+        // 3. Listar archivos registrados en MediaStore
+        Uri collection = MediaStore.Files.getContentUri("external");
+        String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=?";
+        String[] selectionArgs = new String[] { relativePath };
+
+        Cursor cursor = context.getContentResolver().query(
+                collection,
+                new String[] {
+                        MediaStore.MediaColumns.DISPLAY_NAME,
+                        MediaStore.MediaColumns.MIME_TYPE,
+                        MediaStore.MediaColumns.SIZE,
+                        MediaStore.MediaColumns.DATE_MODIFIED
+                },
+                selection,
+                selectionArgs,
+                MediaStore.MediaColumns.DATE_MODIFIED + " DESC"
+        );
+
+        if (cursor != null && cursor.getCount() > 0) {
+            Log.i("GPS-O", "Archivos registrados en MediaStore:");
+            while (cursor.moveToNext()) {
+                String nombre = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME));
+                String tipo = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.MIME_TYPE));
+                long tamano = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.SIZE));
+                long fechaMod = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATE_MODIFIED));
+                Log.i("GPS-O", " - " + nombre + " | Tipo: " + tipo + " | Tamaño: " + tamano + " bytes | Modificado: " + fechaMod);
+            }
+            cursor.close();
+        } else {
+            Log.i("GPS-O", "No se encontraron archivos en MediaStore para: " + relativePath);
+        }
+    }
 
 }

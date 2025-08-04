@@ -385,6 +385,7 @@ public class APrincipal extends Activity {
         //Comprueba y crea el directorio que va a contener los distintos archivos
         Utilidades.crearDirectorioPublico(this, cPathAplica);
         //Saca al log el listado de todos los archivos en Documents/JARU
+        UtilsAndroid.depurarArchivosEnDocumentsJARU(this);
         UtilsAndroid.depurarArchivosEnCarpeta(this, "JARU");
         //Establezco los valores de las propiedades en el contexto estático, para usarlas más adelante
         oApp = this.getApplication();

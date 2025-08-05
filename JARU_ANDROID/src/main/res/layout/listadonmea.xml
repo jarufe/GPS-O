@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-android:layout_width="fill_parent"
-android:layout_height="fill_parent"
-xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:orientation="vertical"
->
+android:layout_width="match_parent"
+android:layout_height="match_parent">
 
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:drawSelectorOnTop="false" />
+<TextView
+    android:id="@+id/lblVacio"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/ORI_ML00224"
+    android:gravity="center"
+    android:visibility="gone"/>
 
-    <TextView
-        android:id="@+id/lblVacio"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:text=""
-        android:textSize="16sp"></TextView>
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerNMEA"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
 </LinearLayout>

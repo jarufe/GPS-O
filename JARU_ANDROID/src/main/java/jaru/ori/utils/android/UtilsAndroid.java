@@ -338,4 +338,64 @@ public class UtilsAndroid {
         }
         return uri;
     }
+    public static boolean existeFicheroPublico(Context context, String nombreCarpeta, String nombreArchivo) {
+        boolean existe = false;
+        Cursor cursor = null;
+
+        try {
+            ContentResolver resolver = context.getContentResolver();
+            Uri collection;
+            // Definir la URI base según la versión de Android
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
+            } else {
+                collection = Uri.parse("content://media/external/file");
+            }
+            // Construir la ruta de búsqueda
+            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+            Log.i("GPS-O", "Buscando archivo en: " + relativePath + "/" + nombreArchivo);
+            String selection = MediaStore.Files.FileColumns.RELATIVE_PATH + "=? AND " +
+                    MediaStore.Files.FileColumns.DISPLAY_NAME + "=?";
+            String[] selectionArgs = new String[]{relativePath + "/", nombreArchivo};
+            // Columnas que queremos recuperar (solo necesitamos saber si existe)
+            String[] projection = new String[]{MediaStore.Files.FileColumns._ID};
+
+            cursor = resolver.query(
+                    collection,
+                    projection,
+                    selection,
+                    selectionArgs,
+                    null);
+            if (cursor == null) {
+                Log.e("GPS-O", "Cursor nulo: la consulta falló");
+            } else if (cursor.getCount()<=0) {
+                Log.e("GPS-O", "Cursor vacío: no se encontró el archivo");
+            } else {
+                Log.i("GPS-O", "Total resultados: " + cursor.getCount());
+                existe = true;
+                cursor.close();
+            }
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error general buscando fichero", e);
+        }
+
+        return existe;
+    }
+    public static boolean crearDirectorioPublico(Context context, String nombreCarpeta) {
+        boolean resultado = true;
+
+        try {
+            File directorio = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), nombreCarpeta);
+
+            if (!directorio.exists()) {
+                resultado = directorio.mkdirs();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            resultado = false;
+        }
+
+        return resultado;
+    }
+
 }

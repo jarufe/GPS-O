@@ -383,7 +383,7 @@ public class APrincipal extends Activity {
             PermisosUtil.solicitarPermisos(this);
         }
         //Comprueba y crea el directorio que va a contener los distintos archivos
-        Utilidades.crearDirectorioPublico(this, cPathAplica);
+        UtilsAndroid.crearDirectorioPublico(this, cPathAplica);
         //Saca al log el listado de todos los archivos en Documents/JARU
         UtilsAndroid.depurarArchivosEnCarpeta(this, "JARU");
         //Establezco los valores de las propiedades en el contexto estático, para usarlas más adelante
@@ -622,12 +622,14 @@ public class APrincipal extends Activity {
      */
     private void obtenerDatosXML() {
         try {
+            Log.i("GPS-O","Entrando para obtener resto de datos XML");
             if (oParametro!=null)
                 cPathDatos = oParametro.getCPathXML();
+            Log.i("GPS-O","Usando path para datos: " + cPathDatos);
             //Compone el path completo a los datos y comprueba que existen.
             String vcRegistros = "Registros.xml";
             //Si existe alguno de los ficheros de datos, los carga.
-            if (Utilidades.existeFicheroPublico(this, cPathDatos, vcRegistros)) {
+            if (UtilsAndroid.existeFicheroPublico(this, cPathDatos, vcRegistros)) {
                 //Recupera los datos que se encuentran en los ficheros XML.
                 vRegistros = RegistrosXMLHandler.obtenerDatosXML(this, cPathDatos, vcRegistros);
             }
@@ -635,7 +637,7 @@ public class APrincipal extends Activity {
             //de trabajo de campo y comprueba que existen.
             String vcConfCampo = "ConfCampo.xml";
             //Si existe alguno de los ficheros de datos, los carga.
-            if (Utilidades.existeFicheroPublico(this, cPathAplica, vcConfCampo)) {
+            if (UtilsAndroid.existeFicheroPublico(this, cPathAplica, vcConfCampo)) {
                 Vector vvConfCampo = ConfCampoXMLHandler.obtenerDatosXML(this, cPathAplica, "ConfCampo.xml");
                 if (vvConfCampo.size()>0)
                     oConfCampo = (ConfCampo)vvConfCampo.elementAt(0);
@@ -644,7 +646,7 @@ public class APrincipal extends Activity {
             //datos de localización
             String vcConfLocaliza = "ConfLocaliza.xml";
             //Si existe alguno de los ficheros de datos, los carga.
-            if (Utilidades.existeFicheroPublico(this, cPathAplica, vcConfLocaliza)) {
+            if (UtilsAndroid.existeFicheroPublico(this, cPathAplica, vcConfLocaliza)) {
                 Vector vvConfLocaliza = ConfLocalizaXMLHandler.obtenerDatosXML(this, cPathAplica, "ConfLocaliza.xml");
                 if (vvConfLocaliza.size()>0) {
                     oConfLocaliza = (ConfLocaliza) vvConfLocaliza.elementAt(0);

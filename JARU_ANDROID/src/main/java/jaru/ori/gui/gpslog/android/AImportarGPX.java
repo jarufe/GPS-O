@@ -15,6 +15,7 @@ import android.content.Intent;
 import jaru.ori.logic.gpslog.*;
 import jaru.ori.logic.gpslog.xml.*;
 import jaru.ori.utils.*;
+import jaru.ori.utils.android.UtilsAndroid;
 
 import java.util.Vector;
 
@@ -266,7 +267,7 @@ public class AImportarGPX extends Activity {
             vcLineas = lstLineas.getSelectedItem().toString().substring(0, 5);
             //Si existe el fichero de datos, lo carga.
             String vcFichero = ((EditText)findViewById(R.id.txtFichero)).getText().toString();
-            if (Utilidades.existeFicheroPublico(this, APrincipal.getOParametro().getCPathXML(), vcFichero)) {
+            if (UtilsAndroid.existeFicheroPublico(this, APrincipal.getOParametro().getCPathXML(), vcFichero)) {
                 //Recupera los datos que se encuentran en los ficheros XML.
                 vRegistros = RegistrosGpxXMLHandler.obtenerDatosXML(oApp.getApplicationContext(),
                         APrincipal.getOParametro().getCPathXML(), vcFichero, vRegistros, vbSobreescribir,

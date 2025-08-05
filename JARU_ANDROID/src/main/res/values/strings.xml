@@ -282,6 +282,7 @@
     <string name="ORI_ML00221">Satellite</string>
     <string name="ORI_ML00222">Terrain</string>
     <string name="ORI_ML00223">Hybrid</string>
+    <string name="ORI_ML00224">No data</string>
 
 
     <string name="ORI_TPRINCIPAL">Welcome to GPS-O</string>

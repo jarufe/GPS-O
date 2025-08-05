@@ -4,12 +4,15 @@ import java.text.*;
 import java.util.*;
 import java.io.*;
 
+import android.content.ContentResolver;
 import android.database.Cursor;
 import android.graphics.*;
 import android.content.Context;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 
 /**
  * Clase que implementa algunas operaciones bÃ¡sicas, como por ejemplo con fechas y con ficheros.
@@ -449,37 +452,6 @@ private static int nTamFuente = Integer.parseInt(conRes.getString("nTamFuente"))
         }
         return vbResul;
     }
-    public static boolean existeFicheroPublico(Context context, String nombreCarpeta, String nombreArchivo) {
-        boolean existe = false;
-
-        try {
-            Uri collection = MediaStore.Files.getContentUri("external");
-
-            String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=? AND " +
-                    MediaStore.MediaColumns.DISPLAY_NAME + "=?";
-            String[] selectionArgs = new String[] {
-                    Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta,
-                    nombreArchivo
-            };
-
-            Cursor cursor = context.getContentResolver().query(
-                    collection,
-                    new String[] { MediaStore.MediaColumns._ID },
-                    selection,
-                    selectionArgs,
-                    null
-            );
-
-            if (cursor != null) {
-                existe = cursor.getCount() > 0;
-                cursor.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return existe;
-    }
 
     /**
      * Dado un nombre completo de directorio, este mÃ©todo devuelve un booleano
@@ -522,22 +494,6 @@ private static int nTamFuente = Integer.parseInt(conRes.getString("nTamFuente"))
         }
         return vbResul;
     }
-public static boolean crearDirectorioPublico(Context context, String nombreCarpeta) {
-    boolean resultado = true;
-
-    try {
-        File directorio = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), nombreCarpeta);
-
-        if (!directorio.exists()) {
-            resultado = directorio.mkdirs();
-        }
-    } catch (Exception e) {
-        e.printStackTrace();
-        resultado = false;
-    }
-
-    return resultado;
-}
 
     /**
      * Lee el contenido de un fichero y lo devuelve en forma de array de bytes.

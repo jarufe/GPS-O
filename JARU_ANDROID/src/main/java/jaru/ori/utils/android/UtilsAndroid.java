@@ -230,7 +230,7 @@ public class UtilsAndroid {
     public static Cursor buscarFicheroEnCarpeta(Context context, String nombreCarpeta, String nombreArchivo) {
         Cursor cursor = null;
 
-        Log.i("GPS-O", "Comienza búsqueda de fichero");
+        Log.i("GPS-O", "Comienza búsqueda de fichero " + nombreArchivo);
         try {
             ContentResolver resolver = context.getContentResolver();
             Uri collection;
@@ -286,6 +286,7 @@ public class UtilsAndroid {
     public static boolean borrarArchivosEnCarpeta (Context context, Cursor cursor) {
         boolean vbResul = true;
         try {
+            Log.i("GPS-O", "Comienza proceso de borrado de fichero");
             Uri collection = UtilsAndroid.componerUriSegunAndroid();
             if (cursor != null && cursor.moveToFirst()) {
                 do {
@@ -314,6 +315,7 @@ public class UtilsAndroid {
     public static Uri crearArchivoXml (Context context, String nombreCarpeta, String nombreArchivo) {
         Uri uri;
         try {
+            Log.i("GPS-O", "Comienza proceso de creación de fichero " + nombreArchivo);
             Uri collection;
             // Definir la URI base según la versión de Android
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -329,6 +331,7 @@ public class UtilsAndroid {
             values.put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath);
 
             uri = context.getContentResolver().insert(collection, values);
+            Log.i("GPS-O", "Fichero creado");
         }catch (Exception e) {
             Log.e("GPS-O", "Error creando fichero", e);
             uri = null;

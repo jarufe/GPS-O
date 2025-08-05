@@ -114,7 +114,7 @@ public class RegistrosXMLHandler extends DefaultHandler
     public static Vector<Registro> obtenerDatosXML(Context context, String nombreCarpeta, String nombreArchivo) {
         Vector<Registro> vvResul = new Vector<>();
 
-        Log.i("GPS-O", "Comienza carga de parámetros en XML");
+        Log.i("GPS-O", "Comienza carga de registros vectoriales en XML");
         try {
             Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
             Uri collection = UtilsAndroid.componerUriSegunAndroid();
@@ -122,7 +122,7 @@ public class RegistrosXMLHandler extends DefaultHandler
                 int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
                 long id = cursor.getLong(idColumn);
                 Uri uri = ContentUris.withAppendedId(collection, id);
-
+                Log.i("GPS-O", "Fichero encontrado. Comienza parseo");
                 // Parsear el XML desde el InputStream
                 SAXParserFactory spf = SAXParserFactory.newInstance();
                 spf.setValidating(false);
@@ -136,7 +136,7 @@ public class RegistrosXMLHandler extends DefaultHandler
                 parser.parse(source, handler);
 
                 vvResul = handler.getVRegistros();
-                Log.i("GPS-O", "Archivo procesado. Registros: " + (vvResul != null ? vvResul.size() : 0));
+                Log.i("GPS-O", "Archivo procesado. Elementos: " + (vvResul != null ? vvResul.size() : 0));
                 if (inputStream!=null) inputStream.close();
             }
 
@@ -161,6 +161,7 @@ public class RegistrosXMLHandler extends DefaultHandler
         PrintStream pStr = null;
 
         try {
+            Log.i("GPS-O", "Comienza grabación de registros vectoriales en XML");
             //Busca si existe el fichero y lo borra antes de crearlo de nuevo
             Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
             UtilsAndroid.borrarArchivosEnCarpeta(context, cursor);
@@ -168,6 +169,7 @@ public class RegistrosXMLHandler extends DefaultHandler
             Uri uri = UtilsAndroid.crearArchivoXml(context, nombreCarpeta, nombreArchivo);
             //Si se ha creado el archivo, se exporta el contenido XML
             if (uri != null) {
+                Log.i("GPS-O", "Comienza escritura de registros vectoriales en el fichero");
                 os = context.getContentResolver().openOutputStream(uri);
                 pStr = new PrintStream(new BufferedOutputStream(os), true, "ISO-8859-1");
                 //Comienza escribiendo la cabecera del archivo XML
@@ -195,6 +197,7 @@ public class RegistrosXMLHandler extends DefaultHandler
                 }
                 //Cierra la estructura XML en el archivo, y el propio archivo.
                 pStr.println("</Registros>");
+                Log.i("GPS-O", pvRegistros.size() + " registros vectoriales grabados en XML");
             } else {
                 Log.e("GPS-O", "No se pudo crear el archivo en MediaStore");
                 resultado = false;

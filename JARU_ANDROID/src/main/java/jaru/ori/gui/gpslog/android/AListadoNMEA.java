@@ -76,8 +76,7 @@ public class AListadoNMEA extends AppCompatActivity {
      * @return boolean Devuelve true
      */
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        super.onCreateOptionsMenu(menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.refrescarcancelar, menu);
         return true;
@@ -88,9 +87,8 @@ public class AListadoNMEA extends AppCompatActivity {
      * @return boolean Devuelve el resultado del método en super
      */
     @Override
-    public boolean  onPrepareOptionsMenu (Menu menu) {
-        boolean vbResul = super.onPrepareOptionsMenu(menu);
-        return vbResul;
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return super.onPrepareOptionsMenu(menu);
     }
     /**
      * Método que se lanza cuando el usuario selecciona una opción de menú.<BR>
@@ -102,15 +100,17 @@ public class AListadoNMEA extends AppCompatActivity {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        super.onOptionsItemSelected(item);
         // Handle item selection
         if (item.getItemId()==R.id.refrescar7) {
             this.realizarLectura();
+            return true;
         } else if (item.getItemId()==R.id.cancelar7) {
             APrincipal.setOGpsInterno(oGpsInterno);
             this.finish();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
-        return true;
     }
 
     /**

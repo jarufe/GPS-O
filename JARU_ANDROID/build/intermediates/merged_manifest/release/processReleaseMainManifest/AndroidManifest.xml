@@ -165,7 +165,8 @@
         <activity
             android:name="jaru.ori.gui.gpslog.android.AListadoNMEA"
             android:exported="true"
-            android:label="@string/ORI_TLISTANMEA" >
+            android:label="@string/ORI_TLISTANMEA"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="jaru.ori.gui.gpslog.android.AListadoNMEA" />
 

@@ -10,6 +10,10 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.content.ContentResolver;
+import android.content.ContentUris;
+import android.content.ContentValues;
+import android.os.Build;
 
 import java.io.File;
 
@@ -211,4 +215,95 @@ public class UtilsAndroid {
         }
     }
 
+    /**
+     * Busca si existe un fichero en la subcarpeta indicada dentro de la carpeta Documents
+     * @param context Context Contexto de la aplicación
+     * @param nombreCarpeta String Subcarpeta dentro de Documents
+     * @param nombreArchivo String Nombre del archivo XML
+     * @return Cursor Cursor apuntando al fichero o ficheros encontrados
+     */
+    public static Cursor buscarFicheroEnCarpeta(Context context, String nombreCarpeta, String nombreArchivo) {
+        Cursor cursor = null;
+
+        Log.i("GPS-O", "Comienza búsqueda de fichero");
+        try {
+            ContentResolver resolver = context.getContentResolver();
+            Uri collection;
+            // Definir la URI base según la versión de Android
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
+            } else {
+                collection = Uri.parse("content://media/external/file");
+            }
+            // Construir la ruta de búsqueda
+            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+            Log.i("GPS-O", "Buscando archivo en: " + relativePath + "/" + nombreArchivo);
+            String selection = MediaStore.Files.FileColumns.RELATIVE_PATH + "=? AND " +
+                    MediaStore.Files.FileColumns.DISPLAY_NAME + "=?";
+            String[] selectionArgs = new String[]{relativePath + "/", nombreArchivo};
+            // Columnas que queremos recuperar (solo necesitamos saber si existe)
+            String[] projection = new String[]{MediaStore.Files.FileColumns._ID};
+
+            cursor = resolver.query(
+                    collection,
+                    projection,
+                    selection,
+                    selectionArgs,
+                    null);
+            if (cursor == null) {
+                Log.e("GPS-O", "Cursor nulo: la consulta falló");
+            } else if (cursor.getCount()<=0) {
+                Log.e("GPS-O", "Cursor vacío: no se encontró el archivo");
+            } else {
+                Log.i("GPS-O", "Total resultados: " + cursor.getCount());
+            }
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error buscando fichero", e);
+        }
+
+        return cursor;
+    }
+
+    /**
+     * En función de la versión de Android, crea un Uri del almacenamiento externo para poder buscar archivos
+     * @return Uri
+     */
+    public static Uri componerUriSegunAndroid () {
+        Uri collection;
+        // Definir la URI base según la versión de Android
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
+        } else {
+            collection = Uri.parse("content://media/external/file");
+        }
+        return collection;
+    }
+
+    /**
+     * Crea un archivo de tipo XML usando MediaStore, dentro de la carpeta Documents y subcarpeta indicada en el parámetro
+     * @param context Context Contexto de la aplicación
+     * @param nombreCarpeta String Subcarpeta dentro de Documents
+     * @param nombreArchivo String Nombre del archivo XML
+     * @return Uri Apunta al archivo creado
+     */
+    public static Uri crearArchivoXml (Context context, String nombreCarpeta, String nombreArchivo) {
+        ContentResolver resolver = context.getContentResolver();
+        Uri collection;
+        // Definir la URI base según la versión de Android
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
+        } else {
+            collection = Uri.parse("content://media/external/file");
+        }
+        // Construir la ruta de búsqueda
+        String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.MediaColumns.DISPLAY_NAME, nombreArchivo);
+        values.put(MediaStore.MediaColumns.MIME_TYPE, "text/xml");
+        values.put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath);
+
+        Uri uri = context.getContentResolver().insert(collection, values);
+
+        return uri;
+    }
 }

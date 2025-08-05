@@ -1,10 +1,12 @@
 package jaru.gps.logic.xml;
 
+import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -16,6 +18,7 @@ import javax.xml.parsers.*;
 import java.util.Vector;
 import java.io.*;
 import jaru.gps.logic.*;
+import jaru.ori.utils.android.UtilsAndroid;
 
 /**
  * Gestor SAX2 para poder transformar un archivo XML con datos de Parámetros de configuración
@@ -111,29 +114,10 @@ public class ParametrosXMLHandler extends DefaultHandler
 
         Log.i("GPS-O", "Comienza carga de parámetros en XML");
         try {
-            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
-            Log.i("GPS-O", "Buscando archivo en: " + relativePath + "/" + nombreArchivo);
-
-            Uri collection = MediaStore.Files.getContentUri("external");
-
-            String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=? AND " +
-                    MediaStore.MediaColumns.DISPLAY_NAME + "=?";
-            String[] selectionArgs = new String[] {
-                    relativePath,
-                    nombreArchivo
-            };
-
-            Cursor cursor = context.getContentResolver().query(
-                    collection,
-                    null,
-                    selection,
-                    selectionArgs,
-                    null
-            );
-
-            if (cursor != null && cursor.moveToFirst()) {
-                Log.i("GPS-O", "Archivo encontrado");
-                int idColumn = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns._ID);
+            Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
+            Uri collection = UtilsAndroid.componerUriSegunAndroid();
+            if (cursor!=null && cursor.moveToFirst()) {
+                int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
                 long id = cursor.getLong(idColumn);
                 Uri uri = ContentUris.withAppendedId(collection, id);
 
@@ -150,11 +134,60 @@ public class ParametrosXMLHandler extends DefaultHandler
                 vvResul = handler.getVRegistros();
                 Log.i("GPS-O", "Archivo procesado. Registros: " + (vvResul != null ? vvResul.size() : 0));
                 inputStream.close();
+            }
+            if (cursor != null) cursor.close();
+            /*
+            ContentResolver resolver = context.getContentResolver();
+            Uri collection;
+            // Definir la URI base según la versión de Android
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
             } else {
-                Log.e("GPS-O", "Archivo no encontrado en MediaStore");
+                collection = Uri.parse("content://media/external/file");
+            }
+            // Construir la ruta de búsqueda
+            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+            Log.i("GPS-O", "Buscando archivo en: " + relativePath + "/" + nombreArchivo);
+            String selection = MediaStore.Files.FileColumns.RELATIVE_PATH + "=? AND " +
+                    MediaStore.Files.FileColumns.DISPLAY_NAME + "=?";
+            String[] selectionArgs = new String[]{relativePath + "/", nombreArchivo};
+            // Columnas que queremos recuperar (solo necesitamos saber si existe)
+            String[] projection = new String[]{MediaStore.Files.FileColumns._ID};
+
+            Cursor cursor = resolver.query(
+                    collection,
+                    projection,
+                    selection,
+                    selectionArgs,
+                    null);
+            if (cursor == null) {
+                Log.e("GPS-O", "Cursor nulo: la consulta falló");
+            } else if (!cursor.moveToFirst()) {
+                Log.e("GPS-O", "Cursor vacío: no se encontró el archivo");
+                Log.i("GPS-O", "Total resultados: " + cursor.getCount());
+            } else {
+                Log.i("GPS-O", "Archivo encontrado");
+                int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
+                long id = cursor.getLong(idColumn);
+                Uri uri = ContentUris.withAppendedId(collection, id);
+
+                SAXParserFactory spf = SAXParserFactory.newInstance();
+                spf.setValidating(false);
+                spf.setNamespaceAware(true);
+
+                SAXParser parser = spf.newSAXParser();
+                ParametrosXMLHandler handler = new ParametrosXMLHandler();
+
+                InputStream inputStream = context.getContentResolver().openInputStream(uri);
+                InputSource source = new InputSource(inputStream);
+                parser.parse(source, handler);
+                vvResul = handler.getVRegistros();
+                Log.i("GPS-O", "Archivo procesado. Registros: " + (vvResul != null ? vvResul.size() : 0));
+                inputStream.close();
             }
 
             if (cursor != null) cursor.close();
+             */
 
         } catch (Exception e) {
             Log.e("GPS-O", "Error cargando XML", e);
@@ -176,27 +209,11 @@ public class ParametrosXMLHandler extends DefaultHandler
         PrintStream pStr = null;
 
         try {
-            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
-            Uri collection = MediaStore.Files.getContentUri("external");
-
-            String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=? AND " +
-                    MediaStore.MediaColumns.DISPLAY_NAME + "=?";
-            String[] selectionArgs = new String[] {
-                    relativePath,
-                    nombreArchivo
-            };
-
-            Cursor cursor = context.getContentResolver().query(
-                    collection,
-                    new String[] { MediaStore.MediaColumns._ID },
-                    selection,
-                    selectionArgs,
-                    null
-            );
-
-            if (cursor != null && cursor.moveToFirst()) {
+            Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
+            Uri collection = UtilsAndroid.componerUriSegunAndroid();
+            if (cursor!=null && cursor.moveToFirst()) {
                 do {
-                    int idColumn = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns._ID);
+                    int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
                     long id = cursor.getLong(idColumn);
                     Uri uriExistente = ContentUris.withAppendedId(collection, id);
                     context.getContentResolver().delete(uriExistente, null, null);
@@ -205,14 +222,56 @@ public class ParametrosXMLHandler extends DefaultHandler
 
                 cursor.close();
             }
+            /*
+            ContentResolver resolver = context.getContentResolver();
+            Uri collection;
+            // Definir la URI base según la versión de Android
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
+            } else {
+                collection = Uri.parse("content://media/external/file");
+            }
+            // Construir la ruta de búsqueda
+            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+            Log.i("GPS-O", "Escribir. Buscando archivo en: " + relativePath + "/" + nombreArchivo);
+            String selection = MediaStore.Files.FileColumns.RELATIVE_PATH + "=? AND " +
+                    MediaStore.Files.FileColumns.DISPLAY_NAME + "=?";
+            String[] selectionArgs = new String[]{relativePath + "/", nombreArchivo};
+            // Columnas que queremos recuperar (solo necesitamos saber si existe)
+            String[] projection = new String[]{MediaStore.Files.FileColumns._ID};
 
+            Cursor cursor = resolver.query(
+                    collection,
+                    projection,
+                    selection,
+                    selectionArgs,
+                    null);
+            if (cursor == null) {
+                Log.e("GPS-O", "Escribir. Cursor nulo: la consulta falló");
+            } else if (!cursor.moveToFirst()) {
+                Log.e("GPS-O", "Escribir. Cursor vacío: no se encontró el archivo");
+                Log.i("GPS-O", "Escribir. Total resultados: " + cursor.getCount());
+            } else {
+                do {
+                    int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
+                    long id = cursor.getLong(idColumn);
+                    Uri uriExistente = ContentUris.withAppendedId(collection, id);
+                    context.getContentResolver().delete(uriExistente, null, null);
+                    Log.i("GPS-O", "Archivo existente borrado: " + uriExistente.toString());
+                } while (cursor.moveToNext());
+
+                cursor.close();
+            }
+            */
+            /*
             ContentValues values = new ContentValues();
             values.put(MediaStore.MediaColumns.DISPLAY_NAME, nombreArchivo);
             values.put(MediaStore.MediaColumns.MIME_TYPE, "text/xml");
             values.put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath);
 
             Uri uri = context.getContentResolver().insert(collection, values);
-
+            */
+            Uri uri = UtilsAndroid.crearArchivoXml(context, nombreCarpeta, nombreArchivo);
             if (uri != null) {
                 os = context.getContentResolver().openOutputStream(uri);
                 pStr = new PrintStream(new BufferedOutputStream(os), true, "ISO-8859-1");

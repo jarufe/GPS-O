@@ -187,6 +187,7 @@ id map
 id mostrarBrujula0
 id nube0
 id posicionPropia8
+id recyclerNMEA
 id refrescar7
 id registro0
 id reiniciar0
@@ -492,6 +493,7 @@ string ORI_ML00220
 string ORI_ML00221
 string ORI_ML00222
 string ORI_ML00223
+string ORI_ML00224
 string ORI_ML00990
 string ORI_ML00991
 string ORI_ML00992

@@ -871,7 +871,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.AListadoNMEA.class);
             startActivityForResult(viIntent, ACTIVITY_LISTADONMEA);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error lanzando actividad", e1);
         }
     }
     /**

@@ -76,6 +76,16 @@ public class ParametrosXMLHandler extends DefaultHandler
             String content = vcBuffer.toString().trim();
             //Datos de una línea de reparto
             if (lname.equals("cPathXML")) {
+                if (content != null && !content.isEmpty()) {
+                    // Eliminar el primer carácter si es / o \
+                    if (content.startsWith("/") || content.startsWith("\\")) {
+                        content = content.substring(1);
+                    }
+                    // Eliminar el último carácter si es / o \
+                    if (content.endsWith("/") || content.endsWith("\\")) {
+                        content = content.substring(0, content.length() - 1);
+                    }
+                }
                 oRegistro.setCPathXML(content);
             } else if (lname.equals("cEscala")) {
                 oRegistro.setCEscala(content);
@@ -168,6 +178,18 @@ public class ParametrosXMLHandler extends DefaultHandler
 
                 for (Parametro voRegistro : pvRegistros) {
                     pStr.println("  <Parametro>");
+                    String content = voRegistro.getCPathXML();
+                    if (content != null && !content.isEmpty()) {
+                        // Eliminar el primer carácter si es / o \
+                        if (content.startsWith("/") || content.startsWith("\\")) {
+                            content = content.substring(1);
+                        }
+                        // Eliminar el último carácter si es / o \
+                        if (content.endsWith("/") || content.endsWith("\\")) {
+                            content = content.substring(0, content.length() - 1);
+                        }
+                    }
+                    voRegistro.setCPathXML(content);
                     pStr.println("    <cPathXML>" + voRegistro.getCPathXML() + "</cPathXML>");
                     pStr.println("    <cEscala>" + voRegistro.getCEscala() + "</cEscala>");
                     pStr.println("    <cPuerto>" + voRegistro.getCPuerto() + "</cPuerto>");

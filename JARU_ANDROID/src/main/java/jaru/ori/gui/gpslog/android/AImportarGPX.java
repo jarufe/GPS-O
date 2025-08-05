@@ -1,8 +1,8 @@
 package jaru.ori.gui.gpslog.android;
 
 import android.app.Activity;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,13 +15,10 @@ import android.content.Intent;
 import jaru.ori.logic.gpslog.*;
 import jaru.ori.logic.gpslog.xml.*;
 import jaru.ori.utils.*;
-import jaru.gps.logic.*;
-import jaru.ori.utils.android.Option;
-import jaru.ori.utils.android.UtilsAndroid;
 
 import java.util.Vector;
 
-/*
+/**
  * Importación de datos procedentes de GPS a través del formato GPX
  * <P>
  * Con esta clase se configura y procesa la importación de puntos y líneas que se han
@@ -69,14 +66,6 @@ public class AImportarGPX extends Activity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         // ToDo add your GUI initialization code here        
-        //Establece la orientación según el dispositivo sea más ancho (horizontal) o alto (vertical)
-        /*
-        if(UtilsAndroid.esPantallaAncha(this.getResources())) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        }
-         */
         setContentView(R.layout.importargpx);
         try {
             //Recoge de la clase principal los elementos básicos que intervienen en el proceso
@@ -88,24 +77,30 @@ public class AImportarGPX extends Activity {
             Utilidades.setCDirActual(APrincipal.getOParametro().getCPathXML());
             Utilidades.setCFicheroSel("");
             Utilidades.setCFicheroSelNombre("");
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando actividad AImportarGPX", e);
+        }
         try {
             //Inicializa el botón para seleccionar un archivo
-            this.botExaminar = (Button)this.findViewById(R.id.botFichero);
+            this.botExaminar = this.findViewById(R.id.botFichero);
             this.botExaminar.setOnClickListener(new android.view.View.OnClickListener() {
                 //@Override
                 public void onClick(View v) {
                     AImportarGPX.this.abrirFichero();
                 }
             });
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando botón de selección de archivo", e);
+        }
         try {
             //Inicializa las listas
-            this.lstTipoOcadEn = (Spinner)this.findViewById(R.id.lstTipoOcadEn);
-            this.lstPuntos = (Spinner)this.findViewById(R.id.lstPuntos);
-            this.lstLineas = (Spinner)this.findViewById(R.id.lstLineas);
-            this.lstSobreescribir = (Spinner)this.findViewById(R.id.lstSobreescribir);
-        } catch (Exception e) {}
+            this.lstTipoOcadEn = this.findViewById(R.id.lstTipoOcadEn);
+            this.lstPuntos = this.findViewById(R.id.lstPuntos);
+            this.lstLineas = this.findViewById(R.id.lstLineas);
+            this.lstSobreescribir = this.findViewById(R.id.lstSobreescribir);
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando listas", e);
+        }
         //Inicializa los demás elementos GUI
         this.limpiarDatos();
     }
@@ -136,16 +131,15 @@ public class AImportarGPX extends Activity {
      */
     @Override
     public boolean  onPrepareOptionsMenu (Menu menu) {
-        boolean vbResul = super.onPrepareOptionsMenu(menu);
-        return vbResul;
+        return super.onPrepareOptionsMenu(menu);
     }
     /**
      * Método que se lanza cuando el usuario selecciona una opción de menú.<BR>
      * Si el usuario pulsa aceptar, entonces se procede a realizar la importación
      * del fichero seleccionado por el usuario.<BR>
      * Si se pulsa cancelar, simplemente se sale de esta pantalla.
-     * @param item
-     * @return
+     * @param item MenuItem Elemento de menú
+     * @return boolean Flag para indicar si se ha seleccionado un elemento de menú
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -183,20 +177,24 @@ public class AImportarGPX extends Activity {
         try {
             //Inicialización de las listas
             try {
-                ArrayAdapter<CharSequence> voAdapter1 = new ArrayAdapter <CharSequence> (this, android.R.layout.simple_spinner_item );
+                ArrayAdapter<CharSequence> voAdapter1 = new ArrayAdapter <> (this, android.R.layout.simple_spinner_item );
                 voAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 voAdapter1.add(oApp.getString(R.string.ORI_ML00126));
                 voAdapter1.add(oApp.getString(R.string.ORI_ML00127));
                 voAdapter1.add(oApp.getString(R.string.ORI_ML00128));
                 this.lstTipoOcadEn.setAdapter(voAdapter1);
-            } catch (Exception e) {}
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error limpinado lista de tipo OCAD", e);
+            }
             try {
-                ArrayAdapter<CharSequence> voAdapter1 = new ArrayAdapter <CharSequence> (this, android.R.layout.simple_spinner_item );
+                ArrayAdapter<CharSequence> voAdapter1 = new ArrayAdapter <> (this, android.R.layout.simple_spinner_item );
                 voAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 voAdapter1.add(oApp.getString(R.string.ORI_ML00001));
                 voAdapter1.add(oApp.getString(R.string.ORI_ML00002));
                 this.lstSobreescribir.setAdapter(voAdapter1);
-            } catch (Exception e) {}
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error limpiando lista de sobreescribir", e);
+            }
             //Inicializa las listas desplegables de objetos puntuales y lineales
             int vnComienzo1 = Integer.parseInt(oApp.getString(R.string.ORI_ML00994));
             int vnFinal1 = Integer.parseInt(oApp.getString(R.string.ORI_ML00995));
@@ -205,7 +203,7 @@ public class AImportarGPX extends Activity {
             //Rellena los nuevos datos de las listas de tipos OCAD
             //Inicialización de la lista desplegable de Tipos OCAD puntuales
             try {
-                ArrayAdapter<CharSequence> voAdapter1 = new ArrayAdapter <CharSequence> (this, android.R.layout.simple_spinner_item );
+                ArrayAdapter<CharSequence> voAdapter1 = new ArrayAdapter <> (this, android.R.layout.simple_spinner_item );
                 voAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 //Rellena los nuevos datos de la lista de tipos OCAD
                 for (int i=vnComienzo1; i<=vnFinal1; i++) {
@@ -214,10 +212,12 @@ public class AImportarGPX extends Activity {
                     voAdapter1.add(vcTexto);
                 }
                 lstPuntos.setAdapter(voAdapter1);
-            } catch (Exception e) {}
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error limpiando lista de puntos", e);
+            }
             //Inicialización de la lista desplegable de Tipos OCAD lineales
             try {
-                ArrayAdapter<CharSequence> voAdapter1 = new ArrayAdapter <CharSequence> (this, android.R.layout.simple_spinner_item );
+                ArrayAdapter<CharSequence> voAdapter1 = new ArrayAdapter <> (this, android.R.layout.simple_spinner_item );
                 voAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 //Rellena los nuevos datos de la lista de tipos OCAD
                 for (int i=vnComienzo2; i<=vnFinal2; i++) {
@@ -226,7 +226,9 @@ public class AImportarGPX extends Activity {
                     voAdapter1.add(vcTexto);
                 }
                 lstLineas.setAdapter(voAdapter1);
-            } catch (Exception e) {}
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error limpiando lista de líneas", e);
+            }
             //Selecciona los elementos por defecto
             try {
                 this.lstTipoOcadEn.setSelection(2);
@@ -234,8 +236,12 @@ public class AImportarGPX extends Activity {
                 this.lstLineas.setSelection(31);
                 this.lstSobreescribir.setSelection(1);
                 ((EditText)findViewById(R.id.txtFichero)).setText("", TextView.BufferType.EDITABLE);
-            } catch (Exception e) {}
-        } catch (Exception e) {}
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error realizando selección de listas por defecto", e);
+            }
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error general en la limpieza de datos", e);
+        }
     }
     /**
      * Método que procesa la importación de un fichero GPX con la parametrización
@@ -262,7 +268,8 @@ public class AImportarGPX extends Activity {
             String vcFichero = ((EditText)findViewById(R.id.txtFichero)).getText().toString();
             if (Utilidades.existeFicheroPublico(this, APrincipal.getOParametro().getCPathXML(), vcFichero)) {
                 //Recupera los datos que se encuentran en los ficheros XML.
-                vRegistros = RegistrosGpxXMLHandler.obtenerDatosXML(vcFichero, vRegistros, vbSobreescribir,
+                vRegistros = RegistrosGpxXMLHandler.obtenerDatosXML(oApp.getApplicationContext(),
+                        APrincipal.getOParametro().getCPathXML(), vcFichero, vRegistros, vbSobreescribir,
                         vcCampo, vcPuntos, vcLineas);
             }
             boolean vbCorrecto = !vRegistros.isEmpty();
@@ -273,7 +280,7 @@ public class AImportarGPX extends Activity {
             }
             Toast.makeText(oApp.getApplicationContext(), vcTexto, Toast.LENGTH_LONG).show();
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error importando", e);
         }
     }
     /**
@@ -284,7 +291,7 @@ public class AImportarGPX extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.utils.android.FileChooser.class);
             startActivityForResult(viIntent, ACTIVITY_FILECHOOSER);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error llamando a actividad para abrir fichero", e);
         }
     }
 

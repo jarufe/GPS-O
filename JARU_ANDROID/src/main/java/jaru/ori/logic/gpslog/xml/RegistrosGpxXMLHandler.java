@@ -9,8 +9,15 @@ import java.io.*;
 import jaru.ori.logic.gpslog.*;
 import jaru.ori.utils.Utilidades;
 
-import android.content.res.Resources;
+import android.content.ContentUris;
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.util.Log;
+
 import jaru.ori.gui.gpslog.android.R;
+import jaru.ori.utils.android.UtilsAndroid;
 
 /**
  * Gestor SAX2 para poder transformar un archivo GPX con datos de coordenadas de puntos GPS.
@@ -22,15 +29,15 @@ import jaru.ori.gui.gpslog.android.R;
 public class RegistrosGpxXMLHandler extends DefaultHandler
 {
     private Registro oRegistro = new Registro();
-    private Vector<Registro> vRegistros = new Vector<Registro>();
+    private Vector<Registro> vRegistros = new Vector<>();
     /** Buffer de almacenamiento de datos leidos. */
     protected StringBuffer vcBuffer = new StringBuffer();
     //Campo que contiene el tipo OCAD (0=name; 1=desc; 2=ninguno)
-    private String cCampo = new String("2");
+    private String cCampo = "2";
     //Tipo OCAD para elementos de tipo punto por defecto
-    private String cTipoPuntos = new String("540.0");
+    private String cTipoPuntos = "540.0";
     //Tipo OCAD para elementos de tipo línea por defecto
-    private String cTipoLineas = new String("506.0");
+    private String cTipoLineas = "506.0";
     //Valor que indica si se ha de sobreescribir el conjunto de registros o si se añade
     private boolean bSobreescribir = true;
     //Valor que indica el contador para establecer el campo ID del conjunto de registros
@@ -130,7 +137,7 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
     public void startElement(String uri, String lname, String qname,
                              Attributes attributes) {
         vcBuffer.setLength(0);
-        if (lname.toLowerCase().equals("wpt")) {
+        if (lname.equalsIgnoreCase("wpt")) {
             cTipoActivo = "wpt";
             bReconocer = true;
             cName = "";
@@ -148,7 +155,7 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
             String vcLon = attributes.getValue("lon");
             oRegistro.setCCY(Utilidades.grados(Double.parseDouble(vcLat)));
             oRegistro.setCCX(Utilidades.grados(Double.parseDouble(vcLon)));
-        } else if (lname.toLowerCase().equals("trk")) {
+        } else if (lname.equalsIgnoreCase("trk")) {
             cTipoActivo = "trk";
             bReconocer = true;
             cName = "";
@@ -156,9 +163,9 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
             cCmt = "";
             cTipoOCAD = cTipoLineas;
             cTipoOBM = "";
-        } else if (lname.toLowerCase().equals("trkseg")) {
+        } else if (lname.equalsIgnoreCase("trkseg")) {
             nContador = nContador + 1;
-        } else if (lname.toLowerCase().equals("trkpt")) {
+        } else if (lname.equalsIgnoreCase("trkpt")) {
             bReconocer = true;
             oRegistro = new Registro();
             oRegistro.setCID(nContador + "");
@@ -169,7 +176,7 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
             String vcLon = attributes.getValue("lon");
             oRegistro.setCCY(Utilidades.grados(Double.parseDouble(vcLat)));
             oRegistro.setCCX(Utilidades.grados(Double.parseDouble(vcLon)));
-        } else if (lname.toLowerCase().equals("rte")) {
+        } else if (lname.equalsIgnoreCase("rte")) {
             nContador = nContador + 1;
             cTipoActivo = "rte";
             bReconocer = true;
@@ -178,7 +185,7 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
             cCmt = "";
             cTipoOCAD = cTipoLineas;
             cTipoOBM = "";
-        } else if (lname.toLowerCase().equals("rtept")) {
+        } else if (lname.equalsIgnoreCase("rtept")) {
             bReconocer = true;
             oRegistro = new Registro();
             oRegistro.setCID(nContador + "");
@@ -210,39 +217,39 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
      * @param qname String
      */
     public void endElement(String uri, String lname, String qname) {
-        if (lname.toLowerCase().equals("wpt")) {
+        if (lname.equalsIgnoreCase("wpt")) {
             oRegistro.setCTipoOCAD(cTipoOCAD);
             oRegistro.setCTipoOBM("");
             oRegistro.setCDesc(cDesc);
             vRegistros.addElement(oRegistro);
             bReconocer = false;
-        }else if (lname.toLowerCase().equals("trkpt")) {
+        }else if (lname.equalsIgnoreCase("trkpt")) {
             oRegistro.setCTipoOCAD(cTipoOCAD);
             oRegistro.setCTipoOBM("");
             oRegistro.setCDesc(cDesc);
             vRegistros.addElement(oRegistro);
             bReconocer = false;
-        }else if (lname.toLowerCase().equals("trkseg")) {
+        }else if (lname.equalsIgnoreCase("trkseg")) {
             bReconocer = false;
-        }else if (lname.toLowerCase().equals("trk")) {
+        }else if (lname.equalsIgnoreCase("trk")) {
             bReconocer = false;
-        }else if (lname.toLowerCase().equals("rtept")) {
+        }else if (lname.equalsIgnoreCase("rtept")) {
             oRegistro.setCTipoOCAD(cTipoOCAD);
             oRegistro.setCTipoOBM("");
             oRegistro.setCDesc(cDesc);
             vRegistros.addElement(oRegistro);
             bReconocer = false;
-        }else if (lname.toLowerCase().equals("rte")) {
+        }else if (lname.equalsIgnoreCase("rte")) {
             bReconocer = false;
         } else {
             if (bReconocer) {
                 String content = vcBuffer.toString().trim();
                 //Datos de un punto de GPS
-                if (lname.toLowerCase().equals("elev")) {
+                if (lname.equalsIgnoreCase("elev")) {
                     oRegistro.setCElev(content);
-                } else if (lname.toLowerCase().equals("time")) {
+                } else if (lname.equalsIgnoreCase("time")) {
                     oRegistro.setCFecha(content);
-                } else if (lname.toLowerCase().equals("desc")) {
+                } else if (lname.equalsIgnoreCase("desc")) {
                     //Si el usuario ha dicho que el tipo OCAD viene en el campo desc, trata de escribirlo
                     //pero sólo si lo valida como un tipo OCAD correcto.
                     if (cCampo.equals("1")) {
@@ -252,14 +259,14 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
                     } else {
                         cDesc = content;
                     }
-                } else if (lname.toLowerCase().equals("name")) {
+                } else if (lname.equalsIgnoreCase("name")) {
                     //Si el usuario ha dicho que el tipo OCAD viene en el campo name, trata de escribirlo
                     //pero sólo si lo valida como un tipo OCAD correcto.
                     if (cCampo.equals("0")) {
                         if (esTipoOCAD (content))
                             cTipoOCAD = content;
                     }
-                } else if (lname.toLowerCase().equals("cmt")) {
+                } else if (lname.equalsIgnoreCase("cmt")) {
                     //Si el usuario dice que en el campo desc viene el tipo OCAD
                     //los comentarios del punto se meten como descripción del registro.
                     if (cCampo.equals("1")) {
@@ -274,34 +281,50 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
      * Método que se encarga de recuperar los datos a partir del archivo XML.
      * Los datos son introducidos en un vector de elementos de la clase Registro.
      * Los datos se recuperan de un archivo XML.
-     * @param pcArchivo String. Ruta completa al archivo XML donde se encuentran los datos que se han de recuperar.
+     * @param context Context. Contexto de la aplicación
+     * @param nombreCarpeta String. Carpeta donde se guardan los datos
+     * @param nombreArchivo String. Nombre del archivo XML donde se encuentran los datos que se han de recuperar.
      * @return Vector. Elementos de la clase Registro, conteniendo los datos recuperados del archivo XML.
      */
-    public static Vector<Registro> obtenerDatosXML(String pcArchivo) {
-        Vector<Registro> vvResul = new Vector<Registro>();
+    public static Vector<Registro> obtenerDatosXML(Context context, String nombreCarpeta, String nombreArchivo) {
+        Vector<Registro> vvResul = new Vector<>();
+
+        Log.i("GPS-O", "Comienza carga de parámetros en XML");
         try {
-            SAXParserFactory spf = SAXParserFactory.newInstance();
-            spf.setValidating(false);
-            spf.setNamespaceAware(true);
-            // parse the document
-            SAXParser parser = spf.newSAXParser();
-            RegistrosGpxXMLHandler handler = new RegistrosGpxXMLHandler();
-            //En este método, no se usa un campo OCAD para los tipos de objetos
-            //También, se sobreescribe el conjunto de datos.
-            handler.setBSobreescribir(true);
-            handler.setCCampo("2");
-            handler.setCTipoPuntos("540.0");
-            handler.setCTipoLineas("506.0");
-            handler.setNContador(0);
-            //Se obtiene el archivo y se procesa
-            InputSource source = new InputSource(new FileReader(pcArchivo));
-            parser.parse(source, (DefaultHandler)handler);
-            //DespuÃ©s de trabajar con el fichero XML, los datos se encuentran en forma de vector
-            vvResul = handler.getVRegistros();
+            Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
+            Uri collection = UtilsAndroid.componerUriSegunAndroid();
+            if (cursor!=null && cursor.moveToFirst()) {
+                int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
+                long id = cursor.getLong(idColumn);
+                Uri uri = ContentUris.withAppendedId(collection, id);
+
+                SAXParserFactory spf = SAXParserFactory.newInstance();
+                spf.setValidating(false);
+                spf.setNamespaceAware(true);
+                // parse the document
+                SAXParser parser = spf.newSAXParser();
+                RegistrosGpxXMLHandler handler = new RegistrosGpxXMLHandler();
+                //En este metodo, no se usa un campo OCAD para los tipos de objetos
+                //Tambien, se sobreescribe el conjunto de datos.
+                handler.setBSobreescribir(true);
+                handler.setCCampo("2");
+                handler.setCTipoPuntos("540.0");
+                handler.setCTipoLineas("506.0");
+                handler.setNContador(0);
+                //Se obtiene el archivo y se procesa
+                InputStream inputStream = context.getContentResolver().openInputStream(uri);
+                InputSource source = new InputSource(inputStream);
+                parser.parse(source, (DefaultHandler) handler);
+                //Después de trabajar con el fichero XML, los datos se encuentran en forma de vector
+                vvResul = handler.getVRegistros();
+                Log.i("GPS-O", "Archivo procesado. Registros: " + (vvResul != null ? vvResul.size() : 0));
+                if (inputStream!=null) inputStream.close();
+            }
+            if (cursor != null) cursor.close();
         }
         catch (Exception e) {
-            e.printStackTrace();
-            vvResul.removeAllElements();
+            Log.e("GPS-O", "Error cargando XML", e);
+            if (vvResul!=null) vvResul.removeAllElements();
         }
         return vvResul;
     }
@@ -309,7 +332,9 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
      * Método que se encarga de recuperar los datos a partir del archivo XML.
      * Los datos son introducidos en un vector de elementos de la clase Registro.
      * Los datos se recuperan de un archivo XML.
-     * @param pcArchivo String. Ruta completa al archivo XML donde se encuentran los datos que se han de recuperar.
+     * @param context Context. Contexto de la aplicación
+     * @param nombreCarpeta String. Carpeta donde se guardan los datos
+     * @param nombreArchivo String. Nombre del archivo XML donde se encuentran los datos que se han de recuperar.
      * @param pvRegistros Vector. Conjunto de datos actuales.
      * @param pbSobreescribir boolean. El conjunto de datos se sobreescribe o se aÃ±aden a uno existente.
      * @param pcCampo String. El campo que se va a utilizar para obtener el tipo OCAD (0=name; 1=desc; 2=ninguno)
@@ -317,156 +342,193 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
      * @param pcTipoLineas String. Objeto OCAD por defecto para elementos lineales.
      * @return Vector. Elementos de la clase Registro, conteniendo los datos recuperados del archivo XML.
      */
-    public static Vector<Registro> obtenerDatosXML(String pcArchivo, Vector<Registro> pvRegistros,
+    public static Vector<Registro> obtenerDatosXML(Context context, String nombreCarpeta, String nombreArchivo,
+                                                   Vector<Registro> pvRegistros,
                                                    boolean pbSobreescribir, String pcCampo, String pcTipoPuntos, String pcTipoLineas) {
-        Vector<Registro> vvResul = new Vector<Registro>();
+        Vector<Registro> vvResul = new Vector<>();
+        Log.i("GPS-O", "Comienza carga de parámetros en XML");
         try {
-            SAXParserFactory spf = SAXParserFactory.newInstance();
-            spf.setValidating(false);
-            spf.setNamespaceAware(true);
-            // parse the document
-            SAXParser parser = spf.newSAXParser();
-            RegistrosGpxXMLHandler handler = new RegistrosGpxXMLHandler();
-            //En este método, se puede usar un campo OCAD para los tipos de objetos
-            //También, se puede sobreescribir o añadir el conjunto de datos.
-            handler.setBSobreescribir(pbSobreescribir);
-            if (pbSobreescribir) {
-                pvRegistros.removeAllElements();
-                handler.setVRegistros(pvRegistros);
-                handler.setNContador(0);
-            } else {
-                handler.setVRegistros(pvRegistros);
-                handler.setNContador(obtenerContador(pvRegistros));
+            Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
+            Uri collection = UtilsAndroid.componerUriSegunAndroid();
+            if (cursor!=null && cursor.moveToFirst()) {
+                int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
+                long id = cursor.getLong(idColumn);
+                Uri uri = ContentUris.withAppendedId(collection, id);
+
+                SAXParserFactory spf = SAXParserFactory.newInstance();
+                spf.setValidating(false);
+                spf.setNamespaceAware(true);
+                // parse the document
+                SAXParser parser = spf.newSAXParser();
+                RegistrosGpxXMLHandler handler = new RegistrosGpxXMLHandler();
+                //En este metodo, se puede usar un campo OCAD para los tipos de objetos
+                //Tambien, se puede sobreescribir o añadir el conjunto de datos.
+                handler.setBSobreescribir(pbSobreescribir);
+                if (pbSobreescribir) {
+                    pvRegistros.removeAllElements();
+                    handler.setVRegistros(pvRegistros);
+                    handler.setNContador(0);
+                } else {
+                    handler.setVRegistros(pvRegistros);
+                    handler.setNContador(obtenerContador(pvRegistros));
+                }
+                handler.setCCampo(pcCampo);
+                handler.setCTipoPuntos(pcTipoPuntos);
+                handler.setCTipoLineas(pcTipoLineas);
+                //Se obtiene el archivo y se procesa
+                InputStream inputStream = context.getContentResolver().openInputStream(uri);
+                InputSource source = new InputSource(inputStream);
+                parser.parse(source, (DefaultHandler) handler);
+                //Después de trabajar con el fichero XML, los datos se encuentran en forma de vector
+                vvResul = handler.getVRegistros();
+                Log.i("GPS-O", "Archivo procesado. Registros: " + (vvResul != null ? vvResul.size() : 0));
+                if (inputStream!=null) inputStream.close();
             }
-            handler.setCCampo(pcCampo);
-            handler.setCTipoPuntos(pcTipoPuntos);
-            handler.setCTipoLineas(pcTipoLineas);
-            //Se obtiene el archivo y se procesa
-            InputSource source = new InputSource(new FileReader(pcArchivo));
-            parser.parse(source, (DefaultHandler)handler);
-            //Después de trabajar con el fichero XML, los datos se encuentran en forma de vector
-            vvResul = handler.getVRegistros();
+            if (cursor != null) cursor.close();
         }
         catch (Exception e) {
-            e.printStackTrace();
-            vvResul.removeAllElements();
+            Log.e("GPS-O", "Error cargando XML", e);
+            if (vvResul!=null) vvResul.removeAllElements();
         }
         return vvResul;
     }
     /**
      * Vuelca los datos de parámetros a un archivo XML, cuyo nombre es el que 
      * se proporciona en el segundo argumento.
+     * @param context Context. Contexto de la aplicación
      * @param pvRegistros Vector<Registro>. Vector de elementos de la clase Registro.
-     * @param pcFichero String. Cadena que contiene el nombre completo del archivo XML físico que se va a escribir.
+     * @param nombreCarpeta String. Carpeta donde se guardan los datos
+     * @param nombreArchivo String. Nombre del archivo XML donde se encuentran los datos que se han de recuperar.
      */
-    public static void escribirXML (Vector<Registro> pvRegistros, String pcFichero) {
+    public static boolean escribirXML (Context context, Vector<Registro> pvRegistros, String nombreCarpeta, String nombreArchivo) {
+        boolean resultado = true;
         //Llama al método que crea el fichero indicando que se va a usar el campo Tipo OCAD principal
-        escribirXML(pvRegistros, pcFichero, false);
+        resultado = escribirXML(context, pvRegistros, nombreCarpeta, nombreArchivo, false);
+        return resultado;
     }
 
     /**
      * Vuelca los datos de parámetros a un archivo XML, cuyo nombre es el que
      * se proporciona en el segundo argumento.
+     * @param context Context. Contexto de la aplicación
      * @param pvRegistros Vector<Registro>. Vector de elementos de la clase Registro.
-     * @param pcFichero String. Cadena que contiene el nombre completo del archivo XML físico que se va a escribir.
+     * @param nombreCarpeta String. Carpeta donde se guardan los datos
+     * @param nombreArchivo String. Nombre del archivo XML donde se encuentran los datos que se han de recuperar.
      * @param pbDual boolean. Indica si se quiere usar el valor dual para OBM, en lugar del tipo OCAD principal
      */
-    public static void escribirXML (Vector<Registro> pvRegistros, String pcFichero, boolean pbDual) {
+    public static boolean escribirXML (Context context, Vector<Registro> pvRegistros, String nombreCarpeta, String nombreArchivo, boolean pbDual) {
+        boolean resultado = true;
+        OutputStream os = null;
         PrintStream pStr = null;
         String vcIdAct = "";
         String vcTipoAct = "";
         try {
-            //Obtiene un objeto que representa el fichero que se va a escribir
-            pStr = new PrintStream(new BufferedOutputStream(new FileOutputStream(pcFichero)));
-            //Comienza escribiendo la cabecera del archivo XML
-            pStr.println("<?xml version=\"1.0\"?>");
-            pStr.println("<gpx xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.topografix.com/GPX/1/1\" version=\"1.1\" creator=\"\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">");
-            pStr.println("<metadata>");
-            pStr.println("<name>Export from GPS-O</name>");
-            pStr.println("<copyright></copyright>");
-            pStr.println("<author></author>");
-            pStr.println("<keyword>GPSLog</keyword>");
-            pStr.println("<link></link>");
-            pStr.println("<description>Export from GPS-O</description>");
-            java.util.Date vdActual = Utilidades.getCurDate();
-            String vcFecha = Utilidades.format(vdActual, "yyyy-MM-dd");
-            String vcHora = Utilidades.format(vdActual, "HH:mm:ss");
-            pStr.println("<time>" + vcFecha + "T" + vcHora + "Z</time>");
-            pStr.println("</metadata>");
-            //Recorre el vector de elementos, para volcar uno a uno su contenido al fichero.
-            int i = 0;
-            while (i<pvRegistros.size()) {
-                //Obtiene el siguiente elemento
-                Registro voRegistro = (Registro)pvRegistros.elementAt(i);
-                //Crea la estructura XML en el archivo
-                //Si cambia el ID, se tiene que cerrar el objeto actual y comenzar otro
-                if (!voRegistro.getCID().equals(vcIdAct)) {
-                    //Si se había abierto un objeto, primero se cierra (trk o wpt)
-                    if (vcTipoAct.equals("trk")) {
-                        pStr.println("</trkseg>");
-                        pStr.println("</trk>");
-                    }
-                    //Ahora se abre uno nuevo
-                    if (voRegistro.getNTipo()==0) {
-                        vcTipoAct = "wpt";
-                    } else {
-                        vcTipoAct = "trk";
-                        pStr.println("<trk>");
-                        //Sólo si es línea y pide usar el valor dual OBM, entonces escribe el valor de ese campo
-                        if (voRegistro.getNTipo()==1 && pbDual && !voRegistro.getCTipoOBM().equals("")) {
-                            pStr.println("<name>" + voRegistro.getCID() + "(" + voRegistro.getCTipoOBM() + ")</name>");
-                            pStr.println("<desc>" + voRegistro.getCTipoOBM() + "</desc>");
-                        //en caso contrario escribe el valor principal de tipo OCAD
-                        } else {
-                            pStr.println("<name>" + voRegistro.getCID() + "(" + voRegistro.getCTipoOCAD() + ")</name>");
-                            pStr.println("<desc>" + voRegistro.getCTipoOCAD() + "</desc>");
+            //Busca si existe el fichero y lo borra antes de crearlo de nuevo
+            Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
+            UtilsAndroid.borrarArchivosEnCarpeta(context, cursor);
+            //Crea el archivo de nuevo
+            Uri uri = UtilsAndroid.crearArchivoXml(context, nombreCarpeta, nombreArchivo);
+            //Si se ha creado el archivo, se exporta el contenido XML
+            if (uri != null) {
+                os = context.getContentResolver().openOutputStream(uri);
+                pStr = new PrintStream(new BufferedOutputStream(os), true, "ISO-8859-1");
+                //Comienza escribiendo la cabecera del archivo XML
+                pStr.println("<?xml version=\"1.0\"?>");
+                pStr.println("<gpx xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.topografix.com/GPX/1/1\" version=\"1.1\" creator=\"\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">");
+                pStr.println("<metadata>");
+                pStr.println("<name>Export from GPS-O</name>");
+                pStr.println("<copyright></copyright>");
+                pStr.println("<author></author>");
+                pStr.println("<keyword>GPSLog</keyword>");
+                pStr.println("<link></link>");
+                pStr.println("<description>Export from GPS-O</description>");
+                java.util.Date vdActual = Utilidades.getCurDate();
+                String vcFecha = Utilidades.format(vdActual, "yyyy-MM-dd");
+                String vcHora = Utilidades.format(vdActual, "HH:mm:ss");
+                pStr.println("<time>" + vcFecha + "T" + vcHora + "Z</time>");
+                pStr.println("</metadata>");
+                //Recorre el vector de elementos, para volcar uno a uno su contenido al fichero.
+                int i = 0;
+                while (i < pvRegistros.size()) {
+                    //Obtiene el siguiente elemento
+                    Registro voRegistro = pvRegistros.elementAt(i);
+                    //Crea la estructura XML en el archivo
+                    //Si cambia el ID, se tiene que cerrar el objeto actual y comenzar otro
+                    if (!voRegistro.getCID().equals(vcIdAct)) {
+                        //Si se había abierto un objeto, primero se cierra (trk o wpt)
+                        if (vcTipoAct.equals("trk")) {
+                            pStr.println("</trkseg>");
+                            pStr.println("</trk>");
                         }
-                        pStr.println("<cmt>" + voRegistro.getCDesc() + "</cmt>");
-                        pStr.println("<number>" + voRegistro.getCID() + "</number>");
-                        pStr.println("<trkseg>");
+                        //Ahora se abre uno nuevo
+                        if (voRegistro.getNTipo() == 0) {
+                            vcTipoAct = "wpt";
+                        } else {
+                            vcTipoAct = "trk";
+                            pStr.println("<trk>");
+                            //Sólo si es línea y pide usar el valor dual OBM, entonces escribe el valor de ese campo
+                            if (voRegistro.getNTipo() == 1 && pbDual && !voRegistro.getCTipoOBM().isEmpty()) {
+                                pStr.println("<name>" + voRegistro.getCID() + "(" + voRegistro.getCTipoOBM() + ")</name>");
+                                pStr.println("<desc>" + voRegistro.getCTipoOBM() + "</desc>");
+                                //en caso contrario escribe el valor principal de tipo OCAD
+                            } else {
+                                pStr.println("<name>" + voRegistro.getCID() + "(" + voRegistro.getCTipoOCAD() + ")</name>");
+                                pStr.println("<desc>" + voRegistro.getCTipoOCAD() + "</desc>");
+                            }
+                            pStr.println("<cmt>" + voRegistro.getCDesc() + "</cmt>");
+                            pStr.println("<number>" + voRegistro.getCID() + "</number>");
+                            pStr.println("<trkseg>");
+                        }
+                        //Ahora se guarda el valor del ID actual
+                        vcIdAct = voRegistro.getCID();
                     }
-                    //Ahora se guarda el valor del ID actual
-                    vcIdAct = voRegistro.getCID();
+                    //Se calcula el dato de latitud y longitud
+                    double vnLat = Utilidades.grados(voRegistro.getCCY());
+                    double vnLon = Utilidades.grados(voRegistro.getCCX());
+                    //Se escriben los datos correspondientes al punto actual
+                    if (vcTipoAct.equals("trk")) {
+                        pStr.println("<trkpt lat=\"" + vnLat + "\" lon=\"" + vnLon + "\">");
+                        String vcElev = "0";
+                        if (!voRegistro.getCElev().isEmpty())
+                            vcElev = voRegistro.getCElev();
+                        pStr.println("<ele>" + vcElev + "</ele>");
+                        pStr.println("<time>" + voRegistro.getCFecha() + "</time>");
+                        pStr.println("</trkpt>");
+                    } else {
+                        pStr.println("<wpt lat=\"" + vnLat + "\" lon=\"" + vnLon + "\">");
+                        String vcElev = "0";
+                        if (!voRegistro.getCElev().isEmpty())
+                            vcElev = voRegistro.getCElev();
+                        pStr.println("<ele>" + vcElev + "</ele>");
+                        pStr.println("<name>" + voRegistro.getCID() + "(" + voRegistro.getCTipoOCAD() + ")</name>");
+                        pStr.println("<desc>" + voRegistro.getCTipoOCAD() + "</desc>");
+                        pStr.println("<cmt>" + voRegistro.getCDesc() + "</cmt>");
+                        pStr.println("<sym>Flag</sym>");
+                        pStr.println("</wpt>");
+                    }
+                    i++;
                 }
-                //Se calcula el dato de latitud y longitud
-                double vnLat = Utilidades.grados(voRegistro.getCCY());
-                double vnLon = Utilidades.grados(voRegistro.getCCX());
-                //Se escriben los datos correspondientes al punto actual
+                //Si se habï¿½a abierto un objeto de tipo trk, se cierra
                 if (vcTipoAct.equals("trk")) {
-                    pStr.println("<trkpt lat=\"" + vnLat + "\" lon=\"" + vnLon + "\">");
-                    String vcElev = "0";
-                    if (!voRegistro.getCElev().equals(""))
-                        vcElev = voRegistro.getCElev();
-                    pStr.println("<ele>" + vcElev + "</ele>");
-                    pStr.println("<time>" + voRegistro.getCFecha() + "</time>");
-                    pStr.println("</trkpt>");
-                } else {
-                    pStr.println("<wpt lat=\"" + vnLat + "\" lon=\"" + vnLon + "\">");
-                    String vcElev = "0";
-                    if (!voRegistro.getCElev().equals(""))
-                        vcElev = voRegistro.getCElev();
-                    pStr.println("<ele>" + vcElev + "</ele>");
-                    pStr.println("<name>" + voRegistro.getCID() + "(" + voRegistro.getCTipoOCAD() + ")</name>");
-                    pStr.println("<desc>" + voRegistro.getCTipoOCAD() + "</desc>");
-                    pStr.println("<cmt>" + voRegistro.getCDesc() + "</cmt>");
-                    pStr.println("<sym>Flag</sym>");
-                    pStr.println("</wpt>");
+                    pStr.println("</trkseg>");
+                    pStr.println("</trk>");
                 }
-                i++;
+                //Cierra la estructura XML en el archivo, y el propio archivo.
+                pStr.println("</gpx>");
+            } else {
+                Log.e("GPS-O", "No se pudo crear el archivo en MediaStore");
+                resultado = false;
             }
-            //Si se habï¿½a abierto un objeto de tipo trk, se cierra
-            if (vcTipoAct.equals("trk")) {
-                pStr.println("</trkseg>");
-                pStr.println("</trk>");
-            }
-            //Cierra la estructura XML en el archivo, y el propio archivo.
-            pStr.println("</gpx>");
-            pStr.close();
+
         } catch (Exception e) {
-            e.printStackTrace();
-            if (pStr!=null)
-                pStr.close();
+            Log.e("GPS-O", "Error escribiendo XML", e);
+            resultado = false;
+        } finally {
+            if (pStr != null) pStr.close();
+            else if (os != null) try { os.close(); } catch (IOException ignored) {}
         }
+
+        return resultado;
     }
 
     /**
@@ -484,18 +546,19 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
             int i = 0;
             while (i<pvRegistros.size()) {
                 //Obtiene el siguiente elemento
-                Registro voRegistro = (Registro)pvRegistros.elementAt(i);
+                Registro voRegistro = pvRegistros.elementAt(i);
                 //Intenta procesar el campo ID como numérico, para conocer el mayor número utilizado
                 try {
                     vnActual = Integer.parseInt(voRegistro.getCID());
                     if (vnActual > vnContador)
                         vnContador = vnActual;
                 } catch (Exception e2) {
+                    Log.e("GPS-O", "Campo ID no numérico", e2);
                 }
                 i++;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error obteniendo contador", e);
             vnContador = 0;
         }
         return vnContador;
@@ -542,7 +605,7 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
                 i++;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error comprobando tipo OCAD", e);
             vbResult = false;
         }
         return vbResult;

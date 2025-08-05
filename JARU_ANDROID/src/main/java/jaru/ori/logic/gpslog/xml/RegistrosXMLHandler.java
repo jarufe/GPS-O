@@ -1,12 +1,11 @@
 package jaru.ori.logic.gpslog.xml;
 
 import android.content.ContentUris;
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
@@ -14,10 +13,9 @@ import javax.xml.parsers.*;
 import java.io.*;
 
 import java.util.Vector;
-import java.io.*;
 
-import jaru.gps.logic.xml.ParametrosXMLHandler;
 import jaru.ori.logic.gpslog.*;
+import jaru.ori.utils.android.UtilsAndroid;
 
 /**
  * Gestor SAX2 para poder transformar un archivo XML con datos de coordenadas de puntos GPS
@@ -28,14 +26,14 @@ import jaru.ori.logic.gpslog.*;
 public class RegistrosXMLHandler extends DefaultHandler
 {
     private Registro oRegistro = new Registro();
-    private Vector<Registro> vRegistros = new Vector<Registro>();
+    private Vector<Registro> vRegistros = new Vector<>();
     /** Buffer de almacenamiento de datos leidos. */
     protected StringBuffer vcBuffer = new StringBuffer();
 
     /**
      * Devuelve el vector de resultados del procesamiento.
      * Es un vector de elementos de la clase Producto.
-     * @return
+     * @return Vector<Registro> Conjunto de registros
      */
     public Vector<Registro> getVRegistros () {
         return vRegistros;
@@ -51,7 +49,7 @@ public class RegistrosXMLHandler extends DefaultHandler
     public void startElement(String uri, String lname, String qname,
                              Attributes attributes) {
         vcBuffer.setLength(0);
-        if (lname.toLowerCase().equals("registro")) {
+        if (lname.equalsIgnoreCase("registro")) {
             oRegistro = new Registro();
         }
     }
@@ -74,7 +72,7 @@ public class RegistrosXMLHandler extends DefaultHandler
      * @param qname String
      */
     public void endElement(String uri, String lname, String qname) {
-        if (lname.toLowerCase().equals("registro")) {
+        if (lname.equalsIgnoreCase("registro")) {
             vRegistros.addElement(oRegistro);
         } else {
             String content = vcBuffer.toString().trim();
@@ -114,29 +112,14 @@ public class RegistrosXMLHandler extends DefaultHandler
      * @return Vector. Elementos de la clase Registro, conteniendo los datos recuperados del archivo XML.
      */
     public static Vector<Registro> obtenerDatosXML(Context context, String nombreCarpeta, String nombreArchivo) {
-        Vector<Registro> vvResul = new Vector<Registro>();
+        Vector<Registro> vvResul = new Vector<>();
 
+        Log.i("GPS-O", "Comienza carga de parámetros en XML");
         try {
-            // Buscar el archivo en MediaStore
-            Uri collection = MediaStore.Files.getContentUri("external");
-
-            String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=? AND " +
-                    MediaStore.MediaColumns.DISPLAY_NAME + "=?";
-            String[] selectionArgs = new String[] {
-                    Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta,
-                    nombreArchivo
-            };
-
-            Cursor cursor = context.getContentResolver().query(
-                    collection,
-                    null,
-                    selection,
-                    selectionArgs,
-                    null
-            );
-
-            if (cursor != null && cursor.moveToFirst()) {
-                int idColumn = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns._ID);
+            Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
+            Uri collection = UtilsAndroid.componerUriSegunAndroid();
+            if (cursor!=null && cursor.moveToFirst()) {
+                int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
                 long id = cursor.getLong(idColumn);
                 Uri uri = ContentUris.withAppendedId(collection, id);
 
@@ -146,23 +129,21 @@ public class RegistrosXMLHandler extends DefaultHandler
                 spf.setNamespaceAware(true);
 
                 SAXParser parser = spf.newSAXParser();
-                ParametrosXMLHandler handler = new ParametrosXMLHandler();
+                RegistrosXMLHandler handler = new RegistrosXMLHandler();
 
                 InputStream inputStream = context.getContentResolver().openInputStream(uri);
                 InputSource source = new InputSource(inputStream);
                 parser.parse(source, handler);
 
                 vvResul = handler.getVRegistros();
-                inputStream.close();
+                Log.i("GPS-O", "Archivo procesado. Registros: " + (vvResul != null ? vvResul.size() : 0));
+                if (inputStream!=null) inputStream.close();
             }
 
-            if (cursor != null) {
-                cursor.close();
-            }
-
+            if (cursor != null) cursor.close();
         } catch (Exception e) {
-            e.printStackTrace();
-            vvResul.removeAllElements();
+            Log.e("GPS-O", "Error cargando XML", e);
+            if (vvResul!=null) vvResul.removeAllElements();
         }
 
         return vvResul;
@@ -180,38 +161,12 @@ public class RegistrosXMLHandler extends DefaultHandler
         PrintStream pStr = null;
 
         try {
-            // Buscar y eliminar archivo existente
-            Uri collection = MediaStore.Files.getContentUri("external");
-            String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=? AND " +
-                    MediaStore.MediaColumns.DISPLAY_NAME + "=?";
-            String[] selectionArgs = new String[] {
-                    Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta,
-                    nombreArchivo
-            };
-
-            Cursor cursor = context.getContentResolver().query(
-                    collection,
-                    new String[] { MediaStore.MediaColumns._ID },
-                    selection,
-                    selectionArgs,
-                    null
-            );
-
-            if (cursor != null && cursor.moveToFirst()) {
-                int idColumn = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns._ID);
-                long id = cursor.getLong(idColumn);
-                Uri uriExistente = ContentUris.withAppendedId(collection, id);
-                context.getContentResolver().delete(uriExistente, null, null);
-                cursor.close();
-            }
-            // Crear entrada en MediaStore
-            ContentValues values = new ContentValues();
-            values.put(MediaStore.MediaColumns.DISPLAY_NAME, nombreArchivo);
-            values.put(MediaStore.MediaColumns.MIME_TYPE, "text/xml");
-            values.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta);
-
-            Uri uri = context.getContentResolver().insert(MediaStore.Files.getContentUri("external"), values);
-
+            //Busca si existe el fichero y lo borra antes de crearlo de nuevo
+            Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
+            UtilsAndroid.borrarArchivosEnCarpeta(context, cursor);
+            //Crea el archivo de nuevo
+            Uri uri = UtilsAndroid.crearArchivoXml(context, nombreCarpeta, nombreArchivo);
+            //Si se ha creado el archivo, se exporta el contenido XML
             if (uri != null) {
                 os = context.getContentResolver().openOutputStream(uri);
                 pStr = new PrintStream(new BufferedOutputStream(os), true, "ISO-8859-1");
@@ -223,7 +178,7 @@ public class RegistrosXMLHandler extends DefaultHandler
                 int i = 0;
                 while (i<pvRegistros.size()) {
                     //Obtiene el siguiente elemento
-                    Registro voRegistro = (Registro)pvRegistros.elementAt(i);
+                    Registro voRegistro = pvRegistros.elementAt(i);
                     //Crea la estructura XML en el archivo
                     pStr.println("  <Registro>");
                     pStr.println("    <cID>" + voRegistro.getCID() + "</cID>");
@@ -241,10 +196,11 @@ public class RegistrosXMLHandler extends DefaultHandler
                 //Cierra la estructura XML en el archivo, y el propio archivo.
                 pStr.println("</Registros>");
             } else {
+                Log.e("GPS-O", "No se pudo crear el archivo en MediaStore");
                 resultado = false;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error escribiendo XML", e);
             resultado = false;
         } finally {
             if (pStr != null) pStr.close();

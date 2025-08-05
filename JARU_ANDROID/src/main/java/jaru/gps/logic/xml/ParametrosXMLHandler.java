@@ -1,13 +1,9 @@
 package jaru.gps.logic.xml;
 
-import android.content.ContentResolver;
 import android.content.ContentUris;
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 
@@ -29,16 +25,16 @@ import jaru.ori.utils.android.UtilsAndroid;
 public class ParametrosXMLHandler extends DefaultHandler
 {
     private Parametro oRegistro = new Parametro();
-    private Vector vRegistros = new Vector();
+    private Vector<Parametro> vRegistros = new Vector<>();
     /** Buffer de almacenamiento de datos leidos. */
     protected StringBuffer vcBuffer = new StringBuffer();
 
     /**
      * Devuelve el vector de resultados del procesamiento.
      * Es un vector de elementos de la clase Parametro.
-     * @return
+     * @return Vector Conjunto de registros
      */
-    public Vector getVRegistros () {
+    public Vector<Parametro> getVRegistros () {
         return vRegistros;
     }
 
@@ -52,7 +48,7 @@ public class ParametrosXMLHandler extends DefaultHandler
     public void startElement(String uri, String lname, String qname,
                              Attributes attributes) {
         vcBuffer.setLength(0);
-        if (lname.toLowerCase().equals("parametro")) {
+        if (lname.equalsIgnoreCase("parametro")) {
             oRegistro = new Parametro();
         }
     }
@@ -74,7 +70,7 @@ public class ParametrosXMLHandler extends DefaultHandler
      * @param qname String
      */
     public void endElement(String uri, String lname, String qname) {
-        if (lname.toLowerCase().equals("parametro")) {
+        if (lname.equalsIgnoreCase("parametro")) {
             vRegistros.addElement(oRegistro);
         } else {
             String content = vcBuffer.toString().trim();
@@ -109,8 +105,8 @@ public class ParametrosXMLHandler extends DefaultHandler
      * @param nombreArchivo String. Nombre del archivo XML donde se encuentran los datos que se han de recuperar.
      * @return Vector. Elementos de la clase Parametro, conteniendo los datos recuperados del archivo XML.
      */
-    public static Vector obtenerDatosXML(Context context, String nombreCarpeta, String nombreArchivo) {
-        Vector vvResul = new Vector();
+    public static Vector<Parametro> obtenerDatosXML(Context context, String nombreCarpeta, String nombreArchivo) {
+        Vector<Parametro> vvResul = new Vector<>();
 
         Log.i("GPS-O", "Comienza carga de parámetros en XML");
         try {
@@ -133,65 +129,12 @@ public class ParametrosXMLHandler extends DefaultHandler
                 parser.parse(source, handler);
                 vvResul = handler.getVRegistros();
                 Log.i("GPS-O", "Archivo procesado. Registros: " + (vvResul != null ? vvResul.size() : 0));
-                inputStream.close();
+                if (inputStream!=null) inputStream.close();
             }
             if (cursor != null) cursor.close();
-            /*
-            ContentResolver resolver = context.getContentResolver();
-            Uri collection;
-            // Definir la URI base según la versión de Android
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
-            } else {
-                collection = Uri.parse("content://media/external/file");
-            }
-            // Construir la ruta de búsqueda
-            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
-            Log.i("GPS-O", "Buscando archivo en: " + relativePath + "/" + nombreArchivo);
-            String selection = MediaStore.Files.FileColumns.RELATIVE_PATH + "=? AND " +
-                    MediaStore.Files.FileColumns.DISPLAY_NAME + "=?";
-            String[] selectionArgs = new String[]{relativePath + "/", nombreArchivo};
-            // Columnas que queremos recuperar (solo necesitamos saber si existe)
-            String[] projection = new String[]{MediaStore.Files.FileColumns._ID};
-
-            Cursor cursor = resolver.query(
-                    collection,
-                    projection,
-                    selection,
-                    selectionArgs,
-                    null);
-            if (cursor == null) {
-                Log.e("GPS-O", "Cursor nulo: la consulta falló");
-            } else if (!cursor.moveToFirst()) {
-                Log.e("GPS-O", "Cursor vacío: no se encontró el archivo");
-                Log.i("GPS-O", "Total resultados: " + cursor.getCount());
-            } else {
-                Log.i("GPS-O", "Archivo encontrado");
-                int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
-                long id = cursor.getLong(idColumn);
-                Uri uri = ContentUris.withAppendedId(collection, id);
-
-                SAXParserFactory spf = SAXParserFactory.newInstance();
-                spf.setValidating(false);
-                spf.setNamespaceAware(true);
-
-                SAXParser parser = spf.newSAXParser();
-                ParametrosXMLHandler handler = new ParametrosXMLHandler();
-
-                InputStream inputStream = context.getContentResolver().openInputStream(uri);
-                InputSource source = new InputSource(inputStream);
-                parser.parse(source, handler);
-                vvResul = handler.getVRegistros();
-                Log.i("GPS-O", "Archivo procesado. Registros: " + (vvResul != null ? vvResul.size() : 0));
-                inputStream.close();
-            }
-
-            if (cursor != null) cursor.close();
-             */
-
         } catch (Exception e) {
             Log.e("GPS-O", "Error cargando XML", e);
-            vvResul.removeAllElements();
+            if (vvResul!=null) vvResul.removeAllElements();
         }
 
         return vvResul;
@@ -209,69 +152,12 @@ public class ParametrosXMLHandler extends DefaultHandler
         PrintStream pStr = null;
 
         try {
+            //Busca si existe el fichero y lo borra antes de crearlo de nuevo
             Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
-            Uri collection = UtilsAndroid.componerUriSegunAndroid();
-            if (cursor!=null && cursor.moveToFirst()) {
-                do {
-                    int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
-                    long id = cursor.getLong(idColumn);
-                    Uri uriExistente = ContentUris.withAppendedId(collection, id);
-                    context.getContentResolver().delete(uriExistente, null, null);
-                    Log.i("GPS-O", "Archivo existente borrado: " + uriExistente.toString());
-                } while (cursor.moveToNext());
-
-                cursor.close();
-            }
-            /*
-            ContentResolver resolver = context.getContentResolver();
-            Uri collection;
-            // Definir la URI base según la versión de Android
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
-            } else {
-                collection = Uri.parse("content://media/external/file");
-            }
-            // Construir la ruta de búsqueda
-            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
-            Log.i("GPS-O", "Escribir. Buscando archivo en: " + relativePath + "/" + nombreArchivo);
-            String selection = MediaStore.Files.FileColumns.RELATIVE_PATH + "=? AND " +
-                    MediaStore.Files.FileColumns.DISPLAY_NAME + "=?";
-            String[] selectionArgs = new String[]{relativePath + "/", nombreArchivo};
-            // Columnas que queremos recuperar (solo necesitamos saber si existe)
-            String[] projection = new String[]{MediaStore.Files.FileColumns._ID};
-
-            Cursor cursor = resolver.query(
-                    collection,
-                    projection,
-                    selection,
-                    selectionArgs,
-                    null);
-            if (cursor == null) {
-                Log.e("GPS-O", "Escribir. Cursor nulo: la consulta falló");
-            } else if (!cursor.moveToFirst()) {
-                Log.e("GPS-O", "Escribir. Cursor vacío: no se encontró el archivo");
-                Log.i("GPS-O", "Escribir. Total resultados: " + cursor.getCount());
-            } else {
-                do {
-                    int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
-                    long id = cursor.getLong(idColumn);
-                    Uri uriExistente = ContentUris.withAppendedId(collection, id);
-                    context.getContentResolver().delete(uriExistente, null, null);
-                    Log.i("GPS-O", "Archivo existente borrado: " + uriExistente.toString());
-                } while (cursor.moveToNext());
-
-                cursor.close();
-            }
-            */
-            /*
-            ContentValues values = new ContentValues();
-            values.put(MediaStore.MediaColumns.DISPLAY_NAME, nombreArchivo);
-            values.put(MediaStore.MediaColumns.MIME_TYPE, "text/xml");
-            values.put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath);
-
-            Uri uri = context.getContentResolver().insert(collection, values);
-            */
+            UtilsAndroid.borrarArchivosEnCarpeta(context, cursor);
+            //Crea el archivo de nuevo
             Uri uri = UtilsAndroid.crearArchivoXml(context, nombreCarpeta, nombreArchivo);
+            //Si se ha creado el archivo, se exporta el contenido XML
             if (uri != null) {
                 os = context.getContentResolver().openOutputStream(uri);
                 pStr = new PrintStream(new BufferedOutputStream(os), true, "ISO-8859-1");

@@ -59,10 +59,15 @@ public class UtilsAndroid {
         try {
             ConnectivityManager cm =
                     (ConnectivityManager) poContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-            //isConnected = activeNetwork.isConnectedOrConnecting();
-            isConnected = activeNetwork.isConnected();
+            if (cm!=null) {
+                NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+                if (activeNetwork!=null) {
+                    //isConnected = activeNetwork.isConnectedOrConnecting();
+                    isConnected = activeNetwork.isConnected();
+                }
+            }
         } catch (Exception e) {
+            Log.e("GPS-O", "Error comprobando conectividad", e);
         }
         return isConnected;
     }
@@ -278,7 +283,27 @@ public class UtilsAndroid {
         }
         return collection;
     }
+    public static boolean borrarArchivosEnCarpeta (Context context, Cursor cursor) {
+        boolean vbResul = true;
+        try {
+            Uri collection = UtilsAndroid.componerUriSegunAndroid();
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
+                    long id = cursor.getLong(idColumn);
+                    Uri uriExistente = ContentUris.withAppendedId(collection, id);
+                    context.getContentResolver().delete(uriExistente, null, null);
+                    Log.i("GPS-O", "Archivo existente borrado: " + uriExistente.toString());
+                } while (cursor.moveToNext());
 
+                cursor.close();
+            }
+        }catch (Exception e) {
+            Log.e("GPS-O", "Error borrando fichero", e);
+            vbResul = false;
+        }
+        return vbResul;
+    }
     /**
      * Crea un archivo de tipo XML usando MediaStore, dentro de la carpeta Documents y subcarpeta indicada en el parámetro
      * @param context Context Contexto de la aplicación
@@ -287,23 +312,27 @@ public class UtilsAndroid {
      * @return Uri Apunta al archivo creado
      */
     public static Uri crearArchivoXml (Context context, String nombreCarpeta, String nombreArchivo) {
-        ContentResolver resolver = context.getContentResolver();
-        Uri collection;
-        // Definir la URI base según la versión de Android
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
-        } else {
-            collection = Uri.parse("content://media/external/file");
+        Uri uri;
+        try {
+            Uri collection;
+            // Definir la URI base según la versión de Android
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
+            } else {
+                collection = Uri.parse("content://media/external/file");
+            }
+            // Construir la ruta de búsqueda
+            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+            ContentValues values = new ContentValues();
+            values.put(MediaStore.MediaColumns.DISPLAY_NAME, nombreArchivo);
+            values.put(MediaStore.MediaColumns.MIME_TYPE, "text/xml");
+            values.put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath);
+
+            uri = context.getContentResolver().insert(collection, values);
+        }catch (Exception e) {
+            Log.e("GPS-O", "Error creando fichero", e);
+            uri = null;
         }
-        // Construir la ruta de búsqueda
-        String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
-        ContentValues values = new ContentValues();
-        values.put(MediaStore.MediaColumns.DISPLAY_NAME, nombreArchivo);
-        values.put(MediaStore.MediaColumns.MIME_TYPE, "text/xml");
-        values.put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath);
-
-        Uri uri = context.getContentResolver().insert(collection, values);
-
         return uri;
     }
 }

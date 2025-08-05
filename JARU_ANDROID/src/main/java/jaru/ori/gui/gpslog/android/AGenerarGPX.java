@@ -2,28 +2,22 @@ package jaru.ori.gui.gpslog.android;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.Vector;
 
 import jaru.gps.logic.Parametro;
 import jaru.ori.logic.gpslog.Registro;
-import jaru.ori.logic.gpslog.TransfOCAD;
 import jaru.ori.logic.gpslog.xml.RegistrosGpxXMLHandler;
-import jaru.ori.utils.android.UtilsAndroid;
 
-/*
+/**
  * Exportación de los datos vectoriales a GPX.
  * <P>
  * Con esta clase se configura y procesa la generación de un archivo GPX
@@ -56,14 +50,6 @@ public class AGenerarGPX extends Activity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         // ToDo add your GUI initialization code here
-        //Establece la orientación según el dispositivo sea más ancho (horizontal) o alto (vertical)
-        /*
-        if(UtilsAndroid.esPantallaAncha(this.getResources())) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        }
-         */
         setContentView(R.layout.generargpx);
         try {
             //Recoge de la clase principal los elementos básicos que intervienen en el proceso
@@ -73,8 +59,10 @@ public class AGenerarGPX extends Activity {
             //Resto de objetos
             oApp = APrincipal.getOApp();
             oRes = APrincipal.getORes();
-            this.chkUsarDual = (CheckBox)this.findViewById(R.id.chkUsarDual);
-        } catch (Exception e) {}
+            this.chkUsarDual = this.findViewById(R.id.chkUsarDual);
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando actividad AGenerarGPX", e);
+        }
         //Inicializa los demás elementos GUI
         this.limpiarDatos();
     }
@@ -105,15 +93,14 @@ public class AGenerarGPX extends Activity {
      */
     @Override
     public boolean  onPrepareOptionsMenu (Menu menu) {
-        boolean vbResul = super.onPrepareOptionsMenu(menu);
-        return vbResul;
+        return super.onPrepareOptionsMenu(menu);
     }
     /**
      * Método que se llama cuando el usuario selecciona una opción de menú.<BR>
      * Si el usuario pulsa en aceptar, se procede a la generación del fichero GPX.<BR>
      * Si el usuario pulsa en cancelar, simplemente se sale de la pantalla.
-     * @param item
-     * @return
+     * @param item MenuItem Elemento de menú
+     * @return boolean Flag para indicar si se ha seleccionado un elemento de menú
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -134,7 +121,9 @@ public class AGenerarGPX extends Activity {
     private void limpiarDatos () {
         try {
             this.chkUsarDual.setChecked(false);
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error limpiando datos en pantalla", e);
+        }
     }
     /**
      * Método que procesa la generación del fichero GPX a partir de los parámetros configurados
@@ -153,9 +142,9 @@ public class AGenerarGPX extends Activity {
                 if (oParametro!=null)
                     vcPathDatos = oParametro.getCPathXML();
                 if (vRegistros!=null)
-                    RegistrosGpxXMLHandler.escribirXML(vRegistros, vcPathDatos + "Registros.gpx", vbDual);
+                    RegistrosGpxXMLHandler.escribirXML(this, vRegistros, vcPathDatos, "Registros.gpx", vbDual);
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e("GPS-O", "Error generando fichero XML", e);
                 vbCorrecto = false;
             }
             if (vbCorrecto)
@@ -165,7 +154,7 @@ public class AGenerarGPX extends Activity {
             //Se muestra un mensaje con el resultado correcto o incorrecto del proceso.
             Toast.makeText(this.getApplicationContext(), vcMensaje, Toast.LENGTH_LONG).show();
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error generando fichero XML", e1);
         }
     }
 

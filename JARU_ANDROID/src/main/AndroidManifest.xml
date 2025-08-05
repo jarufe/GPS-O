@@ -3,7 +3,9 @@
     package="jaru.ori.gui.gpslog.android">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -134,7 +136,7 @@
         <activity
             android:name="jaru.ori.gui.gpslog.android.AListadoNMEA"
             android:label="@string/ORI_TLISTANMEA"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:theme="@style/AppTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="jaru.ori.gui.gpslog.android.AListadoNMEA" />

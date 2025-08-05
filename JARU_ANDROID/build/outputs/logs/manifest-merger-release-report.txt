@@ -337,7 +337,7 @@ ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\
 	android:exported
 		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:138:13-36
 	android:theme
-		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:137:13-69
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:137:13-44
 	android:name
 		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:135:13-68
 intent-filter#action:name:jaru.ori.gui.gpslog.android.AListadoNMEA+category:name:android.intent.category.DEFAULT

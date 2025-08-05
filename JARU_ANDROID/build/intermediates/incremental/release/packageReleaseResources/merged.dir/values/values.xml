@@ -507,14 +507,10 @@
     <string name="ORI_TVISTAOCAD">OCAD View</string>
     <string name="app_desg">Breakdown of runners</string>
     <string name="app_name">GPS-O</string>
-    <style name="AppBaseTheme" parent="android:Theme.Light">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
         
     </style>
     <style name="AppTheme" parent="AppBaseTheme">
         
-    </style>
-    <style name="Theme.AppCompat.Light.NoActionBar" parent="Theme.AppCompat.Light">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
     </style>
 </resources>

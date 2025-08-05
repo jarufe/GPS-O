@@ -714,4 +714,3 @@ string app_desg
 string app_name
 style AppBaseTheme
 style AppTheme
-style Theme.AppCompat.Light.NoActionBar

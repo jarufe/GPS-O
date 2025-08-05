@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="jaru.ori.GpsLogOri"
-    android:versionCode="10"
-    android:versionName="0.10" >
+    android:versionCode="11"
+    android:versionName="0.11" >
 
     <uses-sdk
         android:minSdkVersion="26"
@@ -166,7 +166,7 @@
             android:name="jaru.ori.gui.gpslog.android.AListadoNMEA"
             android:exported="true"
             android:label="@string/ORI_TLISTANMEA"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="jaru.ori.gui.gpslog.android.AListadoNMEA" />
 

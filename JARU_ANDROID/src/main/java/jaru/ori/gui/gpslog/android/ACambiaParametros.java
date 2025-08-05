@@ -1,12 +1,24 @@
 package jaru.ori.gui.gpslog.android;
 
+import android.Manifest;
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.*;
+
+import androidx.core.app.ActivityCompat;
+
+import java.util.ArrayList;
+import java.util.Set;
 
 import jaru.gps.logic.*;
 import jaru.ori.utils.android.UtilsAndroid;
@@ -104,7 +116,7 @@ public class ACambiaParametros extends Activity {
      */
     private void actualizarParametro () {
         try {
-            oParametro.setCPuerto(((EditText)findViewById(R.id.txtPuerto)).getText().toString());
+            oParametro.setCPuerto(((Spinner)findViewById(R.id.spnPuerto)).getSelectedItem().toString().replace(" (NOT FOUND)", ""));
             if (this.chkGpsInterno.isChecked())
                 oParametro.setCGpsInterno("1");
             else
@@ -133,8 +145,66 @@ public class ACambiaParametros extends Activity {
      */
     public void setOParametro(Parametro poParametro) {
         oParametro = poParametro;
-        //Inicialización del cuadro de texto del Puerto
-        ((EditText)findViewById(R.id.txtPuerto)).setText(oParametro.getCPuerto(), TextView.BufferType.EDITABLE);
+        //----------COMIENZO DE LA INICIALIZACIÓN DE LA LISTA DE DISPOSITIVOS BLUETOOTH
+        Spinner spnPuerto = findViewById(R.id.spnPuerto);
+        ArrayList<String> listaDispositivos = new ArrayList<>();
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        if (bluetoothAdapter != null && bluetoothAdapter.isEnabled()) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                String vcMensaje = this.getString(R.string.ORI_MI00019);
+                Toast.makeText(this.getApplicationContext(), vcMensaje, Toast.LENGTH_LONG).show();
+            } else {
+                Set<BluetoothDevice> dispositivosEmparejados = bluetoothAdapter.getBondedDevices();
+                for (BluetoothDevice device : dispositivosEmparejados) {
+                    listaDispositivos.add(device.getName());
+                }
+            }
+        }
+
+        // Añadir el nombre del puerto guardado si no está en la lista
+        String puertoGuardado = oParametro.getCPuerto();
+        if (!listaDispositivos.contains(puertoGuardado)) {
+            listaDispositivos.add(puertoGuardado + " (NOT FOUND)");
+        }
+
+        // Adaptador personalizado para marcar en rojo si no está disponible
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listaDispositivos) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView textView = (TextView) view;
+                if (getItem(position).contains("(NOT FOUND)")) {
+                    textView.setTextColor(Color.RED);
+                } else {
+                    textView.setTextColor(Color.BLACK);
+                }
+                return view;
+            }
+
+            @Override
+            public View getDropDownView(int position, View convertView, ViewGroup parent) {
+                View view = super.getDropDownView(position, convertView, parent);
+                TextView textView = (TextView) view;
+                if (getItem(position).contains("(NOT FOUND)")) {
+                    textView.setTextColor(Color.RED);
+                } else {
+                    textView.setTextColor(Color.BLACK);
+                }
+                return view;
+            }
+        };
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnPuerto.setAdapter(adapter);
+        // Seleccionar el valor guardado
+        for (int i = 0; i < listaDispositivos.size(); i++) {
+            if (listaDispositivos.get(i).contains(puertoGuardado)) {
+                spnPuerto.setSelection(i);
+                break;
+            }
+        }
+        //----------FIN DE LA INICIALIZACIÓN DE LA LISTA DE DISPOSITIVOS BLUETOOTH
+
         //Inicialización del check que indica si se usa GPS interno
         if (oParametro.getCGpsInterno().equals("0"))
             this.chkGpsInterno.setChecked(false);

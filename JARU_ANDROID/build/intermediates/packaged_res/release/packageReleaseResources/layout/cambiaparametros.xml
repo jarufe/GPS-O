@@ -23,13 +23,13 @@ android:text="@string/ORI_ML00079"
 >
 </TextView>
 
-    <EditText
-        android:id="@+id/txtPuerto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:textSize="18sp"></EditText>
+<Spinner
+    android:id="@+id/spnPuerto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="48dp"
+    android:prompt="@string/ORI_ML00079" />
+
 <TextView
 android:id="@+id/lblBaudios"
 android:layout_width="wrap_content"

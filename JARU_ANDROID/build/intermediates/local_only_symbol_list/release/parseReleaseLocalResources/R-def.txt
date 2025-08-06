@@ -194,6 +194,7 @@ id reiniciar0
 id salir0
 id seleccionar8
 id seleccionarIds0
+id spnPuerto
 id testLoc0
 id txtAltitud
 id txtAltura
@@ -279,6 +280,7 @@ string ORI_MI00015
 string ORI_MI00016
 string ORI_MI00017
 string ORI_MI00018
+string ORI_MI00019
 string ORI_ML00000
 string ORI_ML00001
 string ORI_ML00002

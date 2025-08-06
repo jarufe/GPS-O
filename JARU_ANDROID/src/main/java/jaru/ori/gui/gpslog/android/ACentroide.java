@@ -57,16 +57,8 @@ public class ACentroide extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        //Establece la orientación según el dispositivo sea más ancho (horizontal) o alto (vertical)
-        /*
-        if(UtilsAndroid.esPantallaAncha(this.getResources())) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        }
-         */
         // Se inicializan las variables con valores que están escritos en la actividad principal.
-        // Este es un método sencillo de compartir valores a lo largo de la ejecución.
+        // Este es un metodo sencillo de compartir valores a lo largo de la ejecución.
         oTransf = APrincipal.getOTransf();
         cMeridiano = APrincipal.getCMeridiano();
         cHemisferio = APrincipal.getCHemisferio();

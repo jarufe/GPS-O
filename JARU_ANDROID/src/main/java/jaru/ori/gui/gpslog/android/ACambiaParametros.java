@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothDevice;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -151,7 +152,10 @@ public class ACambiaParametros extends Activity {
         BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         if (bluetoothAdapter != null && bluetoothAdapter.isEnabled()) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+            // Comprobación de si existe permiso otorgado para Bluetooth
+            // Bluetooth (solo BLUETOOTH_CONNECT en Android 12+)
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED &&
+                    (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)) {
                 String vcMensaje = this.getString(R.string.ORI_MI00019);
                 Toast.makeText(this.getApplicationContext(), vcMensaje, Toast.LENGTH_LONG).show();
             } else {

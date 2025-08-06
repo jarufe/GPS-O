@@ -3641,6 +3641,7 @@ id spacer
 id special_effects_controller_view_tag
 id spline
 id split_action_bar
+id spnPuerto
 id spread
 id spread_inside
 id square
@@ -4006,6 +4007,7 @@ string ORI_MI00015
 string ORI_MI00016
 string ORI_MI00017
 string ORI_MI00018
+string ORI_MI00019
 string ORI_ML00000
 string ORI_ML00001
 string ORI_ML00002

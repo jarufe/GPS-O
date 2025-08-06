@@ -1,5 +1,11 @@
 package jaru.ori.logic.gpslog;
 
+import android.util.Log;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Locale;
+
 import jaru.ori.utils.Utilidades;
 
 /**
@@ -58,7 +64,7 @@ public class TransfGeografica {
             nCentroGlobal[0][2] = -9999;
             nCont = 0;
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error en constructor de transformación geográfica", e);
         }
     }
     /**
@@ -87,7 +93,7 @@ public class TransfGeografica {
             nCentroGlobal[0][2] = -9999;
             nCont = 0;
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error reiniciando matrices de valores", e);
         }
     }
     /**
@@ -137,7 +143,7 @@ public class TransfGeografica {
             nCentro[0][0] = -9999;
             nCentro[0][1] = -9999;
             nCentro[0][2] = -9999;
-            e.printStackTrace();
+            Log.e("GPS-O", "Error calculando centroide", e);
         }
 
     }
@@ -162,7 +168,7 @@ public class TransfGeografica {
             if (pnSatelites>nMaxSatelites)
                 nMaxSatelites = pnSatelites;
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error actualizando extremos", e);
         }
     }
     /**
@@ -183,7 +189,7 @@ public class TransfGeografica {
                 i++;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error mínimo X", e);
         }
         return vnMinX;
     }
@@ -205,7 +211,7 @@ public class TransfGeografica {
                 i++;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error máximo X", e);
         }
         return vnMaxX;
     }
@@ -227,7 +233,7 @@ public class TransfGeografica {
                 i++;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error mínimo Y", e);
         }
         return vnMinY;
     }
@@ -249,7 +255,7 @@ public class TransfGeografica {
                 i++;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error máximo Y", e);
         }
         return vnMaxY;
     }
@@ -271,7 +277,7 @@ public class TransfGeografica {
                 i++;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error máximo satélites", e);
         }
         return vnMax;
     }
@@ -311,7 +317,7 @@ public class TransfGeografica {
             else
                 vnLong = -1;
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error para obtener long de: " + pcTexto, e);
         }
         return vnLong;
     }
@@ -335,7 +341,7 @@ public class TransfGeografica {
             if (vnTam > 0)
                 vcTexto = vcTexto.substring(0, vnTam) + "." + vcTexto.substring(vnTam);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error obteniendo cadena de: " + pnValor, e);
         }
         return vcTexto;
     }
@@ -352,7 +358,7 @@ public class TransfGeografica {
             for (int i=1; i<=b; i++)
                 vnResul = vnResul * a;
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error elevando a potencia", e);
         }
         return vnResul;
     }
@@ -396,8 +402,7 @@ public class TransfGeografica {
             else
                 vcCoord = "00:00:00.000";
         } catch (Exception e) {
-            System.out.println ("Error transformando: " + pcTexto);
-            //e.printStackTrace();
+            Log.e("GPS-O", "Error transformando: " + pcTexto, e);
         }
         return vcCoord;
     }
@@ -409,9 +414,7 @@ public class TransfGeografica {
      */
     public synchronized String transfCoordAGrados (String pcTexto) {
         int i=0;
-        Integer vnDecimal = new Integer(0);
-        String vcCoord = new String("00.000");
-        String vcSeg = new String("");
+        String vcCoord = "00.000000"; // Valor por defecto con 6 decimales
         double vnGrados = 0;
         double vnMinutos = 0;
         double vnSegundos = 0;
@@ -419,24 +422,16 @@ public class TransfGeografica {
         try {
             if (pcTexto.length() > 5 && !pcTexto.equals("-.9999") && !pcTexto.equals(".9999")) {
                 i = pcTexto.indexOf('.');
-                if (i>0)
-                {
+                if (i>0) {
                     vnGrados = Double.parseDouble(pcTexto.substring(0, i-2));
                     vnMinutos = Double.parseDouble(pcTexto.substring(i-2, i));
                     vnSegundos = (Double.parseDouble(pcTexto.substring(i)))*60.0;
                     vnGrados = vnGrados + (vnMinutos / 60.0) + (vnSegundos / 3600.0);
-                    vcCoord = vnGrados + "";
-                }
-                else
-                {
-                    vcCoord = "00.000";
+                    vcCoord = String.format(Locale.US, "%.6f", vnGrados); // Formato con 6 decimales
                 }
             }
-            else
-                vcCoord = "00.000";
         } catch (Exception e) {
-            System.out.println ("Error transformando: " + pcTexto);
-            //e.printStackTrace();
+            Log.e("GPS-O", "Error transformando: " + pcTexto, e);
         }
         return vcCoord;
     }
@@ -476,10 +471,29 @@ public class TransfGeografica {
                 vcCoord = vcTexto;
             }
         } catch (Exception e) {
-            System.out.println ("Error transformando: " + pnGrados);
-            //e.printStackTrace();
+            Log.e("GPS-O", "Error transformando: " + pnGrados, e);
         }
         return vcCoord;
+    }
+
+    /**
+     * Un valor con varios decimales se formatea para que tenga el número de decimales pasado como parámetro
+     * @param pcTexto String. Texto de entrada con un valor numérico con varios decimales
+     * @return String. Valor transformado.
+     */
+    public synchronized String transfValorNDecimales (String pcTexto, int pnDecimales) {
+        int i=0;
+        String vcResul = "0"; // Valor por defecto con 6 decimales
+
+        try {
+            BigDecimal vnValor = new BigDecimal(pcTexto);
+            // Redondear a n decimales, añadiendo ceros si es necesario
+            BigDecimal valorFormateado = vnValor.setScale(pnDecimales, RoundingMode.HALF_UP);
+            vcResul = valorFormateado.toPlainString(); // Evita notación científica
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error formateando número de decimales de: " + pcTexto, e);
+        }
+        return vcResul;
     }
 
 }

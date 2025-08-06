@@ -2,6 +2,7 @@ package jaru.ori.gui.gpslog.android;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.util.Log;
 import android.view.View;
 import android.graphics.Paint;
 
@@ -59,85 +60,78 @@ public class ACentroideView extends View {
         return cTexto;
     }
 
-    /**
-     * Realiza el repintado gráfico de los puntos recogidos y del centroide calculado.
-     */
     @Override
     protected void onDraw(Canvas canvas) {
         try {
+            int width = getWidth();
+            int height = getHeight();
+
+            // Detectar si es tablet (simple heurística)
+            boolean esTablet = Math.max(width, height) >= 1000;
+
+            // Tamaños adaptativos
+            float puntoPequeno = Math.max(width, height) * (esTablet ? 0.009f : 0.004f);
+            float puntoGrande  = Math.max(width, height) * (esTablet ? 0.018f : 0.008f);
+            float margen        = esTablet ? 40f : 12f;
+            float textoSize     = height * (esTablet ? 0.035f : 0.005f);
+
+            // Pinturas
             Paint voNormal = new Paint();
             voNormal.setColor(0xFFFF0000);
             Paint voExtra = new Paint();
             voExtra.setColor(0xFF000000);
-            //Dibuja un fondo blanco en toda la pantalla
             Paint voFondo = new Paint();
             voFondo.setColor(0xFFFFFFFF);
-            canvas.drawRect(0, 0, getWidth(), getHeight(), voFondo);
+            canvas.drawRect(0, 0, width, height, voFondo);
 
-            long nMinX, nMaxX, nMinY, nMaxY, nValX, nValY, nTamX, nTamY;
-            Integer nInt = new Integer(0);
+            long nMinX = oTransf.nMinX;
+            long nMaxX = oTransf.nMaxX;
+            long nMinY = oTransf.nMinY;
+            long nMaxY = oTransf.nMaxY;
+            long nTamX = width - (int)(2 * margen);
+            long nTamY = height - (int)(2 * margen);
 
-            //Obtiene el tamaño del panel
-            int width = getWidth();
-            int height = getHeight();
-            //Obtiene los valores mínimos y máximos de las coordenadas, para poder dibujarlas
-            nMinX = oTransf.nMinX;
-            nMaxX = oTransf.nMaxX;
-            nMinY = oTransf.nMinY;
-            nMaxY = oTransf.nMaxY;
-
-            //Reducimos el tamaño de la pantalla para que los puntos aparezcan claramente
-            nTamX = width - 30;
-            nTamY = height - 30;
-            if ((nMaxX-nMinX)!=0 && (nMaxY-nMinY)!=0) {
-                //Para cada coordenada, calcula sus coordenadas de pantalla y dibuja un punto
-                int i=0;
+            if ((nMaxX - nMinX) != 0 && (nMaxY - nMinY) != 0) {
                 int vnLimite = Utilidades.getNLecturasNMEA();
-                while (i<vnLimite && oTransf.nDatos[i][0]!=-9999) {
-                    nValX = (((oTransf.nDatos[i][0]-nMinX) * nTamX) / (nMaxX - nMinX)) + 15;
-                    nValY = (((oTransf.nDatos[i][1]-nMinY) * nTamY) / (nMaxY - nMinY)) + 15;
-                    if (oTransf.nSatelites[i]==oTransf.nMaxSatelites || oTransf.nMaxSatelites==0) {
-                        canvas.drawRect((int)nValX, (int)nValY, (int)nValX+2, (int)nValY+2, voNormal);
-                    }
-                    else {
-                        canvas.drawRect((int)nValX, (int)nValY, (int)nValX+2, (int)nValY+2, voExtra);
-                    }
-                    i++;
+                for (int i = 0; i < vnLimite && oTransf.nDatos[i][0] != -9999; i++) {
+                    long nValX = (((oTransf.nDatos[i][0] - nMinX) * nTamX) / (nMaxX - nMinX)) + (int)margen;
+                    long nValY = (((oTransf.nDatos[i][1] - nMinY) * nTamY) / (nMaxY - nMinY)) + (int)margen;
+                    Paint paint = (oTransf.nSatelites[i] == oTransf.nMaxSatelites || oTransf.nMaxSatelites == 0) ? voNormal : voExtra;
+                    canvas.drawCircle(nValX, nValY, puntoPequeno, paint);
                 }
-                //Calcula las coordenadas de pantalla del centroide, y dibuja un punto más grueso
-                if ((nMaxX-nMinX)!=0 && (nMaxY-nMinY)!=0) {
-                    //Centroide de los puntos con el máximo número de satélites de la muestra
-                    nValX = (((oTransf.nCentroGlobal[0][0]-nMinX) * nTamX) / (nMaxX - nMinX)) + 15;
-                    nValY = (((oTransf.nCentroGlobal[0][1]-nMinY) * nTamY) / (nMaxY - nMinY)) + 15;
-                    canvas.drawRect((int)nValX, (int)nValY, (int)nValX+2, (int)nValY+2, voExtra);
-                    //Centroide de todos los puntos
-                    nValX = (((oTransf.nCentro[0][0]-nMinX) * nTamX) / (nMaxX - nMinX)) + 15;
-                    nValY = (((oTransf.nCentro[0][1]-nMinY) * nTamY) / (nMaxY - nMinY)) + 15;
-                    canvas.drawRect((int)nValX, (int)nValY, (int)nValX+4, (int)nValY+4, voNormal);
-                }
+
+                // Centroide global
+                long nValX = (((oTransf.nCentroGlobal[0][0] - nMinX) * nTamX) / (nMaxX - nMinX)) + (int)margen;
+                long nValY = (((oTransf.nCentroGlobal[0][1] - nMinY) * nTamY) / (nMaxY - nMinY)) + (int)margen;
+                canvas.drawCircle(nValX, nValY, puntoPequeno, voExtra);
+
+                // Centroide total
+                nValX = (((oTransf.nCentro[0][0] - nMinX) * nTamX) / (nMaxX - nMinX)) + (int)margen;
+                nValY = (((oTransf.nCentro[0][1] - nMinY) * nTamY) / (nMaxY - nMinY)) + (int)margen;
+                canvas.drawCircle(nValX, nValY, puntoGrande, voNormal);
             }
 
-            //Escribe las coordenadas del centroide en texto
-            String r1 = oTransf.transfCoord(oTransf.obtieneCadena(oTransf.nCentro[0][0]))
-                    + "; " +
-                    oTransf.transfCoord(oTransf.obtieneCadena(oTransf.nCentro[0][1]));
-            String r2 = oContext.getString(R.string.ORI_ML00092) + " (" + oTransf.nCont + ")";
-            String r3 = oTransf.transfCoord(oTransf.obtieneCadena(oTransf.nCentroGlobal[0][0]))
-                    + "; " +
-                    oTransf.transfCoord(oTransf.obtieneCadena(oTransf.nCentroGlobal[0][1]));
+            // Texto
             Paint voTexto = new Paint();
             voTexto.setColor(0xFF000000);
-            voTexto.setTextSize(10);
-            canvas.drawText(r2, 5, 10, voTexto);
+            voTexto.setTextSize(textoSize);
+
+            String r1 = oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentro[0][0])) + "; " +
+                    oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentro[0][1]));
+            String r2 = oContext.getString(R.string.ORI_ML00092) + " (" + oTransf.nCont + ")";
+            String r3 = oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentroGlobal[0][0])) + "; " +
+                    oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentroGlobal[0][1]));
+
+            canvas.drawText(r2, margen, textoSize + 5, voTexto);
             voTexto.setColor(0xFFFF0000);
-            canvas.drawText(r3, 5, height, voTexto);
+            canvas.drawText(r3, margen, height - textoSize * 2, voTexto);
             voTexto.setColor(0xFF000000);
-            canvas.drawText(r1, width/2, height, voTexto);
-            voTexto.setColor(0xFF000000);
-            voTexto.setTextSize(12);
-            canvas.drawText(cTexto, 5, height-20, voTexto);
+            canvas.drawText(r1, width / 2f, height - textoSize * 2, voTexto);
+            //voTexto.setTextSize(textoSize * 1.2f);
+            canvas.drawText(cTexto, margen, height - textoSize, voTexto);
+
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error dibujando centroide", e);
         }
     }
 

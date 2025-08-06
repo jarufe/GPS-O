@@ -72,6 +72,7 @@
     <string name="ORI_MI00016">GPS n\'est pas activé. Voulez-vous aller au menu des paramètres?</string>
     <string name="ORI_MI00017">Voulez-vous supprimer des enregistrements existants?</string>
     <string name="ORI_MI00018">Enregistrements existants supprimés</string>
+    <string name="ORI_MI00019">L\'application n\'a pas l\'autorisation d\'accéder à la liste des appareils Bluetooth</string>
     <string name="ORI_ML00000">Gestion d\'événements</string>
     <string name="ORI_ML00001">Oui</string>
     <string name="ORI_ML00002">Non</string>

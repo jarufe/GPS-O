@@ -8,6 +8,7 @@ import android.graphics.Paint;
 
 import jaru.ori.logic.gpslog.*;
 import jaru.ori.utils.*;
+import jaru.ori.utils.android.UtilsAndroid;
 
 /**
  * Panel que se encarga del dibujado de los datos de un centroide.<BR>
@@ -67,13 +68,13 @@ public class ACentroideView extends View {
             int height = getHeight();
 
             // Detectar si es tablet (simple heurística)
-            boolean esTablet = Math.max(width, height) >= 1000;
+            boolean esTablet = UtilsAndroid.esTablet(getContext());
 
             // Tamaños adaptativos
-            float puntoPequeno = Math.max(width, height) * (esTablet ? 0.009f : 0.004f);
-            float puntoGrande  = Math.max(width, height) * (esTablet ? 0.018f : 0.008f);
-            float margen        = esTablet ? 40f : 12f;
-            float textoSize     = height * (esTablet ? 0.035f : 0.005f);
+            float puntoPequeno = Math.max(width, height) * (esTablet ? 0.014f : 0.007f);
+            float puntoGrande  = Math.max(width, height) * (esTablet ? 0.021f : 0.014f);
+            float margen        = esTablet ? 40f : 30f;
+            float textoSize     = Math.min(width, height) * (esTablet ? 0.037f : 0.030f);
 
             // Pinturas
             Paint voNormal = new Paint();

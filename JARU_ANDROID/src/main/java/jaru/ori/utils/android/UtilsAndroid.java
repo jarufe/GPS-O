@@ -398,4 +398,16 @@ public class UtilsAndroid {
         return resultado;
     }
 
+    /**
+     * Determina si el dispositivo es una tablet basándose en el tamaño de la pantalla.
+     *
+     * @param context El contexto de la aplicación.
+     * @return true si el dispositivo es una tablet, false si es un teléfono.
+     */
+    public static boolean esTablet(Context context) {
+        return (context.getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+    }
+
 }

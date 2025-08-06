@@ -329,6 +329,7 @@
     <string name="ORI_MI00016">GPS is not enabled. Do you want to go to settings menu?</string>
     <string name="ORI_MI00017">Do you want to remove existing records?</string>
     <string name="ORI_MI00018">Existing records removed</string>
+    <string name="ORI_MI00019">The app has no permission to access the list of Bluetooth devices</string>
 
     <string name="ORI_ML00990">1300</string>
     <string name="ORI_ML00991">1311</string>

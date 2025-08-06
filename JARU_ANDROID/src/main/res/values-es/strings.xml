@@ -318,6 +318,7 @@
     <string name="ORI_MI00016">El GPS no está habilitado. ¿Quiere configurarlo?</string>
     <string name="ORI_MI00017">¿Desea borrar los registros de localización existentes?</string>
     <string name="ORI_MI00018">Registros de localización existentes borrados</string>
+    <string name="ORI_MI00019">La aplicación no tiene permiso para acceder a la lista de dispositivos Bluetooth</string>
 
     <string name="ORI_ML00990">1300</string>
     <string name="ORI_ML00991">1311</string>

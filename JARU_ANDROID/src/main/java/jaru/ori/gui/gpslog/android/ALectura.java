@@ -3,6 +3,7 @@ package jaru.ori.gui.gpslog.android;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,14 +35,6 @@ public class ALectura extends Activity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         // ToDo add your GUI initialization code here        
-        //Establece la orientación según el dispositivo sea más ancho (horizontal) o alto (vertical)
-        /*
-        if(UtilsAndroid.esPantallaAncha(this.getResources())) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        }
-         */
         setContentView(R.layout.lectura);
         cTransf = new TransfGeografica();
         oParametro = APrincipal.getOParametro();
@@ -126,7 +119,7 @@ public class ALectura extends Activity {
             ((EditText)findViewById(R.id.txtSatelites)).setText("", TextView.BufferType.EDITABLE);
             ((EditText)findViewById(R.id.txtHdop)).setText("", TextView.BufferType.EDITABLE);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e ("GPS-O", "Error limpiando datos", e);
         }
     }
     /**
@@ -146,7 +139,7 @@ public class ALectura extends Activity {
                 cSentencia = oGpsInterno.getOSentencia().copia();
             mostrarDatosCompletos (cSentencia);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e ("GPS-O", "Error realizando lectura", e);
         }
     }
     /**
@@ -159,11 +152,23 @@ public class ALectura extends Activity {
         limpiarDatos();
         try {
             if (cSentencia.nOk==3) {
-                String vcLong = cTransf.transfCoord(cTransf.obtieneCadena(cTransf.obtieneLong(cSentencia.cLongitud)));
-                cTexto = vcLong + " " + cSentencia.cMeridiano;
+                //String vcLong = cTransf.transfCoord(cTransf.obtieneCadena(cTransf.obtieneLong(cSentencia.cLongitud)));
+                //cTexto = vcLong + " " + cSentencia.cMeridiano;
+                String vcLong = cTransf.transfCoordAGrados(cTransf.obtieneCadena(cTransf.obtieneLong(cSentencia.cLongitud)));
+                if (cSentencia.getCMeridiano().equalsIgnoreCase("W")) {
+                    cTexto = "-" + vcLong;
+                } else {
+                    cTexto = vcLong;
+                }
                 ((EditText)findViewById(R.id.txtLongitud)).setText(cTexto, TextView.BufferType.EDITABLE);
-                String vcLat = cTransf.transfCoord(cTransf.obtieneCadena(cTransf.obtieneLong(cSentencia.cLatitud)));
-                cTexto = vcLat + " " + cSentencia.cHemisferio;
+                //String vcLat = cTransf.transfCoord(cTransf.obtieneCadena(cTransf.obtieneLong(cSentencia.cLatitud)));
+                //cTexto = vcLat + " " + cSentencia.cHemisferio;
+                String vcLat = cTransf.transfCoordAGrados(cTransf.obtieneCadena(cTransf.obtieneLong(cSentencia.cLatitud)));
+                if (cSentencia.getCHemisferio().equalsIgnoreCase("S")) {
+                    cTexto = "-" + vcLat;
+                } else {
+                    cTexto = vcLat;
+                }
                 ((EditText)findViewById(R.id.txtLatitud)).setText(cTexto, TextView.BufferType.EDITABLE);
                 ((EditText)findViewById(R.id.txtAltura)).setText(cSentencia.cAltura, TextView.BufferType.EDITABLE);
                 try {
@@ -185,7 +190,7 @@ public class ALectura extends Activity {
             else
                 ((EditText)findViewById(R.id.txtLongitud)).setText("00:00:00", TextView.BufferType.EDITABLE);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e ("GPS-O", "Error mostrando lectura", e);
             ((EditText)findViewById(R.id.txtLongitud)).setText("ERROR CONVERSION", TextView.BufferType.EDITABLE);
         }
     }

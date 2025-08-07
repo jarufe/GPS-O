@@ -85,10 +85,14 @@ public class ALog extends Activity {
         try {
             SentenciaNMEA cSentencia = new SentenciaNMEA();
             try {
-                if (oParametro.getCGpsInterno().equals("0"))
+                if (oParametro.getCGpsInterno().equals("0")) {
                     cSentencia = PuertoSerie.getOSentencia().copia();
-                else
+                    //Como la sentencia viene de un GPS externo con NMEA, ajusta la hora según el desfase UTC
+                    int vnDesfase = Utilidades.obtenerDesfaseHorarioMinutos();
+                    cSentencia.ajustarHora(vnDesfase);
+                } else {
                     cSentencia = oGpsInterno.getOSentencia().copia();
+                }
                 String vcTexto = "---";
                 if (cSentencia != null)
                     vcTexto = oTransf.transfCoord(cSentencia.getCLongitud()) + " "

@@ -182,9 +182,12 @@ public class TickerLoc implements Runnable{
         oSentencia = new SentenciaNMEA();
         try {
             //Recoge los datos de posicionamiento del GPS interno o externo según la configuración establecida
-            if (oParametro.getCGpsInterno().equals("0"))
+            if (oParametro.getCGpsInterno().equals("0")) {
                 oSentencia = PuertoSerie.getOSentencia().copia();
-            else {
+                //Como la sentencia viene de un GPS externo con NMEA, ajusta la hora según el desfase UTC
+                int vnDesfase = Utilidades.obtenerDesfaseHorarioMinutos();
+                oSentencia.ajustarHora(vnDesfase);
+            } else {
                 if (oGpsInterno!=null)
                     oSentencia = oGpsInterno.getOSentencia().copia();
             }

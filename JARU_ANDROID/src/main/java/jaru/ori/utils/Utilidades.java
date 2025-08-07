@@ -464,6 +464,17 @@ private static int nTamFuente = Integer.parseInt(conRes.getString("nTamFuente"))
     }
 
     /**
+     * Metodo que calcula el desfase horario de la zona UTC del dispositivo y lo convierte a minutos,
+     * teniendo en cuenta que pueden ser desfases negativos y también el cambio de horario de verano
+     * @return int Número de minutos de desfase
+     */
+    public static int obtenerDesfaseHorarioMinutos() {
+        TimeZone tz = TimeZone.getDefault();
+        long offsetMillis = tz.getOffset(System.currentTimeMillis());
+        return (int) (offsetMillis / 60000); // convertir a minutos
+    }
+
+    /**
      * Dado un nombre completo de archivo (path + nombre), este mÃ©todo devuelve un
      * booleano indicando si el archivo existe o no.
      * @param pcFichero String. Path + nombre de archivo del que se quiere conocer su existencia.

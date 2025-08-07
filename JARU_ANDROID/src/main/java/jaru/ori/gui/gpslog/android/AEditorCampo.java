@@ -727,10 +727,14 @@ public class AEditorCampo extends Activity {
         try {
             SentenciaNMEA voSentencia = new SentenciaNMEA();
             try {
-                if (oParametro.getCGpsInterno().equals("0"))
+                if (oParametro.getCGpsInterno().equals("0")) {
                     voSentencia = PuertoSerie.getOSentencia().copia();
-                else
+                    //Como la sentencia viene de un GPS externo con NMEA, ajusta la hora según el desfase UTC
+                    int vnDesfase = Utilidades.obtenerDesfaseHorarioMinutos();
+                    voSentencia.ajustarHora(vnDesfase);
+                } else {
                     voSentencia = oGpsInterno.getOSentencia().copia();
+                }
             } catch (Exception e) {
             }
 //((TextView)AEditorCampo.this.findViewById(R.id.lblCapas)).setText(voSentencia.cLongitud);

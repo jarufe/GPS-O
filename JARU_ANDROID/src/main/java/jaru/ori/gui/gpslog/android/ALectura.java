@@ -11,6 +11,7 @@ import android.widget.*;
 
 import jaru.ori.logic.gpslog.*;
 import jaru.gps.logic.*;
+import jaru.ori.utils.Utilidades;
 import jaru.ori.utils.android.UtilsAndroid;
 
 /*
@@ -133,10 +134,14 @@ public class ALectura extends Activity {
             //Línea para probar el funcionamiento de la actividad
             //PuertoSerie.getOSentencia().procesaSentencia("$GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47");
             //Recoge los datos de posicionamiento del GPS interno o externo según la configuración establecida
-            if (oParametro.getCGpsInterno().equals("0"))
+            if (oParametro.getCGpsInterno().equals("0")) {
                 cSentencia = PuertoSerie.getOSentencia().copia();
-            else
+                //Como la sentencia viene de un GPS externo con NMEA, ajusta la hora según el desfase UTC
+                int vnDesfase = Utilidades.obtenerDesfaseHorarioMinutos();
+                cSentencia.ajustarHora(vnDesfase);
+            } else {
                 cSentencia = oGpsInterno.getOSentencia().copia();
+            }
             mostrarDatosCompletos (cSentencia);
         } catch (Exception e) {
             Log.e ("GPS-O", "Error realizando lectura", e);

@@ -1,5 +1,12 @@
 package jaru.gps.logic;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
+
 /**
  * Clase que representa el contenido desglosado de las sentencias NMEA.
  * <P>
@@ -306,6 +313,23 @@ public class SentenciaNMEA {
         voResul.nOk = this.nOk;
 
         return voResul;
+    }
+
+    public synchronized void ajustarHora(int desfaseMinutos) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("HHmmss", Locale.US);
+            sdf.setTimeZone(TimeZone.getTimeZone("UTC")); // la hora NMEA está en UTC
+            Date horaUTC = sdf.parse(cHora);
+
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(horaUTC);
+            cal.add(Calendar.MINUTE, desfaseMinutos);
+
+            // Convertir de nuevo a String en formato HHmmss
+            this.cHora = sdf.format(cal.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
 }

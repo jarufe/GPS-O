@@ -193,10 +193,14 @@ public class ACentroide extends Activity {
             //PuertoSerie.getOSentencia().procesaSentencia("$GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47");
             //
             try {
-                if (oParametro.getCGpsInterno().equals("0"))
+                if (oParametro.getCGpsInterno().equals("0")) {
                     cSentencia = PuertoSerie.getOSentencia().copia();
-                else
+                    //Como la sentencia viene de un GPS externo con NMEA, ajusta la hora según el desfase UTC
+                    int vnDesfase = Utilidades.obtenerDesfaseHorarioMinutos();
+                    cSentencia.ajustarHora(vnDesfase);
+                } else {
                     cSentencia = oGpsInterno.getOSentencia().copia();
+                }
             } catch (Exception e) {
             }
             /*

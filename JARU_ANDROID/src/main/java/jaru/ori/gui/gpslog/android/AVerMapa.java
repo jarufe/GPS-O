@@ -31,6 +31,7 @@ import jaru.gps.logic.Parametro;
 import jaru.gps.logic.PuertoSerie;
 import jaru.gps.logic.SentenciaNMEA;
 import jaru.ori.logic.gpslog.TransfGeografica;
+import jaru.ori.utils.Utilidades;
 import jaru.ori.utils.android.UtilsAndroid;
 import jaru.ori.web.controlcarrera.RegistroLocalizacion;
 import jaru.red.logic.GestionTransmisiones;
@@ -372,9 +373,12 @@ public class AVerMapa extends Activity {
         oSentencia = new SentenciaNMEA();
         try {
             //Recoge los datos de posicionamiento del GPS interno o externo según la configuración establecida
-            if (oParametro.getCGpsInterno().equals("0"))
+            if (oParametro.getCGpsInterno().equals("0")) {
                 oSentencia = PuertoSerie.getOSentencia().copia();
-            else {
+                //Como la sentencia viene de un GPS externo con NMEA, ajusta la hora según el desfase UTC
+                int vnDesfase = Utilidades.obtenerDesfaseHorarioMinutos();
+                oSentencia.ajustarHora(vnDesfase);
+            } else {
                 if (oGpsInterno!=null)
                     oSentencia = oGpsInterno.getOSentencia().copia();
             }

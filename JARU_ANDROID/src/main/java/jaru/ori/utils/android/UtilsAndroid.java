@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.content.ContentResolver;
 import android.content.ContentUris;
@@ -405,9 +406,21 @@ public class UtilsAndroid {
      * @return true si el dispositivo es una tablet, false si es un teléfono.
      */
     public static boolean esTablet(Context context) {
-        return (context.getResources().getConfiguration().screenLayout
-                & Configuration.SCREENLAYOUT_SIZE_MASK)
-                >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+        // 1. Comprobar tamaño de pantalla
+        boolean screenSizeCheck = (context.getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+
+        // 2. Comprobar si el dispositivo tiene la característica de "tablet"
+        boolean isTabletFeature = context.getPackageManager().hasSystemFeature("android.hardware.screen.landscape");
+
+        // 3. Comprobar densidad de píxeles (opcional)
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        float widthDp = metrics.widthPixels / metrics.density;
+        float heightDp = metrics.heightPixels / metrics.density;
+        boolean isLargeDp = Math.max(widthDp, heightDp) >= 600;
+
+        // Combinamos criterios
+        return screenSizeCheck && (isTabletFeature || isLargeDp);
     }
 
 }

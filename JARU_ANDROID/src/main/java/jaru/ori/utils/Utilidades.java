@@ -405,6 +405,35 @@ private static int nTamFuente = Integer.parseInt(conRes.getString("nTamFuente"))
         }
         return vcResul;
     }
+
+    /**
+     * Dada una cadena que puede contener varias sentencias NMEA, pudiendo suceder que la última
+     * no esté completa, este metodo descompone las cadenas existentes y las añade a una lista
+     * resultante, dejando fuera la sentencia que esté incompleta
+     * @param datosLeidos String Cadena con varias sentencias NMEA
+     * @param oLista ArrayList<String> Lista resultante conteniendo elementos que son cada uno una sentencia NMEA
+     */
+    public static void descomponerVariasSentenciasNMEA(String datosLeidos, ArrayList<String> oLista) {
+        int inicio = 0;
+
+        //Crea la lista si la que se le pasa es nula
+        if (oLista==null)
+            oLista = new ArrayList<>();
+        //Recorre el contenido de la cadena para descomponer sentencias NMEA
+        while (true) {
+            int start = datosLeidos.indexOf('$', inicio);
+            if (start == -1) break;
+
+            int end = datosLeidos.indexOf("\r\n", start);
+            if (end == -1) break; // No hay fin de sentencia, se descarta lo que queda
+
+            String sentencia = datosLeidos.substring(start, end + 2); // incluir \r\n
+            //La sentencia se añadde a la lista resultante
+            oLista.add(sentencia);
+
+            inicio = end + 2;
+        }
+    }
     /**
      * Dados dos valores de tiempos, en formato HH:MM:SS, este mÃ©todo se encarga de
      * restarlos para obtener un valor de tiempo total entre la hora de salida y la

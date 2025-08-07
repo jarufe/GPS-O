@@ -406,7 +406,7 @@ public class APrincipal extends Activity {
             if (vvParams.size()>0)
                 oParametro = (Parametro)vvParams.elementAt(0);
             if (oParametro!=null) {
-                PuertoSerie.establecerConfiguracion(oParametro);
+                PuertoSerie.establecerConfiguracion(oParametro, this);
             }
             //Recupera los datos que se encuentran almacenados en el terminal.
             this.obtenerDatosXML();
@@ -921,7 +921,7 @@ public class APrincipal extends Activity {
             vvParams.addElement((Parametro)oParametro);
             ParametrosXMLHandler.escribirXML(this, vvParams, cPathAplica, "Parametros.xml");
             //Al establecer la nueva configuración del puerto serie, si estaba abierto, lo cierra.
-            PuertoSerie.establecerConfiguracion(oParametro);
+            PuertoSerie.establecerConfiguracion(oParametro, this);
         }
     }
 

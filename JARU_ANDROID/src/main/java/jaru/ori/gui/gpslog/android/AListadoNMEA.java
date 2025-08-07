@@ -127,6 +127,9 @@ public class AListadoNMEA extends AppCompatActivity {
                 PuertoSerie.getOTicker().stop();
                 String vcTexto = PuertoSerie.recibir(500);
                 PuertoSerie.getOTicker().start();
+                //Llama a un método para descomponer las sentencias NMEA y añadirlas a la lista resultante
+                Utilidades.descomponerVariasSentenciasNMEA(vcTexto, oLista);
+                /*
                 while (vcTexto.length()>0) {
                     int vnPos = vcTexto.indexOf('\n');
                     if (vnPos>0) {
@@ -139,6 +142,7 @@ public class AListadoNMEA extends AppCompatActivity {
                     }
                     oLista.add(vcTextoParcial);
                 }
+                 */
             } else {
                 //Si se usa GPS interno, se crea una nueva instancia y se lee
                 if (oGpsInterno==null)

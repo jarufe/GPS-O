@@ -1,13 +1,23 @@
 package jaru.gps.logic;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.util.Log;
+import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
+
 import java.io.*;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.Vector;
+
+import jaru.ori.gui.gpslog.android.R;
 
 
 /**
@@ -27,6 +37,7 @@ public class PuertoSerie {
     private static String cNombre;
 
     private static BluetoothAdapter oBtInterface;
+    private static Context oContext;
     private static Set<BluetoothDevice> vPairedDevices;
     private static BluetoothSocket oSocket;
     private static InputStreamReader is = null;
@@ -117,6 +128,15 @@ public class PuertoSerie {
     public static synchronized java.io.OutputStreamWriter getCanalSalida() {
         return os;
     }
+
+    public static Context getoContext() {
+        return oContext;
+    }
+
+    public static void setoContext(Context oContext) {
+        PuertoSerie.oContext = oContext;
+    }
+
     /**
      * Constructor de la clase.
      * @param poParametro Parametro. Objeto que contiene todos los valores de configuración.
@@ -132,6 +152,27 @@ public class PuertoSerie {
             nBitsStop = Integer.parseInt(poParametro.getCBitsStop());
             cParidad = new String (poParametro.getCParidad());
             cNombre = new String (poParametro.getCPuerto());
+        } catch (Exception e) {
+            Log.e("Error", e.getMessage());
+        }
+    }
+    /**
+     * Constructor de la clase.
+     * @param poParametro Parametro. Objeto que contiene todos los valores de configuración.
+     * @param poContext Context. Contexto de la aplicación, necesario para algunas tareas dentro de la clase
+     */
+    public static synchronized void establecerConfiguracion (Parametro poParametro, Context poContext) {
+        try {
+            if (bAbierto) {
+                cerrar();
+                bAbierto = false;
+            }
+            nBaudios = Integer.parseInt(poParametro.getCBaudios());
+            nBitsPalabra = Integer.parseInt(poParametro.getCBitsPalabra());
+            nBitsStop = Integer.parseInt(poParametro.getCBitsStop());
+            cParidad = new String (poParametro.getCParidad());
+            cNombre = new String (poParametro.getCPuerto());
+            oContext = poContext;
         } catch (Exception e) {
             Log.e("Error", e.getMessage());
         }
@@ -297,15 +338,20 @@ public class PuertoSerie {
 
         try {
             oBtInterface = BluetoothAdapter.getDefaultAdapter();
-            Log.i("Info", "Local BT Interface name is [" + oBtInterface.getName() + "]");
-            vPairedDevices = oBtInterface.getBondedDevices();
-            Log.i("Info","Found [" + vPairedDevices.size() + "] devices.");
-            Iterator<BluetoothDevice> voIt = vPairedDevices.iterator();
-            while (voIt.hasNext())
-            {
-                BluetoothDevice voBD = voIt.next();
-                Log.i("Info", "Name of peer is [" + voBD.getName() + "]");
-                cPort1 = voBD.getName();
+            // Comprobación de si existe permiso otorgado para Bluetooth
+            // Bluetooth (solo BLUETOOTH_CONNECT en Android 12+)
+            if (!(ActivityCompat.checkSelfPermission(oContext, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED &&
+                    (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S))) {
+                Log.i("Info", "Local BT Interface name is [" + oBtInterface.getName() + "]");
+                vPairedDevices = oBtInterface.getBondedDevices();
+                Log.i("Info","Found [" + vPairedDevices.size() + "] devices.");
+                Iterator<BluetoothDevice> voIt = vPairedDevices.iterator();
+                while (voIt.hasNext())
+                {
+                    BluetoothDevice voBD = voIt.next();
+                    Log.i("Info", "Name of peer is [" + voBD.getName() + "]");
+                    cPort1 = voBD.getName();
+                }
             }
         } catch (Exception e) {
             Log.e("Error","Failed in findRobot() " + e.getMessage());
@@ -323,14 +369,19 @@ public class PuertoSerie {
 
         try {
             oBtInterface = BluetoothAdapter.getDefaultAdapter();
-            Log.i("Info", "Local BT Interface name is [" + oBtInterface.getName() + "]");
-            vPairedDevices = oBtInterface.getBondedDevices();
-            Log.i("Info","Found [" + vPairedDevices.size() + "] devices.");
-            Iterator<BluetoothDevice> voIt = vPairedDevices.iterator();
-            while (voIt.hasNext()) {
-                BluetoothDevice voBD = voIt.next();
-                Log.i("Info", "Name of peer is [" + voBD.getName() + "]");
-                vvResul.addElement(voBD.getName());
+            // Comprobación de si existe permiso otorgado para Bluetooth
+            // Bluetooth (solo BLUETOOTH_CONNECT en Android 12+)
+            if (!(ActivityCompat.checkSelfPermission(oContext, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED &&
+                    (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S))) {
+                Log.i("Info", "Local BT Interface name is [" + oBtInterface.getName() + "]");
+                vPairedDevices = oBtInterface.getBondedDevices();
+                Log.i("Info","Found [" + vPairedDevices.size() + "] devices.");
+                Iterator<BluetoothDevice> voIt = vPairedDevices.iterator();
+                while (voIt.hasNext()) {
+                    BluetoothDevice voBD = voIt.next();
+                    Log.i("Info", "Name of peer is [" + voBD.getName() + "]");
+                    vvResul.addElement(voBD.getName());
+                }
             }
         } catch (Exception e) {
             Log.e("Error","Failed in findRobot() " + e.getMessage());
@@ -349,25 +400,30 @@ public class PuertoSerie {
 
         try {
             oBtInterface = BluetoothAdapter.getDefaultAdapter();
-            Log.i("Info", "Local BT Interface name is [" + oBtInterface.getName() + "]");
-            vPairedDevices = oBtInterface.getBondedDevices();
-            Log.i("Info","Found [" + vPairedDevices.size() + "] devices.");
-            Iterator<BluetoothDevice> voIt = vPairedDevices.iterator();
-            while (voIt.hasNext()) {
-                BluetoothDevice voBD = voIt.next();
-                Log.i("Info", "Name of peer is [" + voBD.getName() + "]");
-                if (voBD.getName().equalsIgnoreCase(pcNombre)) {
-                    Log.i("Info", "Found Robot!");
-                    Log.i("Info", voBD.getAddress());
-                    Log.i("Info", voBD.getBluetoothClass().toString());
-                    //Crea un socket de comunicaciones con el Id de RFCOMM de Bluetooth
-                    voSocket = voBD.createRfcommSocketToServiceRecord(java.util.UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"));
-                    voSocket.connect();
-                    bEncontrado = true;
+            // Comprobación de si existe permiso otorgado para Bluetooth
+            // Bluetooth (solo BLUETOOTH_CONNECT en Android 12+)
+            if (!(ActivityCompat.checkSelfPermission(oContext, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED &&
+                    (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S))) {
+                Log.i("Info", "Local BT Interface name is [" + oBtInterface.getName() + "]");
+                vPairedDevices = oBtInterface.getBondedDevices();
+                Log.i("Info","Found [" + vPairedDevices.size() + "] devices.");
+                Iterator<BluetoothDevice> voIt = vPairedDevices.iterator();
+                while (voIt.hasNext()) {
+                    BluetoothDevice voBD = voIt.next();
+                    Log.i("Info", "Name of peer is [" + voBD.getName() + "]");
+                    if (voBD.getName().equalsIgnoreCase(pcNombre)) {
+                        Log.i("Info", "Found Robot!");
+                        Log.i("Info", voBD.getAddress());
+                        Log.i("Info", voBD.getBluetoothClass().toString());
+                        //Crea un socket de comunicaciones con el Id de RFCOMM de Bluetooth
+                        voSocket = voBD.createRfcommSocketToServiceRecord(java.util.UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"));
+                        voSocket.connect();
+                        bEncontrado = true;
+                    }
                 }
-            }
-            if (!bEncontrado) {
-                voSocket = null;
+                if (!bEncontrado) {
+                    voSocket = null;
+                }
             }
         } catch (Exception e) {
             Log.e("Error","Failed in findRobot() " + e.getMessage());

@@ -91,6 +91,7 @@
         <activity
             android:name="jaru.ori.gui.gpslog.android.AEliminarRegistros"
             android:label="@string/ORI_TELIMINARLOG"
+            android:theme="@style/AppTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="jaru.ori.gui.gpslog.android.AEliminarRegistros" />

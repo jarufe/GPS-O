@@ -3245,6 +3245,7 @@ id cerrar6
 id cerrar8
 id chain
 id chains
+id checkBox
 id checkbox
 id checked
 id chkCalidad
@@ -3682,6 +3683,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3900,6 +3902,7 @@ layout design_text_input_start_icon
 layout dual
 layout editorcampo
 layout editorcampo_1
+layout eliminar
 layout file_view
 layout generargpx
 layout generarocad

@@ -77,6 +77,7 @@ id cerrar4
 id cerrar5
 id cerrar6
 id cerrar8
+id checkBox
 id chkCalidad
 id chkEditorAreas
 id chkEditorFondo
@@ -196,6 +197,7 @@ id seleccionar8
 id seleccionarIds0
 id spnPuerto
 id testLoc0
+id textView
 id txtAltitud
 id txtAltura
 id txtBoceto
@@ -237,6 +239,7 @@ layout conflocaliza
 layout dual
 layout editorcampo
 layout editorcampo_1
+layout eliminar
 layout file_view
 layout generargpx
 layout generarocad

@@ -320,6 +320,7 @@
     <string name="ORI_MI00017">Voulez-vous supprimer des enregistrements existants?</string>
     <string name="ORI_MI00018">Enregistrements existants supprimés</string>
     <string name="ORI_MI00019">L\'application n\'a pas l\'autorisation d\'accéder à la liste des appareils Bluetooth</string>
+    <string name="ORI_MI00020">Vous n\'avez pas saisi de coordonnées ou elles ne sont pas valides (nn.nnnnnn)</string>
 
     <string name="ORI_ML00990">1300</string>
     <string name="ORI_ML00991">1311</string>

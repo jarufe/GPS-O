@@ -1,5 +1,7 @@
 package jaru.ori.logic.gpslog;
 
+import android.util.Log;
+
 import jaru.gps.logic.*;
 import java.util.Vector;
 import jaru.ori.utils.*;
@@ -202,9 +204,9 @@ public class TickerNMEA implements Runnable{
                 try {
                     Thread.sleep(nRetardo);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Log.e("GPS-O", "TickerNMEA. Error en hacer la espera", e);
                 }
-                ie.printStackTrace();
+                Log.e("GPS-O", "TickerNMEA. Error en paso del hilo", ie);
             }
         }
     }
@@ -244,6 +246,7 @@ public class TickerNMEA implements Runnable{
                     oSentencia = oGpsInterno.getOSentencia().copia();
             }
         } catch (Exception e) {
+            Log.e("GPS-O", "TickerNMEA. Error creando nueva sentencia para almacenar", e);
         }
         try {
             //Si hay datos correspondientes a una nueva lectura y además está configurado para registrar las lecturas, procede a ello.
@@ -266,10 +269,10 @@ public class TickerNMEA implements Runnable{
                 }
                 //Obtiene los valores transformados de la coordenada leída
                 TransfGeografica poTransf = new TransfGeografica();
-                String cLongitud = poTransf.transfCoord(poTransf.obtieneCadena(poTransf.obtieneLong(oSentencia.cLongitud)));
+                String cLongitud = poTransf.transfCoordAGrados(poTransf.obtieneCadena(poTransf.obtieneLong(oSentencia.cLongitud)));
                 if (oSentencia.cMeridiano.equals("W"))
                     cLongitud = "-" + cLongitud;
-                String cLatitud = poTransf.transfCoord(poTransf.obtieneCadena(poTransf.obtieneLong(oSentencia.cLatitud)));
+                String cLatitud = poTransf.transfCoordAGrados(poTransf.obtieneCadena(poTransf.obtieneLong(oSentencia.cLatitud)));
                 if (oSentencia.cHemisferio.equals("S"))
                     cLatitud = "-" + cLatitud;
                 voRegistro.setCCX(cLongitud);
@@ -282,6 +285,7 @@ public class TickerNMEA implements Runnable{
                 vRegistros.add(voRegistro);
             }
         } catch (Exception e) {
+            Log.e("GPS-O", "TickerNMEA. Error componiendo el registro para grabar", e);
         }
 
     }

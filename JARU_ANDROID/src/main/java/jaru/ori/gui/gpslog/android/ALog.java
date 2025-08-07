@@ -3,6 +3,7 @@ package jaru.ori.gui.gpslog.android;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,7 +22,7 @@ import jaru.ori.logic.gpslog.*;
 import jaru.ori.utils.Utilidades;
 import jaru.ori.utils.android.UtilsAndroid;
 
-/*
+/**
  * Grabación de registros que representan puntos, líneas o áreas.
  * <P>
  * Los datos descriptivos los introduce el usuario: id, descripción, tipo.
@@ -83,23 +84,33 @@ public class ALog extends Activity {
      */
     private void anadirPunto() {
         try {
-            SentenciaNMEA cSentencia = new SentenciaNMEA();
+            SentenciaNMEA voSentencia = new SentenciaNMEA();
             try {
                 if (oParametro.getCGpsInterno().equals("0")) {
-                    cSentencia = PuertoSerie.getOSentencia().copia();
+                    voSentencia = PuertoSerie.getOSentencia().copia();
                     //Como la sentencia viene de un GPS externo con NMEA, ajusta la hora según el desfase UTC
                     int vnDesfase = Utilidades.obtenerDesfaseHorarioMinutos();
-                    cSentencia.ajustarHora(vnDesfase);
+                    voSentencia.ajustarHora(vnDesfase);
                 } else {
-                    cSentencia = oGpsInterno.getOSentencia().copia();
+                    voSentencia = oGpsInterno.getOSentencia().copia();
                 }
                 String vcTexto = "---";
-                if (cSentencia != null)
-                    vcTexto = oTransf.transfCoord(cSentencia.getCLongitud()) + " "
-                            + cSentencia.getCMeridiano() + ", " +
-                            oTransf.transfCoord(cSentencia.getCLatitud()) + " "
-                            + cSentencia.getCHemisferio() +
-                            ", Sat: " + cSentencia.getCSatelites();
+                if (voSentencia != null) {
+                    String vcLong = oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.obtieneLong(voSentencia.getCLongitud())));
+                    if (voSentencia.getCMeridiano().equalsIgnoreCase("W")) {
+                        vcTexto = "-" + vcLong;
+                    } else {
+                        vcTexto = vcLong;
+                    }
+                    vcTexto += "; ";
+                    String vcLat = oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.obtieneLong(voSentencia.getCLatitud())));
+                    if (voSentencia.getCHemisferio().equalsIgnoreCase("S")) {
+                        vcTexto += "-" + vcLat;
+                    } else {
+                        vcTexto += vcLat;
+                    }
+                    vcTexto += "; Sat: " + voSentencia.getCSatelites();
+                }
                 ((TextView)findViewById(R.id.lblSatelites)).setText(vcTexto);
                 ((TextView)findViewById(R.id.lblRegistros)).setText(oApp.getString(R.string.ORI_ML00101) + " " + vRegistros.size());
             } catch (Exception e) {
@@ -115,15 +126,6 @@ public class ALog extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        // ToDo add your GUI initialization code here        
-        //Establece la orientación según el dispositivo sea más ancho (horizontal) o alto (vertical)
-        /*
-        if(UtilsAndroid.esPantallaAncha(this.getResources())) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        }
-         */
         setContentView(R.layout.log);
         try {
             //Recoge de la clase principal los elementos básicos que intervienen en el proceso
@@ -142,7 +144,9 @@ public class ALog extends Activity {
             ((EditText)findViewById(R.id.txtId)).setText(nId + "", TextView.BufferType.EDITABLE);
             //Escribe el número de registros almacenados hasta el momento.
             ((TextView)findViewById(R.id.lblRegistros)).setText(oApp.getString(R.string.ORI_ML00101) + " " + vRegistros.size());
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando parámetros para el funcionamiento de la actividad", e);
+        }
         try {
             //Inicializa el botón para crear un nuevo ID
             this.botNuevoId = (Button)this.findViewById(R.id.botNuevo);
@@ -154,37 +158,45 @@ public class ALog extends Activity {
                     ((EditText)findViewById(R.id.txtId)).setText(nId + "", TextView.BufferType.EDITABLE);
                 }
             });
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando botón para incrementar Id", e);
+        }
         try {
             //Inicializa el botón para añadir un registro
             this.botAnadir = (Button)this.findViewById(R.id.botLogAnadir);
             this.botAnadir.setOnClickListener(new android.view.View.OnClickListener() {
                 //@Override
                 public void onClick(View v) {
-                    ALog.this.anadirRegistro();
+                    anadirRegistro();
                 }
             });
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando botón para nuevos registros", e);
+        }
         try {
             //Inicializa el botón para calcular un centroide
             this.botCentroide = (Button)this.findViewById(R.id.botLogCentroide);
             this.botCentroide.setOnClickListener(new android.view.View.OnClickListener() {
                 //@Override
                 public void onClick(View v) {
-                    ALog.this.calcularCentroide();
+                    calcularCentroide();
                 }
             });
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando botón para centroide", e);
+        }
         try {
             //Inicializa el botón para grabar registros de forma automática
             this.botAuto = (Button)this.findViewById(R.id.botLogAuto);
             this.botAuto.setOnClickListener(new android.view.View.OnClickListener() {
                 //@Override
                 public void onClick(View v) {
-                    ALog.this.cambiarGrabarAuto();
+                    cambiarGrabarAuto();
                 }
             });
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando botón para grabación automática", e);
+        }
         try {
             //Inicializa la lista de tipos, para añadir el listener de selección
             this.oTipos = (Spinner)this.findViewById(R.id.lstTipo);
@@ -195,7 +207,9 @@ public class ALog extends Activity {
                 public void onNothingSelected(AdapterView<?> arg0) {
                 }
             });
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando lista de tipos de objetos", e);
+        }
         //Inicializa los demás elementos GUI
         this.limpiarDatos(true);
         oThread = new Thread(new LogRun());
@@ -268,7 +282,7 @@ public class ALog extends Activity {
             case ACTIVITY_CENTROIDE:
                 //Cuando vuelve del cuadro de diálogo de cálculo de centroide
                 //actualiza el valor de la coordenada para el registro actual.
-                ALog.this.actualizarCoordenada();
+                actualizarCoordenada();
                 break;
         }
     }
@@ -299,9 +313,8 @@ public class ALog extends Activity {
                 //Se muestra un mensaje con el resultado correcto o incorrecto del proceso.
                 Toast.makeText(this.getApplicationContext(), vcMensaje, Toast.LENGTH_LONG).show();
             }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error grabando a fichero", e);
         }
     }
     /**
@@ -329,7 +342,9 @@ public class ALog extends Activity {
             ((EditText)findViewById(R.id.txtLongitud)).setText("", TextView.BufferType.EDITABLE);
             ((EditText)findViewById(R.id.txtLatitud)).setText("", TextView.BufferType.EDITABLE);
             ((EditText)findViewById(R.id.txtAltitud)).setText("", TextView.BufferType.EDITABLE);
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error limpiando datos de pantalla", e);
+        }
     }
     /**
      * Dada una selección de tipo de punto, actualiza el listado de tipos OCAD 
@@ -368,14 +383,20 @@ public class ALog extends Activity {
             voAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             //Rellena los nuevos datos de la lista de tipos OCAD
             for (int i=vnComienzo; i<=vnFinal; i++) {
-                int vnId = oRes.getIdentifier("ORI_ML0" + i, "string", "jaru.ori.gui.gpslog.android");
-                String vcTexto = oApp.getString(vnId);
-                voAdapter1.add(vcTexto);
+                String resourceName = "ORI_ML0" + String.format("%04d", i);
+                int vnId = oRes.getIdentifier(resourceName, "string", getPackageName());
+
+                if (vnId != 0) {
+                    String vcTexto = oApp.getString(vnId);
+                    voAdapter1.add(vcTexto);
+                } else {
+                    Log.w("GPS-O", "No se encontró el recurso: " + resourceName);
+                }
             }
             voSpinner1.setAdapter(voAdapter1);
             voSpinner1.setSelection(0);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error actualizando lista de objetos OCAD a partir del tipo seleccionado", e);
         }
     }
     /**
@@ -407,13 +428,18 @@ public class ALog extends Activity {
             int vnElemento = vnComienzo + ((Spinner)findViewById(R.id.lstTipoOCAD)).getSelectedItemPosition();
             //Recupera el texto del elemento seleccionado y se queda sólo con la 
             //parte que representa al código OCAD
-            int vnId = oRes.getIdentifier("ORI_ML0" + vnElemento, "string", "jaru.ori.gui.gpslog.android");
-            vcResul = oApp.getString(vnId);
-            int vnPos = vcResul.indexOf(" ");
-            if (vnPos>0)
-                vcResul = vcResul.substring(0, vnPos);
+            String resourceName = "ORI_ML0" + String.format("%04d", vnElemento);
+            int vnId = oRes.getIdentifier(resourceName, "string", getPackageName());
+            if (vnId != 0) {
+                vcResul = oApp.getString(vnId);
+                int vnPos = vcResul.indexOf(" ");
+                if (vnPos>0)
+                    vcResul = vcResul.substring(0, vnPos);
+            } else {
+                Log.w("GPS-O", "No se encontró el recurso: " + resourceName);
+            }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error obteniendo tipo de OCAD seleccionado", e);
         }
         return vcResul;
     }
@@ -425,29 +451,40 @@ public class ALog extends Activity {
         try {
             //Sólo responde si no se está realizando la toma automática de datos
             if (!bCorriendo) {
-                //Crea un nuevo registro.
-                Registro voRegistro = new Registro();
-                voRegistro.setCID(((EditText)findViewById(R.id.txtId)).getText().toString());
-                voRegistro.setNTipo(((Spinner)findViewById(R.id.lstTipo)).getSelectedItemPosition());
-                //Tipos 3 y 4 corresponden a líneas O-Pie y líneas O-BM => tipo 1
-                if (voRegistro.getNTipo()>2)
-                    voRegistro.setNTipo(1);
-                voRegistro.setCTipoOCAD(obtenerTipoOCADSeleccionado());
-                voRegistro.setCTipoOBM("");
-                voRegistro.setCDesc(((EditText)findViewById(R.id.txtDescripcion)).getText().toString());
-                voRegistro.setCCX(((EditText)findViewById(R.id.txtLongitud)).getText().toString());
-                voRegistro.setCCY(((EditText)findViewById(R.id.txtLatitud)).getText().toString());
-                voRegistro.setCElev(((EditText)findViewById(R.id.txtAltitud)).getText().toString());
-                voRegistro.setCFecha(Utilidades.obtenerFechaHoraParaGpx());
-                //Añade el nuevo registro al conjunto de datos
-                vRegistros.add((Registro)voRegistro);
-                //Muestra en una etiqueta de texto el número de registros existente.
-                ((TextView)findViewById(R.id.lblRegistros)).setText(oApp.getString(R.string.ORI_ML00101) + " " + vRegistros.size());
-                //Limpia el contenido del componente, pero deja seleccionados los valores de ID, Tipo y Tipo OCAD, por si el siguiente punto pertenece al mismo objeto.
-                limpiarDatos(false);
+                //Comprueba que se ha escrito una coordenada correcta
+                String vcLong = ((EditText)findViewById(R.id.txtLongitud)).getText().toString();
+                String vcLat = ((EditText)findViewById(R.id.txtLatitud)).getText().toString();
+                vcLong = vcLong.replace(',', '.').trim();
+                vcLat = vcLat.replace(',', '.').trim();
+                if (!vcLong.isEmpty() && !vcLat.isEmpty() &&
+                        Utilidades.esLongitudValida(vcLong) && Utilidades.esLatitudValida(vcLat)) {
+                    //Crea un nuevo registro.
+                    Registro voRegistro = new Registro();
+                    voRegistro.setCID(((EditText) findViewById(R.id.txtId)).getText().toString());
+                    voRegistro.setNTipo(((Spinner) findViewById(R.id.lstTipo)).getSelectedItemPosition());
+                    //Tipos 3 y 4 corresponden a líneas O-Pie y líneas O-BM => tipo 1
+                    if (voRegistro.getNTipo() > 2)
+                        voRegistro.setNTipo(1);
+                    voRegistro.setCTipoOCAD(obtenerTipoOCADSeleccionado());
+                    voRegistro.setCTipoOBM("");
+                    voRegistro.setCDesc(((EditText) findViewById(R.id.txtDescripcion)).getText().toString());
+                    voRegistro.setCCX(vcLong);
+                    voRegistro.setCCY(vcLat);
+                    voRegistro.setCElev(((EditText) findViewById(R.id.txtAltitud)).getText().toString());
+                    voRegistro.setCFecha(Utilidades.obtenerFechaHoraParaGpx());
+                    //Añade el nuevo registro al conjunto de datos
+                    vRegistros.add((Registro) voRegistro);
+                    //Muestra en una etiqueta de texto el número de registros existente.
+                    ((TextView) findViewById(R.id.lblRegistros)).setText(oApp.getString(R.string.ORI_ML00101) + " " + vRegistros.size());
+                    //Limpia el contenido del componente, pero deja seleccionados los valores de ID, Tipo y Tipo OCAD, por si el siguiente punto pertenece al mismo objeto.
+                    limpiarDatos(false);
+                } else {
+                    String vcMensaje = this.getString(R.string.ORI_MI00020);
+                    Toast.makeText(this.getApplicationContext(), vcMensaje, Toast.LENGTH_LONG).show();
+                }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error añadiendo registro de datos", e);
         }
     }
     /**
@@ -463,7 +500,7 @@ public class ALog extends Activity {
                 startActivityForResult(viIntent, ACTIVITY_CENTROIDE);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error llamando a actividad de Centroide", e);
         }
     }
     /**
@@ -472,18 +509,18 @@ public class ALog extends Activity {
     private void actualizarCoordenada () {
         try {
             TransfGeografica voTransf = APrincipal.getOTransf();
-            String cLongitud = voTransf.transfCoord(voTransf.obtieneCadena(voTransf.nCentro[0][0]));
+            String cLongitud = voTransf.transfCoordAGrados(voTransf.obtieneCadena(voTransf.nCentro[0][0]));
             if (APrincipal.getCMeridiano().equals("W"))
                 cLongitud = "-" + cLongitud;
             ((EditText)findViewById(R.id.txtLongitud)).setText(cLongitud, TextView.BufferType.EDITABLE);
-            String cLatitud = voTransf.transfCoord(voTransf.obtieneCadena(voTransf.nCentro[0][1]));
+            String cLatitud = voTransf.transfCoordAGrados(voTransf.obtieneCadena(voTransf.nCentro[0][1]));
             if (APrincipal.getCHemisferio().equals("S"))
                 cLatitud = "-" + cLatitud;
             ((EditText)findViewById(R.id.txtLatitud)).setText(cLatitud, TextView.BufferType.EDITABLE);
             String cAltitud = voTransf.nCentro[0][2] + "";
             ((EditText)findViewById(R.id.txtAltitud)).setText(cAltitud, TextView.BufferType.EDITABLE);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error actualizando datos de coordenadas a partir de Centroide", e);
         }
     }
     /**
@@ -526,7 +563,7 @@ public class ALog extends Activity {
                 botAuto.setText(oApp.getString(R.string.ORI_ML00106), TextView.BufferType.EDITABLE);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error cambiando grabación auto", e);
         }
     }
 

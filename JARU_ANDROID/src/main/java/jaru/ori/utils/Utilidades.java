@@ -617,6 +617,23 @@ private static int nTamFuente = Integer.parseInt(conRes.getString("nTamFuente"))
         }
         return vbResul;
     }
+    public static boolean esLatitudValida(String texto) {
+        try {
+            double valor = Double.parseDouble(texto);
+            return valor >= -90.0 && valor <= 90.0;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public static boolean esLongitudValida(String texto) {
+        try {
+            double valor = Double.parseDouble(texto);
+            return valor >= -180.0 && valor <= 180.0;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 
     /**
      * Dadas dos coordenadas en forma de grados de latitud y longitud,

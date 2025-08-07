@@ -2,6 +2,7 @@ package jaru.ori.gui.gpslog.android;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -189,9 +190,7 @@ public class ACentroide extends Activity {
     private void anadirPunto() {
         try {
             SentenciaNMEA cSentencia = new SentenciaNMEA();
-            //Línea para probar el funcionamiento de la actividad
-            //PuertoSerie.getOSentencia().procesaSentencia("$GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47");
-            //
+            Log.d("GPS-O", "Comienzo proceso para añadir punto al centroide");
             try {
                 if (oParametro.getCGpsInterno().equals("0")) {
                     cSentencia = PuertoSerie.getOSentencia().copia();
@@ -202,17 +201,11 @@ public class ACentroide extends Activity {
                     cSentencia = oGpsInterno.getOSentencia().copia();
                 }
             } catch (Exception e) {
+                Log.e("GPS-O", "Error manejando GPS interno o externo", e);
             }
-            /*
-            if (oTransf.nCont == 1) {
-                cSentencia.cLongitud = "1131.100";
-            } else if (oTransf.nCont == 2) {
-                cSentencia.cLongitud = "1132.000";
-                cSentencia.cLatitud = "4807.156";
-            }
-             */
-
+            Log.d("GPS-O", "Compruebo si tengo coordenadas");
             if (cSentencia.cLongitud.length()>0 && cSentencia.cLatitud.length()>0 && oTransf.nCont<Utilidades.getNLecturasNMEA()) {
+                Log.d("GPS-O", "Hay nueva coordenada");
                 oTransf.nDatos[(int)oTransf.nCont][0] = oTransf.obtieneLong(cSentencia.cLongitud);
                 oTransf.nDatos[(int)oTransf.nCont][1] = oTransf.obtieneLong(cSentencia.cLatitud);
                 int vnAltura = (int)Double.parseDouble(cSentencia.getCAltura());
@@ -226,19 +219,24 @@ public class ACentroide extends Activity {
                 cHemisferio = cSentencia.cHemisferio;
                 cMeridiano = cSentencia.cMeridiano;
             }
+            Log.d("GPS-O", "Añado info de Fix y número de satélites");
             String vcFix = this.getApplicationContext().getString(R.string.ORI_ML00001);
             if (cSentencia.getCFix().equals("0"))
                 vcFix = this.getApplicationContext().getString(R.string.ORI_ML00002);
             String vcTexto = this.getApplicationContext().getString(R.string.ORI_ML00108) + ": " + vcFix;
             vcTexto = vcTexto + "  " + this.getApplicationContext().getString(R.string.ORI_ML00109) + ": " + cSentencia.getCSatelites();
+            Log.d("GPS-O", "Calcula el nuevo centroide");
             //Calcula el nuevo centroide
             oTransf.centroide();
             //Pasa los datos a la vista, para repintarlos en pantalla
+            Log.d("GPS-O", "Pasa los datos a la vista para repintarlos");
             iPanel.setOTransf(oTransf);
             iPanel.setCTexto(vcTexto);
+            iPanel.setcHemisferio(cHemisferio);
+            iPanel.setcMeridiano(cMeridiano);
             iPanel.invalidate();
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error añadiendo punto al centroide", e);
         }
     }
 

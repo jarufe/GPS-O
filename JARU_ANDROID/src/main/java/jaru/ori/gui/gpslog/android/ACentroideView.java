@@ -22,6 +22,8 @@ public class ACentroideView extends View {
     private TransfGeografica oTransf;
     private Context oContext;
     private String cTexto;
+    private String cHemisferio = "N";
+    private String cMeridiano = "W";
 
     /**
      * Constructor por defecto de la clase.
@@ -59,6 +61,22 @@ public class ACentroideView extends View {
      */
     public String getCTexto() {
         return cTexto;
+    }
+
+    public String getcHemisferio() {
+        return cHemisferio;
+    }
+
+    public void setcHemisferio(String cHemisferio) {
+        this.cHemisferio = cHemisferio;
+    }
+
+    public String getcMeridiano() {
+        return cMeridiano;
+    }
+
+    public void setcMeridiano(String cMeridiano) {
+        this.cMeridiano = cMeridiano;
     }
 
     @Override
@@ -117,11 +135,20 @@ public class ACentroideView extends View {
             voTexto.setColor(0xFF000000);
             voTexto.setTextSize(textoSize);
 
-            String r1 = oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentro[0][0])) + "; " +
-                    oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentro[0][1]));
+            String vcSignoX = "";
+            String vcSignoY = "";
+            if (cMeridiano.equalsIgnoreCase("W")) {
+                vcSignoX = "-";
+            }
+            if (cHemisferio.equalsIgnoreCase("S")) {
+                vcSignoY = "-";
+            }
+
+            String r1 = vcSignoX + oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentro[0][0])) + "; " +
+                    vcSignoY + oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentro[0][1]));
             String r2 = oContext.getString(R.string.ORI_ML00092) + " (" + oTransf.nCont + ")";
-            String r3 = oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentroGlobal[0][0])) + "; " +
-                    oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentroGlobal[0][1]));
+            String r3 = vcSignoX + oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentroGlobal[0][0])) + "; " +
+                    vcSignoY + oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.nCentroGlobal[0][1]));
 
             canvas.drawText(r2, margen, textoSize + 5, voTexto);
             voTexto.setColor(0xFFFF0000);

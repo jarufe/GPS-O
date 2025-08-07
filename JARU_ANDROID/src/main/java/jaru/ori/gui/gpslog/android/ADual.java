@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -33,7 +34,7 @@ import jaru.ori.logic.gpslog.xml.RegistrosXMLHandler;
 import jaru.ori.utils.Utilidades;
 import jaru.ori.utils.android.UtilsAndroid;
 
-/*
+/**
  * Grabación de registros que representan caminos de forma dual.
  * <P>
  * Los datos descriptivos los introduce el usuario: id, descripción, tipo.
@@ -86,29 +87,39 @@ public class ADual extends Activity {
      */
     private void anadirPunto() {
         try {
-            SentenciaNMEA cSentencia = new SentenciaNMEA();
+            SentenciaNMEA voSentencia = new SentenciaNMEA();
             try {
                 if (oParametro.getCGpsInterno().equals("0")) {
-                    cSentencia = PuertoSerie.getOSentencia().copia();
+                    voSentencia = PuertoSerie.getOSentencia().copia();
                     //Como la sentencia viene de un GPS externo con NMEA, ajusta la hora según el desfase UTC
                     int vnDesfase = Utilidades.obtenerDesfaseHorarioMinutos();
-                    cSentencia.ajustarHora(vnDesfase);
+                    voSentencia.ajustarHora(vnDesfase);
                 } else {
-                    cSentencia = oGpsInterno.getOSentencia().copia();
+                    voSentencia = oGpsInterno.getOSentencia().copia();
                 }
                 String vcTexto = "---";
-                if (cSentencia != null)
-                    vcTexto = oTransf.transfCoord(cSentencia.getCLongitud()) + " "
-                            + cSentencia.getCMeridiano() + ", " +
-                            oTransf.transfCoord(cSentencia.getCLatitud()) + " "
-                            + cSentencia.getCHemisferio() +
-                            ", Sat: " + cSentencia.getCSatelites();
+                if (voSentencia != null) {
+                    String vcLong = oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.obtieneLong(voSentencia.getCLongitud())));
+                    if (voSentencia.getCMeridiano().equalsIgnoreCase("W")) {
+                        vcTexto = "-" + vcLong;
+                    } else {
+                        vcTexto = vcLong;
+                    }
+                    vcTexto += "; ";
+                    String vcLat = oTransf.transfCoordAGrados(oTransf.obtieneCadena(oTransf.obtieneLong(voSentencia.getCLatitud())));
+                    if (voSentencia.getCHemisferio().equalsIgnoreCase("S")) {
+                        vcTexto += "-" + vcLat;
+                    } else {
+                        vcTexto += vcLat;
+                    }
+                    vcTexto += "; Sat: " + voSentencia.getCSatelites();
+                }
                 ((TextView)findViewById(R.id.lblSatelites)).setText(vcTexto);
                 ((TextView)findViewById(R.id.lblRegistros)).setText(oApp.getString(R.string.ORI_ML00101) + " " + vRegistros.size());
             } catch (Exception e) {
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error en el método de añadir un punto", e);
         }
     }
 
@@ -119,15 +130,6 @@ public class ADual extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        // ToDo add your GUI initialization code here
-        //Establece la orientación según el dispositivo sea más ancho (horizontal) o alto (vertical)
-        /*
-        if(UtilsAndroid.esPantallaAncha(this.getResources())) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        }
-         */
         setContentView(R.layout.dual);
         try {
             //Recoge de la clase principal los elementos básicos que intervienen en el proceso
@@ -146,7 +148,9 @@ public class ADual extends Activity {
             ((EditText)findViewById(R.id.txtId)).setText(nId + "", TextView.BufferType.EDITABLE);
             //Escribe el número de registros almacenados hasta el momento.
             ((TextView)findViewById(R.id.lblRegistros)).setText(oApp.getString(R.string.ORI_ML00101) + " " + vRegistros.size());
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando parámetros para el funcionamiento de la actividad", e);
+        }
         try {
             //Inicializa el botón para crear un nuevo ID
             this.botNuevoId = (Button)this.findViewById(R.id.botNuevo);
@@ -158,7 +162,9 @@ public class ADual extends Activity {
                     ((EditText)findViewById(R.id.txtId)).setText(nId + "", TextView.BufferType.EDITABLE);
                 }
             });
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando botón para incrementar Id", e);
+        }
         try {
             //Inicializa el botón para grabar registros de forma automática
             this.botAuto = (Button)this.findViewById(R.id.botLogAuto);
@@ -168,7 +174,9 @@ public class ADual extends Activity {
                     ADual.this.cambiarGrabarAuto();
                 }
             });
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error inicializando botón para grabación automática", e);
+        }
         //Inicializa los demás elementos GUI
         this.limpiarDatos(true);
         oThread = new Thread(new DualRun());
@@ -242,7 +250,7 @@ public class ADual extends Activity {
                 if (vRegistros!=null)
                     RegistrosXMLHandler.escribirXML(this, vRegistros, vcPathDatos, "Registros.xml");
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e("GPS-O", "Error grabando en XML", e);
                 vbCorrecto = false;
             }
             if (vbCorrecto)
@@ -255,7 +263,7 @@ public class ADual extends Activity {
             }
         }
         catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error grabando a fichero", e);
         }
     }
     /**
@@ -274,9 +282,15 @@ public class ADual extends Activity {
                 voAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 //Rellena los nuevos datos de la lista de tipos O-Pie
                 for (int i=vnComienzo; i<=vnFinal; i++) {
-                    int vnId = oRes.getIdentifier("ORI_ML0" + i, "string", "jaru.ori.gui.gpslog.android");
-                    String vcTexto = oApp.getString(vnId);
-                    voAdapter1.add(vcTexto);
+                    String resourceName = "ORI_ML0" + String.format("%04d", i);
+                    int vnId = oRes.getIdentifier(resourceName, "string", getPackageName());
+
+                    if (vnId != 0) {
+                        String vcTexto = oApp.getString(vnId);
+                        voAdapter1.add(vcTexto);
+                    } else {
+                        Log.w("GPS-O", "No se encontró el recurso: " + resourceName);
+                    }
                 }
                 voSpinner1.setAdapter(voAdapter1);
                 voSpinner1.setSelection(0);
@@ -291,9 +305,15 @@ public class ADual extends Activity {
                 voAdapter2.add("");
                 //Rellena los nuevos datos de la lista de tipos OBM
                 for (int i=vnComienzo; i<=vnFinal; i++) {
-                    int vnId = oRes.getIdentifier("ORI_ML0" + i, "string", "jaru.ori.gui.gpslog.android");
-                    String vcTexto = oApp.getString(vnId);
-                    voAdapter2.add(vcTexto);
+                    String resourceName = "ORI_ML0" + String.format("%04d", i);
+                    int vnId = oRes.getIdentifier(resourceName, "string", getPackageName());
+
+                    if (vnId != 0) {
+                        String vcTexto = oApp.getString(vnId);
+                        voAdapter2.add(vcTexto);
+                    } else {
+                        Log.w("GPS-O", "No se encontró el recurso: " + resourceName);
+                    }
                 }
                 voSpinner2.setAdapter(voAdapter2);
                 voSpinner2.setSelection(0);
@@ -301,7 +321,9 @@ public class ADual extends Activity {
                 ((EditText)findViewById(R.id.txtId)).setText(nId + "", TextView.BufferType.EDITABLE);
             }
             ((EditText)findViewById(R.id.txtDescripcion)).setText("", TextView.BufferType.EDITABLE);
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("GPS-O", "Error actualizando lista de objetos OCAD", e);
+        }
     }
     /**
      * Lee el tipo seleccionado de la lista desplegable correspondiente y recupera a partir
@@ -333,14 +355,19 @@ public class ADual extends Activity {
             //Recupera el texto del elemento seleccionado y se queda sólo con la
             //parte que representa al código OCAD
             if (vnElemento>0) {
-                int vnId = oRes.getIdentifier("ORI_ML0" + vnElemento, "string", "jaru.ori.gui.gpslog.android");
-                vcResul = oApp.getString(vnId);
-                vnPos = vcResul.indexOf(" ");
-                if (vnPos>0)
-                    vcResul = vcResul.substring(0, vnPos);
+                String resourceName = "ORI_ML0" + String.format("%04d", vnElemento);
+                int vnId = oRes.getIdentifier(resourceName, "string", getPackageName());
+                if (vnId != 0) {
+                    vcResul = oApp.getString(vnId);
+                    vnPos = vcResul.indexOf(" ");
+                    if (vnPos>0)
+                        vcResul = vcResul.substring(0, vnPos);
+                } else {
+                    Log.w("GPS-O", "No se encontró el recurso: " + resourceName);
+                }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error obteniendo tipo de OCAD seleccionado", e);
         }
         return vcResul;
     }

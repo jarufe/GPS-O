@@ -116,7 +116,7 @@ public class ALog extends Activity {
             } catch (Exception e) {
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error en el método de añadir un punto", e);
         }
     }
     /**
@@ -302,7 +302,7 @@ public class ALog extends Activity {
                 if (vRegistros!=null)
                     RegistrosXMLHandler.escribirXML(this, vRegistros, vcPathDatos, "Registros.xml");
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e("GPS-O", "Error grabando en XML", e);
                 vbCorrecto = false;
             }
             if (vbCorrecto)

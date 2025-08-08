@@ -236,6 +236,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="jaru.sensor.gui.android.ABrujula"
+            android:exported="true"
+            android:label="@string/ORI_TBRUJULA" >
+            <intent-filter>
+                <action android:name="jaru.sensor.gui.android.ABrujula" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"

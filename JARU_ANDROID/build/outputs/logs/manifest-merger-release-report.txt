@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-212:12
-INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-212:12
-INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-212:12
-INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-212:12
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-221:12
+INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-221:12
+INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-221:12
+INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:2:1-221:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\42209e6bd64014d675f6273e3ec98130\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:17:1-44:12
 MERGED from [com.google.android.gms:play-services-vision:20.1.3] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\c2d1edb150e3713f235691b13b2bd7de\transformed\jetified-play-services-vision-20.1.3\AndroidManifest.xml:2:1-9:12
@@ -122,8 +122,8 @@ MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.a
 	android:required
 		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:22:9-32
 application
-ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:24:5-210:19
-INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:24:5-210:19
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:24:5-219:19
+INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:24:5-219:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\42209e6bd64014d675f6273e3ec98130\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\42209e6bd64014d675f6273e3ec98130\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\8911e820e8b24d0751d2aa162033b992\transformed\jetified-play-services-maps-19.0.0\AndroidManifest.xml:36:5-42:19
@@ -440,20 +440,34 @@ action#jaru.ori.gui.gpslog.android.AVerMapa
 ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:197:17-79
 	android:name
 		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:197:25-76
+activity#jaru.sensor.gui.android.ABrujula
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:201:9-209:20
+	android:label
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:203:13-49
+	android:exported
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:204:13-36
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:202:13-60
+intent-filter#action:name:jaru.sensor.gui.android.ABrujula+category:name:android.intent.category.DEFAULT
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:205:13-208:29
+action#jaru.sensor.gui.android.ABrujula
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:206:17-75
+	android:name
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:206:25-72
 meta-data#com.google.android.gms.version
-ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:203:9-205:69
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:212:9-214:69
 MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\64308c9fae058390fe4627fe0847b6a1\transformed\jetified-play-services-basement-18.5.0\AndroidManifest.xml:21:9-23:69
 MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\javier.arufe\.gradle\caches\8.13\transforms\64308c9fae058390fe4627fe0847b6a1\transformed\jetified-play-services-basement-18.5.0\AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:205:13-66
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:214:13-66
 	android:name
-		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:204:13-58
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:213:13-58
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:206:9-208:71
+ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:215:9-217:71
 	android:value
-		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:208:13-68
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:217:13-68
 	android:name
-		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:207:13-62
+		ADDED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml:216:13-62
 uses-sdk
 INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Programacion\ProyectosAndroidStudio\JARU_ANDROID\JARU_ANDROID\src\main\AndroidManifest.xml

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.graphics.Paint;
 
+import jaru.ori.utils.android.UtilsAndroid;
 import jaru.sensor.logic.android.*;
 import jaru.ori.utils.*;
 
@@ -108,6 +109,17 @@ public class ABrujulaView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         try {
+            int width = getWidth();
+            int height = getHeight();
+
+            // Detectar si es tablet (simple heurística)
+            boolean esTablet = UtilsAndroid.esTablet(getContext());
+
+            // Tamaños adaptativos
+            float margen        = esTablet ? 40f : 30f;
+            float textoSize     = Math.min(width, height) * (esTablet ? 0.050f : 0.040f);
+            float textoSize2     = Math.min(width, height) * (esTablet ? 0.120f : 0.100f);
+
             String vcTexto = Conversor.corregirLectura(nGrados, nDesvio) + "";
             Paint voNormal = new Paint();
             voNormal.setColor(0xFFFF0000);
@@ -141,20 +153,20 @@ public class ABrujulaView extends View {
             //Dibuja un texto con desvío
             Paint voTexto = new Paint();
             voTexto.setColor(0xFF000000);
-            voTexto.setTextSize(24);
+            voTexto.setTextSize(textoSize); //Originalmente estaba a 24
             String vcPrimeraLinea = "";
             if (nOpcion==1) {
                 vcPrimeraLinea = cTexto + "    ";
             }
             vcPrimeraLinea = vcPrimeraLinea + cSensor;
             //Muestra un texto indicando si se está usando la brújula o el acelerómetro
-            canvas.drawText(vcPrimeraLinea, 5, 20, voTexto);
-            canvas.drawText("Desvio: " + nDesvio, 5, 50, voTexto);
-            canvas.drawText(cVarios, 5, 80, voTexto);
+            canvas.drawText(vcPrimeraLinea, margen, textoSize + 5, voTexto);
+            canvas.drawText("Desvio: " + nDesvio, margen, (textoSize * 2) + 5, voTexto);
+            canvas.drawText(cVarios, margen, (textoSize * 3) + 5, voTexto);
             //Dibuja un texto en grande con la lectura de grados
             Paint voTexto2 = new Paint();
             voTexto2.setColor(0xFF0000FF);
-            voTexto2.setTextSize(100);
+            voTexto2.setTextSize(textoSize2); //Originalmente estaba a 100
             voTexto2.setShadowLayer(1f, 0f, 1f, Color.DKGRAY);
             Rect voLim = new Rect();
             voTexto2.getTextBounds(vcTexto, 0, vcTexto.length(), voLim);

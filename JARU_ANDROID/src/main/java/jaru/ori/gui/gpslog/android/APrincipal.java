@@ -1,5 +1,6 @@
 package jaru.ori.gui.gpslog.android;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -606,9 +607,31 @@ public class APrincipal extends Activity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         if (requestCode == PermisosUtil.CODIGO_SOLICITUD_PERMISOS) {
+            boolean ubicacionConcedida = false;
+
             for (int i = 0; i < permissions.length; i++) {
                 if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "Permiso denegado: " + permissions[i], Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.ORI_MI00021 + ": " + permissions[i], Toast.LENGTH_LONG).show();
+                } else if (permissions[i].equals(Manifest.permission.ACCESS_FINE_LOCATION)) {
+                    ubicacionConcedida = true;
+                }
+            }
+
+            // Si se concedió ACCESS_FINE_LOCATION, ahora pide ACCESS_BACKGROUND_LOCATION si aplica
+            if (ubicacionConcedida) {
+                PermisosUtil.solicitarPermisoBackgroundSiAplica(this);
+            }
+        }
+
+        if (requestCode == PermisosUtil.CODIGO_SOLICITUD_BACKGROUND) {
+            for (int i = 0; i < permissions.length; i++) {
+                if (permissions[i].equals(Manifest.permission.ACCESS_BACKGROUND_LOCATION)) {
+                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(this, R.string.ORI_MI00022, Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, R.string.ORI_MI00023, Toast.LENGTH_LONG).show();
+                        PermisosUtil.abrirConfiguracionApp(this);
+                    }
                 }
             }
         }

@@ -320,6 +320,11 @@
     <string name="ORI_MI00018">Registros de localización existentes borrados</string>
     <string name="ORI_MI00019">La aplicación no tiene permiso para acceder a la lista de dispositivos Bluetooth</string>
     <string name="ORI_MI00020">No ha escrito una coordenada o no es válida (nn.nnnnnn)</string>
+    <string name="ORI_MI00021">Permiso denegado</string>
+    <string name="ORI_MI00022">Permiso de ubicación en segundo plano concedido</string>
+    <string name="ORI_MI00023">Permiso de ubicación en segundo plano denegado</string>
+    <string name="ORI_MI00024">Permiso de ubicación en segundo plano</string>
+    <string name="ORI_MI00025">Para registrar tu ubicación incluso cuando la app no está en pantalla, necesitamos permiso de ubicación en segundo plano.</string>
 
     <string name="ORI_ML00990">1300</string>
     <string name="ORI_ML00991">1311</string>

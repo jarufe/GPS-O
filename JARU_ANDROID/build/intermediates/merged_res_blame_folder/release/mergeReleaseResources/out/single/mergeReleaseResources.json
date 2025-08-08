@@ -1,622 +1,622 @@
 [
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glsate.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glsate.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glgest.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glgest.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_gl_ojo.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_gl_ojo.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glcanc.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glcanc.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glmano.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glmano.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glfle2.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glfle2.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\menu_aceptarcancelarver.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\menu\\aceptarcancelarver.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_gldibu.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_gldibu.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glloca.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glloca.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glaguj.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glaguj.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glbruj.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glbruj.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glarch.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glarch.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glgoma.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glgoma.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ic_launcher.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glsali.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glsali.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glbrui.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glbrui.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glcerr.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glcerr.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_confcampo.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/confcampo.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_dual.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\dual.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_vermapa.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/vermapa.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_editorcampo_1.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\editorcampo_1.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glfle1.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glfle1.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glcanc.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glcanc.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glfle2.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glfle2.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glfle2.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glfle2.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glcanc.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glcanc.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glbruj.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glbruj.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_gltrab.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_gltrab.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_icon.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\icon.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glbrui.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glbrui.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_gl_ojo.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_gl_ojo.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glgoma.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glgoma.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_gltrab.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_gltrab.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glalej.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glalej.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glgom2.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glgom2.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glrefr.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glrefr.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_gllogo.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_gllogo.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_gltrab.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_gltrab.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glgest.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glgest.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glelim.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glelim.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glsate.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glsate.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glcerr.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glcerr.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glgrab.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glgrab.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glbrui.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glbrui.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glmano.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glmano.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_selocad.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\selocad.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glsali.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glsali.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glnube.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glnube.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_gldibu.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_gldibu.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glacer.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glacer.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glcanc.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glcanc.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_gltrab.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_gltrab.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glgrab.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glgrab.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glrefr.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glrefr.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glfle1.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glfle1.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glicon.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glicon.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_importargpx.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/importargpx.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_gldibu.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_gldibu.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glgom2.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glgom2.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_gllapi.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_gllapi.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_gldibu.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_gldibu.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glsate.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glsate.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_cambiaparametros.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/cambiaparametros.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glloca.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glloca.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glfle1.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glfle1.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glsali.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glsali.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_gltrab.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_gltrab.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glacep.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glacep.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/menu_cerrar.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/menu/cerrar.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glbrui.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glbrui.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glsate.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glsate.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_gllogo.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_gllogo.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glarch.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glarch.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glcerr.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glcerr.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glmano.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glmano.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_generarocad.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\generarocad.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glbrui.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glbrui.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glgrab.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glgrab.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_gllapi.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_gllapi.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_importargpx.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\importargpx.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_gltrab.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_gltrab.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glnube.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glnube.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_generarocad.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/generarocad.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glgrab.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glgrab.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glaguj.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glaguj.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_gllogo.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_gllogo.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glbrui.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glbrui.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\raw_plantillav6.ocd.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\raw\\plantillav6.ocd"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glbruj.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glbruj.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_gllapi.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_gllapi.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_icon.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/icon.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glcanc.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glcanc.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_gllapi.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_gllapi.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_gltodo.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_gltodo.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/menu_log.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/menu/log.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glicon.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glicon.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glbruj.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glbruj.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glfle2.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glfle2.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glaguj.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glaguj.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glacep.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glacep.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_file_view.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\file_view.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_gllogo.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_gllogo.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_gllogo.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_gllogo.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glacer.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glacer.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_testcon.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\testcon.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_icon.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/icon.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glacep.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glacep.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glalej.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glalej.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glarch.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glarch.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glnube.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glnube.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glbruj.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glbruj.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glcanc.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glcanc.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_gllogo.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_gllogo.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glbruj.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glbruj.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glalej.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glalej.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glelim.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glelim.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glaguj.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glaguj.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glaguj.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glaguj.png"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/menu_aceptarcancelareliminar.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/menu/aceptarcancelareliminar.xml"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glfle2.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glfle2.gif"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glfle2.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glfle2.gif"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glicon.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glicon.png"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glacep.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glacep.png"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_gltodo.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_gltodo.gif"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_gllapi.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_gllapi.gif"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glarch.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glarch.png"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_lectura.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/lectura.xml"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_gllogo.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_gllogo.png"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_gldibu.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_gldibu.gif"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glicon.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glicon.png"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glacep.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glacep.png"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glsate.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glsate.gif"
+    },
+    {
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glalej.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glalej.gif"
     },
     {
         "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_eliminar.xml.flat",
         "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/eliminar.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glarch.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glarch.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glacer.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glacer.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_lectura.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\lectura.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_testcon.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/testcon.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glacep.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glacep.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/raw_plantillav7.ocd.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/raw/plantillav7.ocd"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glacer.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glacer.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glcerr.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glcerr.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_icon.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\icon.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glnube.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glnube.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_gldibu.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_gldibu.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_log.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/log.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glsate.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glsate.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/raw_plantillav6.ocd.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/raw/plantillav6.ocd"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glarch.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glarch.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glloca.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glloca.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glacer.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glacer.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_editorcampo.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/editorcampo.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_gltrab.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_gltrab.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_selocad.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/selocad.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\menu_aceptarcancelareliminar.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\menu\\aceptarcancelareliminar.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glcerr.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glcerr.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_splash.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\splash.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glicon.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glicon.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glmano.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glmano.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glelim.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glelim.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glacer.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glacer.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/menu_vermapa.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/menu/vermapa.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glbrui.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glbrui.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glacep.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glacep.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_gltodo.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_gltodo.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glnube.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glnube.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glalej.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glalej.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glgoma.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glgoma.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glgest.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glgest.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glloca.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glloca.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\raw_plantillav7.ocd.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\raw\\plantillav7.ocd"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_gl_ojo.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_gl_ojo.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glfle2.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glfle2.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/menu_aceptarcancelarver.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/menu/aceptarcancelarver.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glalej.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glalej.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_gllapi.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_gllapi.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glsate.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glsate.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glalej.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glalej.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_gllapi.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_gllapi.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_listadonmea.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/listadonmea.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ic_launcher.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glgoma.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glgoma.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glcanc.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glcanc.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glnube.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glnube.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_generargpx.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\generargpx.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glacer.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glacer.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glfle2.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glfle2.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_splash.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/splash.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glcanc.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glcanc.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glloca.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glloca.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_icon.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\icon.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glelim.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glelim.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glmano.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glmano.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glalej.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glalej.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_log.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\log.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glcerr.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glcerr.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ic_launcher.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glgoma.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glgoma.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ic_launcher.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_icon.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/icon.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\menu_principal.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\menu\\principal.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glacep.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glacep.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glgrab.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glgrab.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glcerr.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glcerr.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\menu_calibrarcerrar.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\menu\\calibrarcerrar.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glrefr.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glrefr.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glaguj.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glaguj.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glacer.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glacer.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_otros.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\otros.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glloca.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glloca.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_editorcampo.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\editorcampo.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_gllogo.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_gllogo.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\menu_vermapa.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\menu\\vermapa.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glsali.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glsali.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glcerr.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glcerr.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glicon.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glicon.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_icon.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\icon.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glrefr.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glrefr.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glfle1.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glfle1.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_gl_ojo.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_gl_ojo.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_gldibu.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_gldibu.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_gltodo.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_gltodo.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glbrui.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glbrui.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/menu_calibrarcerrar.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/menu/calibrarcerrar.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glsali.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glsali.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_editorcampo_1.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/editorcampo_1.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glloca.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glloca.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glgrab.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glgrab.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_gllapi.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_gllapi.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_generargpx.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/generargpx.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_gltrab.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_gltrab.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glmano.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glmano.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glrefr.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glrefr.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_principal.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/principal.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glaguj.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glaguj.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_icon.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/icon.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glgom2.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glgom2.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glrefr.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glrefr.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\menu_refrescarcancelar.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\menu\\refrescarcancelar.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glsate.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glsate.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_gldibu.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_gldibu.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glgrab.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glgrab.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glloca.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glloca.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glsali.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glsali.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_principal.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\principal.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_otros.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/otros.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glrefr.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glrefr.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_file_view.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/file_view.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glaguj.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glaguj.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glrefr.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glrefr.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glfle1.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glfle1.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glmano.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glmano.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glgoma.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glgoma.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_gltodo.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_gltodo.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glicon.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glicon.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/menu_refrescarcancelar.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/menu/refrescarcancelar.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glelim.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glelim.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glarch.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glarch.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glicon.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glicon.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ic_launcher.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glelim.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glelim.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glgom2.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glgom2.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_gl_ojo.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_gl_ojo.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glsali.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glsali.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ic_launcher.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glgest.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glgest.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\menu_aceptarcancelar.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\menu\\aceptarcancelar.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_gl_ojo.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_gl_ojo.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glnube.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glnube.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xhdpi_ori_glbruj.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xhdpi/ori_glbruj.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glarch.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glarch.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/menu_aceptarcancelar.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/menu/aceptarcancelar.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glgrab.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glgrab.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_gltodo.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_gltodo.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\menu_cerrar.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\menu\\cerrar.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_conflocaliza.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/conflocaliza.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glbruj.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glbruj.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_gl_ojo.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_gl_ojo.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glgoma.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glgoma.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-xxhdpi_ori_glgoma.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-xxhdpi/ori_glgoma.gif"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glnube.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glnube.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glgest.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glgest.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glgom2.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glgom2.png"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/layout_dual.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/layout/dual.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_gl_ojo.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_gl_ojo.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/menu_principal.xml.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/menu/principal.xml"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_cambiaparametros.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\cambiaparametros.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-mdpi_ori_glgom2.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-mdpi/ori_glgom2.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_gltodo.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_gltodo.gif"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glelim.png.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glelim.png"
     },
     {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xhdpi_ori_glsali.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xhdpi\\ori_glsali.png"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glmano.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glmano.gif"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glgom2.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glgom2.png"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_gltodo.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_gltodo.gif"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glgest.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glgest.png"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_conflocaliza.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\conflocaliza.xml"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glfle1.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glfle1.gif"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glelim.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glelim.png"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-xxhdpi_ori_glfle1.gif.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-xxhdpi\\ori_glfle1.gif"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\menu_log.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\menu\\log.xml"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glgest.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glgest.png"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-mdpi_ori_glgom2.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-mdpi\\ori_glgom2.png"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_confcampo.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\confcampo.xml"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_listadonmea.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\listadonmea.xml"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\drawable-hdpi_ori_glgest.png.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\drawable-hdpi\\ori_glgest.png"
-    },
-    {
-        "merged": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:\\layout_vermapa.xml.flat",
-        "source": "C:\\Users\\javier.arufe\\.gradle\\daemon\\8.13\\jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:\\layout\\vermapa.xml"
+        "merged": "jaru.ori.gui.gpslog.android.JARU_ANDROID-release-34:/drawable-hdpi_ori_glfle1.gif.flat",
+        "source": "jaru.ori.gui.gpslog.android.JARU_ANDROID-main-35:/drawable-hdpi/ori_glfle1.gif"
     }
 ]

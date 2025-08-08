@@ -74,6 +74,11 @@
     <string name="ORI_MI00018">Enregistrements existants supprimés</string>
     <string name="ORI_MI00019">L\'application n\'a pas l\'autorisation d\'accéder à la liste des appareils Bluetooth</string>
     <string name="ORI_MI00020">Vous n\'avez pas saisi de coordonnées ou elles ne sont pas valides (nn.nnnnnn)</string>
+    <string name="ORI_MI00021">Autorisation refusée</string>
+    <string name="ORI_MI00022">Autorisation de localisation en arrière-plan accordée</string>
+    <string name="ORI_MI00023">Autorisation de localisation en arrière-plan refusée</string>
+    <string name="ORI_MI00024">Autorisation de localisation en arrière-plan</string>
+    <string name="ORI_MI00025">Pour enregistrer votre position même lorsque l\'application n\'est pas à l\'écran, nous avons besoin d\'une autorisation de localisation en arrière-plan.</string>
     <string name="ORI_ML00000">Gestion d\'événements</string>
     <string name="ORI_ML00001">Oui</string>
     <string name="ORI_ML00002">Non</string>

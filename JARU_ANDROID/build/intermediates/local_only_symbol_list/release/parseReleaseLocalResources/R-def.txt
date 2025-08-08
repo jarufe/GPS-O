@@ -285,6 +285,11 @@ string ORI_MI00017
 string ORI_MI00018
 string ORI_MI00019
 string ORI_MI00020
+string ORI_MI00021
+string ORI_MI00022
+string ORI_MI00023
+string ORI_MI00024
+string ORI_MI00025
 string ORI_ML00000
 string ORI_ML00001
 string ORI_ML00002

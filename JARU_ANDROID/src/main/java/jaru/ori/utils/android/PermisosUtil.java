@@ -2,6 +2,7 @@ package jaru.ori.utils.android;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,9 +16,12 @@ import androidx.core.content.ContextCompat;
 import java.util.ArrayList;
 import java.util.List;
 
+import jaru.ori.gui.gpslog.android.R;
+
 public class PermisosUtil {
 
     public static final int CODIGO_SOLICITUD_PERMISOS = 100;
+    public static final int CODIGO_SOLICITUD_BACKGROUND = 101;
 
     // Lista de permisos que deben solicitarse en tiempo de ejecución
     public static String[] obtenerPermisosNecesarios() {
@@ -33,10 +37,8 @@ public class PermisosUtil {
 
         // Almacenamiento externo
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            // Android 10+ usa Scoped Storage, pero READ_EXTERNAL_STORAGE sigue siendo necesario
             permisos.add(Manifest.permission.READ_EXTERNAL_STORAGE);
         } else {
-            // Android < 10 puede usar WRITE_EXTERNAL_STORAGE
             permisos.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         }
 
@@ -50,6 +52,15 @@ public class PermisosUtil {
                 return false;
             }
         }
+
+        // Verifica también ACCESS_BACKGROUND_LOCATION si aplica
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_BACKGROUND_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+
         return true;
     }
 
@@ -68,6 +79,16 @@ public class PermisosUtil {
                     permisosFaltantes.toArray(new String[0]),
                     CODIGO_SOLICITUD_PERMISOS);
         }
+
+        // Solicita ACCESS_BACKGROUND_LOCATION por separado si aplica
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (ContextCompat.checkSelfPermission(actividad, Manifest.permission.ACCESS_BACKGROUND_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(actividad,
+                        new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION},
+                        CODIGO_SOLICITUD_BACKGROUND);
+            }
+        }
     }
 
     // Redirige al usuario a la configuración de la app si ha denegado permisos
@@ -77,4 +98,23 @@ public class PermisosUtil {
         intent.setData(uri);
         actividad.startActivity(intent);
     }
+    public static void solicitarPermisoBackgroundSiAplica(Activity actividad) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (ContextCompat.checkSelfPermission(actividad, Manifest.permission.ACCESS_BACKGROUND_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+
+                new AlertDialog.Builder(actividad)
+                        .setTitle(R.string.ORI_MI00024)
+                        .setMessage(R.string.ORI_MI00025)
+                        .setPositiveButton(R.string.ORI_ML00003, (dialog, which) -> {
+                            ActivityCompat.requestPermissions(actividad,
+                                    new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION},
+                                    CODIGO_SOLICITUD_BACKGROUND);
+                        })
+                        .setNegativeButton(R.string.ORI_ML00004, null)
+                        .show();
+            }
+        }
+    }
+
 }

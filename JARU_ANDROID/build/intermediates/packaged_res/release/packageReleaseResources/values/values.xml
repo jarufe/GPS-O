@@ -76,6 +76,11 @@
     <string name="ORI_MI00018">Existing records removed</string>
     <string name="ORI_MI00019">The app has no permission to access the list of Bluetooth devices</string>
     <string name="ORI_MI00020">You have not entered a coordinate or it is not valid (nn.nnnnnn)</string>
+    <string name="ORI_MI00021">Permission denied</string>
+    <string name="ORI_MI00022">Background location permission granted</string>
+    <string name="ORI_MI00023">Background location permission denied</string>
+    <string name="ORI_MI00024">Background location permission</string>
+    <string name="ORI_MI00025">To record your location even when the app is not on screen, we need background location permission.</string>
     <string name="ORI_ML00000">Event Management</string>
     <string name="ORI_ML00001">Yes</string>
     <string name="ORI_ML00002">No</string>

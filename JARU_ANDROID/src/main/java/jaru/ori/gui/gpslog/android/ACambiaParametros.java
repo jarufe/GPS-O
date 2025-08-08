@@ -45,15 +45,6 @@ public class ACambiaParametros extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        // ToDo add your GUI initialization code here        
-        //Establece la orientación según el dispositivo sea más ancho (horizontal) o alto (vertical)
-        /*
-        if(UtilsAndroid.esPantallaAncha(this.getResources())) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        }
-        */
         setContentView(R.layout.cambiaparametros);
         this.chkGpsInterno = (CheckBox)this.findViewById(R.id.chkGpsInterno);
         oParametro = APrincipal.getOParametro();

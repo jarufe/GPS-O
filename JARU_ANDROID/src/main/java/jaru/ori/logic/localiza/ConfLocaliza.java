@@ -24,11 +24,11 @@ public class ConfLocaliza {
      *
      */
     public ConfLocaliza() {
-        nEvento = -1;
+        nEvento = 119;
         nCategoria = -1;
         cDorsal = "";
         cNombre = "";
-        cServidor = "jaru.ignitiondomain.com";
+        cServidor = "jaruori.es";
         nPuerto = 80;
         cServlet = "LocalizacionController";
         nRetardo = 20;

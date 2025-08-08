@@ -3,6 +3,7 @@ package jaru.ori.gui.gpslog.android;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 import jaru.ori.logic.localiza.ConfLocaliza;
 import jaru.ori.utils.android.UtilsAndroid;
 
-/*
+/**
  * Edición de los parámetros de configuración de la gestión de comunicación de posicionamientos
  * <P>
  * Los parámetros son de dos tipos. El primero es la especificación
@@ -31,18 +32,13 @@ public class AConfLocaliza extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        // ToDo add your GUI initialization code here        
-        //Establece la orientación según el dispositivo sea más ancho (horizontal) o alto (vertical)
-        /*
-        if(UtilsAndroid.esPantallaAncha(this.getResources())) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        try {
+            setContentView(R.layout.conflocaliza);
+            oConfLocaliza = APrincipal.getoConfLocaliza();
+            this.setoConfLocaliza(oConfLocaliza);
+        }catch(Exception e) {
+            Log.e("GPS-O", "ConfLocaliza. Error en onCreate", e);
         }
-         */
-        setContentView(R.layout.conflocaliza);
-        oConfLocaliza = APrincipal.getoConfLocaliza();
-        this.setoConfLocaliza(oConfLocaliza);
     }
 
     /**
@@ -111,7 +107,7 @@ public class AConfLocaliza extends Activity {
             oConfLocaliza.setcDorsal(((EditText)findViewById(R.id.txtDorsal)).getText().toString());
             oConfLocaliza.setcNombre(((EditText)findViewById(R.id.txtNombre)).getText().toString());
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "ConfLocaliza. Error en actualización de parámetros", e);
         }
     }
     /**
@@ -119,15 +115,19 @@ public class AConfLocaliza extends Activity {
      * @param poConfLocaliza ConfLocaliza. Objeto con los parámetros actuales.
      */
     public void setoConfLocaliza(ConfLocaliza poConfLocaliza) {
-        oConfLocaliza = poConfLocaliza;
-        ((EditText)findViewById(R.id.txtServidor)).setText(oConfLocaliza.getcServidor(), TextView.BufferType.EDITABLE);
-        ((EditText)findViewById(R.id.txtPuerto)).setText(oConfLocaliza.getnPuerto()+"", TextView.BufferType.EDITABLE);
-        ((EditText)findViewById(R.id.txtServlet)).setText(oConfLocaliza.getcServlet(), TextView.BufferType.EDITABLE);
-        ((EditText)findViewById(R.id.txtRetardo)).setText(oConfLocaliza.getnRetardo()+"", TextView.BufferType.EDITABLE);
-        ((EditText)findViewById(R.id.txtEvento)).setText(oConfLocaliza.getnEvento()+"", TextView.BufferType.EDITABLE);
-        ((EditText)findViewById(R.id.txtCategoria)).setText(oConfLocaliza.getnCategoria()+"", TextView.BufferType.EDITABLE);
-        ((EditText)findViewById(R.id.txtDorsal)).setText(oConfLocaliza.getcDorsal(), TextView.BufferType.EDITABLE);
-        ((EditText)findViewById(R.id.txtNombre)).setText(oConfLocaliza.getcNombre(), TextView.BufferType.EDITABLE);
+        try {
+            oConfLocaliza = poConfLocaliza;
+            ((EditText) findViewById(R.id.txtServidor)).setText(oConfLocaliza.getcServidor(), TextView.BufferType.EDITABLE);
+            ((EditText) findViewById(R.id.txtPuerto)).setText(oConfLocaliza.getnPuerto() + "", TextView.BufferType.EDITABLE);
+            ((EditText) findViewById(R.id.txtServlet)).setText(oConfLocaliza.getcServlet(), TextView.BufferType.EDITABLE);
+            ((EditText) findViewById(R.id.txtRetardo)).setText(oConfLocaliza.getnRetardo() + "", TextView.BufferType.EDITABLE);
+            ((EditText) findViewById(R.id.txtEvento)).setText(oConfLocaliza.getnEvento() + "", TextView.BufferType.EDITABLE);
+            ((EditText) findViewById(R.id.txtCategoria)).setText(oConfLocaliza.getnCategoria() + "", TextView.BufferType.EDITABLE);
+            ((EditText) findViewById(R.id.txtDorsal)).setText(oConfLocaliza.getcDorsal(), TextView.BufferType.EDITABLE);
+            ((EditText) findViewById(R.id.txtNombre)).setText(oConfLocaliza.getcNombre(), TextView.BufferType.EDITABLE);
+        }catch(Exception e) {
+            Log.e("GPS-O", "ConfLocaliza. Error al establecer parámetros", e);
+        }
     }
 
 

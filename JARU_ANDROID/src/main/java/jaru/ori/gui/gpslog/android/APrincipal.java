@@ -367,15 +367,6 @@ public class APrincipal extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        // ToDo add your GUI initialization code here        
-        //Establece la orientación según el dispositivo sea más ancho (horizontal) o alto (vertical)
-        /*
-        if(UtilsAndroid.esPantallaAncha(this.getResources())) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        }
-        */
         setContentView(R.layout.principal);
         Log.i("GPS-O","Entrando en la aplicación");
         //Pide permisos si no los tiene asignados todavía
@@ -395,6 +386,7 @@ public class APrincipal extends Activity {
         vRegistros = new Vector<Registro>();
         oParametro = new Parametro(cPathAplica, "5000", "5000", "0", "9600", "8", "1", "none", "0");
         oConfCampo = new ConfCampo();
+        oConfLocaliza = new ConfLocaliza();
         oTransf = new TransfGeografica();
         cHemisferio = "N";
         cMeridiano = "W";

@@ -35,6 +35,7 @@ import jaru.ori.utils.android.*;
 import jaru.ori.web.controlcarrera.RegistroLocalizacion;
 import jaru.red.logic.GestionTransmisiones;
 import jaru.red.logic.HiloTransmisiones;
+import jaru.red.logic.UploadLoc;
 import jaru.red.logic.UploadPunch;
 import jaru.red.logic.UploadRequestResponse;
 import jaru.sensor.logic.android.CombiOrientacion;
@@ -1057,7 +1058,7 @@ public class APrincipal extends Activity {
             //Si se desea borrar y existe conectividad de datos
             if (pbBorrar && UtilsAndroid.existeConectividadDatos(this)) {
                 //Crea un registro de localización básico con los datos de evento, categoría y dorsal
-                RegistroLocalizacion voRegLoc = new RegistroLocalizacion();
+                UploadLoc voRegLoc = new UploadLoc();
                 voRegLoc.setEve2cod(oConfLocaliza.getnEvento());
                 voRegLoc.setCat2cod(oConfLocaliza.getnCategoria());
                 voRegLoc.setLoccdor(oConfLocaliza.getcDorsal());
@@ -1069,7 +1070,7 @@ public class APrincipal extends Activity {
                 //Crea el elemento con la orden y datos a transmitir
                 UploadRequestResponse voEnvio = new UploadRequestResponse();
                 voEnvio.setcOrder("EliminarLocalizacionesPrevias");
-                List<RegistroLocalizacion>vlLoc = new ArrayList<>();
+                List<UploadLoc>vlLoc = new ArrayList<>();
                 vlLoc.add(voRegLoc);
                 voEnvio.setlLoc(vlLoc);
                 oTransTx.setoEnvio(voEnvio);

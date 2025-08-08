@@ -290,6 +290,25 @@ private static int nTamFuente = Integer.parseInt(conRes.getString("nTamFuente"))
         return vcResul;
     }
     /**
+     * Dado un objeto de tipo cadena, que contiene un valor de fecha, y dado un formato
+     * especificado en el segundo parámetro, este metodo se encarga de devolver un
+     * objeto de tipo Date.
+     * @return java.util.Date
+     * @param pcFecha java.lang.String
+     * @param pcFormato java.lang.String
+     * @exception java.lang.Exception Excepción
+     */
+    public static Date parse(String pcFecha, String pcFormato) throws java.lang.Exception {
+        java.util.Date vdResul = null;
+        try {
+            SimpleDateFormat df = new SimpleDateFormat (pcFormato);
+
+            df.setLenient(false);
+            vdResul = df.parse(pcFecha);
+        }catch(Exception e) {}
+        return vdResul;
+    }
+    /**
      * Dado un valor en forma de cadena de caracteres (que se supone que tiene una fecha),
      * y dos formatos (origen y destino), este mÃ©todo devuelve la misma fecha de inicio,
      * pero transformada desde su formato de origen al formato de destino.

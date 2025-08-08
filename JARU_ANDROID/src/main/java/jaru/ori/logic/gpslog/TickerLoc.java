@@ -1,6 +1,10 @@
 package jaru.ori.logic.gpslog;
 
 
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 import jaru.gps.logic.GpsInterno;
@@ -10,6 +14,8 @@ import jaru.gps.logic.SentenciaNMEA;
 import jaru.ori.utils.Utilidades;
 import jaru.ori.web.controlcarrera.RegistroLocalizacion;
 import jaru.red.logic.GestionTransmisiones;
+import jaru.red.logic.UploadLoc;
+import jaru.red.logic.UploadRequestResponse;
 
 
 /**
@@ -197,7 +203,7 @@ public class TickerLoc implements Runnable{
             //Si hay datos correspondientes a una nueva lectura y además está configurado para registrar las lecturas, procede a ello.
             if (oSentencia.cLongitud.length()>0 && oSentencia.cLatitud.length()>0) {
                 //Crea un nuevo registro.
-                RegistroLocalizacion voRegistro = new RegistroLocalizacion();
+                UploadLoc voRegistro = new UploadLoc();
                 if (oRegistro!=null) {
                     voRegistro.setCat2cod(oRegistro.getCat2cod());
                     voRegistro.setEve2cod(oRegistro.getEve2cod());
@@ -221,7 +227,7 @@ public class TickerLoc implements Runnable{
                 voRegistro.setLocclon(cLongitud);
                 voRegistro.setLocclat(cLatitud);
                 //Establece la fecha/hora actual
-                voRegistro.setLoctpas(Utilidades.getCurDate());
+                voRegistro.setLoctpas(Utilidades.format(Utilidades.getCurDate(), "yyyy-MM-dd HH:mm:ss"));
                 //Obtiene valor de la elevación
                 voRegistro.setLoccele(oSentencia.getCAltura());
                 //Finalmente, trata de enviar los datos de localización al servidor web
@@ -232,26 +238,31 @@ public class TickerLoc implements Runnable{
     }
 
     /**
-     * Método que conecta con el servidor web y le envía el último registro de localización
-     * @param poRegistro RegistroLocalizacion. Datos de localización actuales
+     * Metodo que conecta con el servidor web y le envía el último registro de localización
+     * @param poRegistro UploadLoc. Datos de localización actuales
      */
-    private void transmitirNuevoRegistro (RegistroLocalizacion poRegistro) {
+    private void transmitirNuevoRegistro (UploadLoc poRegistro) {
         try {
-            Vector<Object>vvEnvio = new Vector<Object>();
             //GestionTransmisiones.setoConfLocaliza(oConfLocaliza);
-            vvEnvio.addElement("Anadir");
-            vvEnvio.addElement(poRegistro);
-            /*
-            //
-            //CAMBIAR LO SIGUIENTE PARA PROCESAR Y ENVIAR JSON
-            //
-            Vector<Object>vvRespuesta = GestionTransmisiones.transmitirOrden(vvEnvio);
+            //Crea el elemento con la orden y datos a transmitir
+            UploadRequestResponse voEnvio = new UploadRequestResponse();
+            voEnvio.setcOrder("Anadir");
+            //Datos adicionales
+            //List<String> vlData = new ArrayList<>();
+            //vlData.add("");
+            //voEnvio.setlData(vlData);
+            //Una o varias localizaciones
+            List<UploadLoc>vlLoc = new ArrayList<>();
+            vlLoc.add(poRegistro);
+            voEnvio.setlLoc(vlLoc);
+            //Realiza el envío y obtiene la respuesta
+            UploadRequestResponse voRespuesta = GestionTransmisiones.transmitirOrden(voEnvio);
+            List<String>vlData = voRespuesta.getlData();
             //Guarda el resultado "OK", "KO" del último envío en la propiedad correspondiente
-            cResul = (String)vvRespuesta.elementAt(0);
-             */
+            cResul = vlData.get(0);
         } catch (Exception e) {
             cResul = "KO";
-            e.printStackTrace();
+            Log.e("GPS-O", "Error en transmitiendo nuevo registro de localización", e);
         }
     }
 }

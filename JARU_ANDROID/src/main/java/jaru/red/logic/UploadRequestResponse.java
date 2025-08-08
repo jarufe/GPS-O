@@ -4,43 +4,42 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.List;
-import jaru.ori.web.controlcarrera.RegistroLocalizacion;
 
 public class UploadRequestResponse {
     private String cOrder;
     private List<String> lData;
     private List<UploadPunch> lPunch;
-    private List<RegistroLocalizacion> lLoc;
+    private List<UploadLoc> lLoc;
 
     public UploadRequestResponse() {
         cOrder = "";
         lData = new ArrayList<String>();
         lPunch = new ArrayList<UploadPunch>();
-        lLoc = new ArrayList<RegistroLocalizacion>();
+        lLoc = new ArrayList<UploadLoc>();
     }
 
     public UploadRequestResponse(String cOrder) {
         this.cOrder = cOrder;
         lData = new ArrayList<String>();
         lPunch = new ArrayList<UploadPunch>();
-        lLoc = new ArrayList<RegistroLocalizacion>();
+        lLoc = new ArrayList<UploadLoc>();
     }
 
     public UploadRequestResponse(String cOrder, List<String> lData) {
         this.cOrder = cOrder;
         this.lData = lData;
         lPunch = new ArrayList<UploadPunch>();
-        lLoc = new ArrayList<RegistroLocalizacion>();
+        lLoc = new ArrayList<UploadLoc>();
     }
 
     public UploadRequestResponse(String cOrder, List<String> lData, List<UploadPunch> lPunch) {
         this.cOrder = cOrder;
         this.lData = lData;
         this.lPunch = lPunch;
-        lLoc = new ArrayList<RegistroLocalizacion>();
+        lLoc = new ArrayList<UploadLoc>();
     }
 
-    public UploadRequestResponse(String cOrder, List<String> lData, List<UploadPunch> lPunch, List<RegistroLocalizacion> lLoc) {
+    public UploadRequestResponse(String cOrder, List<String> lData, List<UploadPunch> lPunch, List<UploadLoc> lLoc) {
         this.cOrder = cOrder;
         this.lData = lData;
         this.lPunch = lPunch;
@@ -69,10 +68,10 @@ public class UploadRequestResponse {
         this.lPunch = lPunch;
     }
     @JsonProperty("localizations")
-    public List<RegistroLocalizacion> getlLoc() {
+    public List<UploadLoc> getlLoc() {
         return lLoc;
     }
-    public void setlLoc(List<RegistroLocalizacion> lLoc) {
+    public void setlLoc(List<UploadLoc> lLoc) {
         this.lLoc = lLoc;
     }
 }

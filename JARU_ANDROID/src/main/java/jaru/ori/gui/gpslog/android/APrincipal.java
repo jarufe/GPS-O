@@ -431,7 +431,7 @@ public class APrincipal extends Activity {
             if (oTransTx == null)
                 oTransTx = new HiloTransmisiones();
         }catch (Exception e) {
-
+            Log.e("GPS-O", "Error volviendo en onResume", e);
         }
     }
     @Override
@@ -443,7 +443,7 @@ public class APrincipal extends Activity {
             if (oTransTx != null)
                 oTransTx.stop();
         }catch (Exception e) {
-
+            Log.e("GPS-O", "Error haciendo onPause", e);
         }
     }
 
@@ -656,7 +656,7 @@ public class APrincipal extends Activity {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error en obtenerDatosXML", e);
         }
     }
     /**
@@ -686,7 +686,7 @@ public class APrincipal extends Activity {
             }
         }
         catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error en grabarXML", e);
         }
     }
     /**
@@ -716,7 +716,7 @@ public class APrincipal extends Activity {
                 APrincipal.this.salir(true);
         }
         catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error en confirmacionGrabarXML", e);
         }
     }
     /**
@@ -771,7 +771,7 @@ public class APrincipal extends Activity {
             viConfirma.show();
         }
         catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error en petición de confirmación para reiniciar datos", e);
         }
     }
     /**
@@ -790,7 +790,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.AGenerarOCAD.class);
             startActivityForResult(viIntent, ACTIVITY_GENERAROCAD);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad generarOCAD", e1);
         }
     }
     /**
@@ -802,7 +802,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.AGenerarGPX.class);
             startActivityForResult(viIntent, ACTIVITY_GENERARGPX);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad generarGPX", e1);
         }
     }
     /**
@@ -813,7 +813,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.AImportarGPX.class);
             startActivityForResult(viIntent, ACTIVITY_IMPORTARGPX);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad importarGPX", e1);
         }
     }
     /**
@@ -824,7 +824,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.ALectura.class);
             startActivityForResult(viIntent, ACTIVITY_LECTURA);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de lectura", e1);
         }
     }
     /**
@@ -836,7 +836,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.ACentroide.class);
             startActivityForResult(viIntent, ACTIVITY_CENTROIDE);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de centroide", e1);
         }
     }
     /**
@@ -847,7 +847,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.ALog.class);
             startActivityForResult(viIntent, ACTIVITY_LOG);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de registro de objetos", e1);
         }
     }
     /**
@@ -860,7 +860,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.ADual.class);
             startActivityForResult(viIntent, ACTIVITY_DUAL);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de registro dual", e1);
         }
     }
     /**
@@ -871,7 +871,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.AListadoNMEA.class);
             startActivityForResult(viIntent, ACTIVITY_LISTADONMEA);
         } catch (Exception e1) {
-            Log.e("GPS-O", "Error lanzando actividad", e1);
+            Log.e("GPS-O", "Error en llamada a actividad de listado NMEA", e1);
         }
     }
     /**
@@ -882,7 +882,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.AEliminarRegistros.class);
             startActivityForResult(viIntent, ACTIVITY_ELIMINAR);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de eliminar registros", e1);
         }
     }
     private void realizarBrujula(int pnValor) {
@@ -891,7 +891,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.sensor.gui.android.ABrujula.class);
             startActivityForResult(viIntent, ACTIVITY_BRUJULA);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad Brújula", e1);
         }
     }
     /**
@@ -902,7 +902,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.ACambiaParametros.class);
             startActivityForResult(viIntent, ACTIVITY_CAMBIAPARAMETROS);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de cambiar parámetros", e1);
         }
     }
     /**
@@ -912,16 +912,20 @@ public class APrincipal extends Activity {
      * @param poParametro Parametro. Nuevos valores de los parámetros de configuración.
      */
     private void actualizarConfiguracionParametros (Parametro poParametro) {
-        if (poParametro!=null) {
-            //Actualiza los parámetros y almacena en XML
-            oParametro = new Parametro(poParametro.getCPathXML(), poParametro.getCEscala(), poParametro.getCTick(), poParametro.getCPuerto(), poParametro.getCBaudios(),
-                    poParametro.getCBitsPalabra(), poParametro.getCBitsStop(), poParametro.getCParidad(),
-                    poParametro.getCGpsInterno());
-            Vector<Parametro> vvParams = new Vector<Parametro>();
-            vvParams.addElement((Parametro)oParametro);
-            ParametrosXMLHandler.escribirXML(this, vvParams, cPathAplica, "Parametros.xml");
-            //Al establecer la nueva configuración del puerto serie, si estaba abierto, lo cierra.
-            PuertoSerie.establecerConfiguracion(oParametro, this);
+        try {
+            if (poParametro != null) {
+                //Actualiza los parámetros y almacena en XML
+                oParametro = new Parametro(poParametro.getCPathXML(), poParametro.getCEscala(), poParametro.getCTick(), poParametro.getCPuerto(), poParametro.getCBaudios(),
+                        poParametro.getCBitsPalabra(), poParametro.getCBitsStop(), poParametro.getCParidad(),
+                        poParametro.getCGpsInterno());
+                Vector<Parametro> vvParams = new Vector<Parametro>();
+                vvParams.addElement((Parametro) oParametro);
+                ParametrosXMLHandler.escribirXML(this, vvParams, cPathAplica, "Parametros.xml");
+                //Al establecer la nueva configuración del puerto serie, si estaba abierto, lo cierra.
+                PuertoSerie.establecerConfiguracion(oParametro, this);
+            }
+        }catch(Exception e) {
+            Log.e("GPS-O", "Error en actualización de parámetros generales de configuración", e);
         }
     }
 
@@ -934,7 +938,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.AConfCampo.class);
             startActivityForResult(viIntent, ACTIVITY_CONFIGURARCAMPO);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de configuración de trabajo de campo", e1);
         }
     }
     /**
@@ -946,15 +950,19 @@ public class APrincipal extends Activity {
      * @param poConfCampo ConfCampo. Parámetros de configuración del editor de trabajo de campo.
      */
     private void actualizarConfCampo (Parametro poParametro, ConfCampo poConfCampo) {
-        if (poParametro!=null && poConfCampo!=null) {
-            //Actualiza los parámetros y almacena en XML
-            oConfCampo = new ConfCampo(poConfCampo.getCPlantilla(), poConfCampo.getCCX(), poConfCampo.getCCY(),
-                    poConfCampo.getCCX2(), poConfCampo.getCCY2(), poConfCampo.getNZona(), poConfCampo.getCFactorX(),
-                    poConfCampo.getCFactorY(), poConfCampo.getCBoceto(), poConfCampo.getNZoom(),
-                    poConfCampo.getCCXCentral(), poConfCampo.getCCYCentral(), poConfCampo.getBCalidad());
-            Vector<ConfCampo> vvParams = new Vector<ConfCampo>();
-            vvParams.addElement((ConfCampo)oConfCampo);
-            ConfCampoXMLHandler.escribirXML(this, vvParams, cPathAplica, "ConfCampo.xml");
+        try {
+            if (poParametro != null && poConfCampo != null) {
+                //Actualiza los parámetros y almacena en XML
+                oConfCampo = new ConfCampo(poConfCampo.getCPlantilla(), poConfCampo.getCCX(), poConfCampo.getCCY(),
+                        poConfCampo.getCCX2(), poConfCampo.getCCY2(), poConfCampo.getNZona(), poConfCampo.getCFactorX(),
+                        poConfCampo.getCFactorY(), poConfCampo.getCBoceto(), poConfCampo.getNZoom(),
+                        poConfCampo.getCCXCentral(), poConfCampo.getCCYCentral(), poConfCampo.getBCalidad());
+                Vector<ConfCampo> vvParams = new Vector<ConfCampo>();
+                vvParams.addElement((ConfCampo) oConfCampo);
+                ConfCampoXMLHandler.escribirXML(this, vvParams, cPathAplica, "ConfCampo.xml");
+            }
+        }catch(Exception e) {
+            Log.e("GPS-O", "Error en actualización de parámetros de configuración de trabajo de campo", e);
         }
     }
 
@@ -966,7 +974,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.AEditorCampo.class);
             startActivityForResult(viIntent, ACTIVITY_EDITORCAMPO);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de editor de trabajo de campo", e1);
         }
     }
 
@@ -986,7 +994,7 @@ public class APrincipal extends Activity {
             }
             Toast.makeText(this.getApplicationContext(), vcMensaje, Toast.LENGTH_LONG).show();
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en exportación de bocetos", e1);
         }
     }
 
@@ -1014,7 +1022,7 @@ public class APrincipal extends Activity {
             }
             bGrabaLoc = !bGrabaLoc;
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en grabar/parar localizaciones", e1);
         }
     }
 
@@ -1041,6 +1049,7 @@ public class APrincipal extends Activity {
                     .create();
             viConfirma.show();
         }catch (Exception e) {
+            Log.e("GPS-O", "Error en petición de confirmación de borrado de localizaciones previas", e);
         }
     }
     /**
@@ -1075,7 +1084,7 @@ public class APrincipal extends Activity {
                 oTransTx.start();
             }
         }catch (Exception e) {
-
+            Log.e("GPS-O", "Error en comunicación con servidor para borrado de localizaciones previas", e);
         }
     }
     /**
@@ -1086,7 +1095,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.ATestConn.class);
             startActivityForResult(viIntent, ACTIVITY_TESTCONN);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de test de conexión", e);
         }
     }
     /**
@@ -1098,7 +1107,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.AVerMapa.class);
             startActivityForResult(viIntent, ACTIVITY_VERMAPA);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de ver mapa", e1);
         }
     }
     /**
@@ -1110,7 +1119,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.AConfLocaliza.class);
             startActivityForResult(viIntent, ACTIVITY_CONFLOCALIZA);
         } catch (Exception e1) {
-            e1.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de configuración de localización", e1);
         }
     }
     /**
@@ -1122,15 +1131,19 @@ public class APrincipal extends Activity {
      * @param poConfLocaliza ConfLocaliza. Parámetros de configuración del gestor de comunicaciones
      */
     private void actualizarConfLocaliza (Parametro poParametro, ConfLocaliza poConfLocaliza) {
-        if (poParametro!=null && poConfLocaliza!=null) {
-            //Actualiza los parámetros y almacena en XML
-            oConfLocaliza = new ConfLocaliza(poConfLocaliza.getnEvento(), poConfLocaliza.getnCategoria(),
-                    poConfLocaliza.getcDorsal(), poConfLocaliza.getcNombre(),
-                    poConfLocaliza.getcServidor(), poConfLocaliza.getnPuerto(),
-                    poConfLocaliza.getcServlet(), poConfLocaliza.getnRetardo());
-            Vector<ConfLocaliza> vvParams = new Vector<ConfLocaliza>();
-            vvParams.addElement((ConfLocaliza)oConfLocaliza);
-            ConfLocalizaXMLHandler.escribirXML(this, vvParams, cPathAplica, "ConfLocaliza.xml");
+        try {
+            if (poParametro != null && poConfLocaliza != null) {
+                //Actualiza los parámetros y almacena en XML
+                oConfLocaliza = new ConfLocaliza(poConfLocaliza.getnEvento(), poConfLocaliza.getnCategoria(),
+                        poConfLocaliza.getcDorsal(), poConfLocaliza.getcNombre(),
+                        poConfLocaliza.getcServidor(), poConfLocaliza.getnPuerto(),
+                        poConfLocaliza.getcServlet(), poConfLocaliza.getnRetardo());
+                Vector<ConfLocaliza> vvParams = new Vector<ConfLocaliza>();
+                vvParams.addElement((ConfLocaliza) oConfLocaliza);
+                ConfLocalizaXMLHandler.escribirXML(this, vvParams, cPathAplica, "ConfLocaliza.xml");
+            }
+        }catch(Exception e) {
+            Log.e("GPS-O", "Error en actualización de parámetros de localización", e);
         }
     }
     /**
@@ -1141,7 +1154,7 @@ public class APrincipal extends Activity {
             Intent viIntent = new Intent(this.getApplicationContext(), jaru.ori.gui.gpslog.android.ASelIds.class);
             startActivityForResult(viIntent, ACTIVITY_SELIDS);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error en llamada a actividad de selección de Ids de localización", e);
         }
     }
 

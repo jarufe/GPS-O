@@ -1158,16 +1158,11 @@ public class APrincipal extends Activity {
                 case APrincipal.MENSAJEPARALOCALIZACION:
                     if (oTransTx!=null) {
                         if (oTransTx.isbResulPreparado()) {
-                            /*
-                            //
-                            //CAMBIAR LO SIGUIENTE POR RECIBIR JSON, CONVERTIR Y PROCESAR
-                            //
-                            Vector<Object> vvRespuesta = oTransTx.getvRespuesta();
-                            //Procesa respuesta del hilo de transmisiones
-                            String vcResul = (String) vvRespuesta.elementAt(0);
+                            UploadRequestResponse voRespuesta = oTransTx.getoRespuesta();
+                            List<String>vlData = voRespuesta.getlData();
+                            String vcResul = (vlData!=null?vlData.get(0):"KO");
                             Toast.makeText(APrincipal.this.getApplicationContext(),
                                     APrincipal.this.getString(R.string.ORI_MI00018) + " " + vcResul, Toast.LENGTH_LONG).show();
-                             */
                             //Resetea el hilo
                             oTransTx.setbResulPreparado(false);
                             oTransTx.stop();

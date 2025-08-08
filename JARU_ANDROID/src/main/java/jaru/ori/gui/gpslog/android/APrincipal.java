@@ -25,6 +25,9 @@ import jaru.ori.utils.*;
 import jaru.ori.utils.android.*;
 import jaru.gps.logic.*;
 import jaru.gps.logic.xml.*;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 import jaru.ori.logic.campo.*;
 import jaru.ori.logic.campo.xml.*;
@@ -32,6 +35,8 @@ import jaru.ori.utils.android.*;
 import jaru.ori.web.controlcarrera.RegistroLocalizacion;
 import jaru.red.logic.GestionTransmisiones;
 import jaru.red.logic.HiloTransmisiones;
+import jaru.red.logic.UploadPunch;
+import jaru.red.logic.UploadRequestResponse;
 import jaru.sensor.logic.android.CombiOrientacion;
 
 /**
@@ -1062,17 +1067,12 @@ public class APrincipal extends Activity {
                 GestionTransmisiones.setnPuerto(oConfLocaliza.getnPuerto());
                 GestionTransmisiones.setcServlet(oConfLocaliza.getcServlet());
                 //Crea el elemento con la orden y datos a transmitir
-                Vector<Object> vvEnvio = new Vector<Object>();
-                vvEnvio.addElement("EliminarLocalizacionesPrevias");
-                vvEnvio.addElement(voRegLoc);
-                //Lanza la transmisión a través del hilo de comunicaciones
-                //La respuesta se consulta periódicamente a través de un hilo separado
-                /*
-                //
-                //CAMBIAR ESTA LLAMADA POR CONVERTIR Y ENVIAR JSON
-                //
-                oTransTx.setvEnvio(vvEnvio);
-                 */
+                UploadRequestResponse voEnvio = new UploadRequestResponse();
+                voEnvio.setcOrder("EliminarLocalizacionesPrevias");
+                List<RegistroLocalizacion>vlLoc = new ArrayList<>();
+                vlLoc.add(voRegLoc);
+                voEnvio.setlLoc(vlLoc);
+                oTransTx.setoEnvio(voEnvio);
                 oTransTx.start();
             }
         }catch (Exception e) {

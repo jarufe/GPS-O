@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.util.Log;
 
 /**
  * Clase que sirve para encapsular la utilización básica del acelerómetro disponible
@@ -67,6 +68,7 @@ public class Acelerometro implements SensorEventListener {
                 vbResul = true;
             }
         } catch (Exception e) {
+            Log.e("GPS-O", "Error iniciando acelerómetro", e);
             vbResul = false;
         }
         bAcelerometro = vbResul;
@@ -80,6 +82,7 @@ public class Acelerometro implements SensorEventListener {
             }
             vbResul = true;
         } catch (Exception e) {
+            Log.e("GPS-O", "Error parando acelerómetro", e);
             vbResul = false;
         }
         bAcelerometro = false;
@@ -88,10 +91,14 @@ public class Acelerometro implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            nRotacion = event.values[0];
-            nInclinacion = event.values[1];
-            nAlabeo = event.values[2];
+        try {
+            if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+                nRotacion = event.values[0];
+                nInclinacion = event.values[1];
+                nAlabeo = event.values[2];
+            }
+        }catch(Exception e) {
+            Log.e("GPS-O", "Error al capturar cambio de valores en el sensor acelerómetro", e);
         }
     }
     @Override

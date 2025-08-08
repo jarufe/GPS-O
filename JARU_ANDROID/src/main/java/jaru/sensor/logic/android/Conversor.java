@@ -1,5 +1,7 @@
 package jaru.sensor.logic.android;
 
+import android.util.Log;
+
 /**
  * Clase que permite guardar valores de ángulos y desvíos. A partir de ahí, realiza correcciones
  * de dichos ángulos en función del valor de desvío. También se cuenta con métodos para la conversión
@@ -62,9 +64,13 @@ public class Conversor {
      * @return double. Ángulo corregido según un desvío
      */
     public static double corregirLectura (double pnGrados, double pnDesvio) {
-        double vnCorregido = 0.0;
-        nGrados = pnGrados;
-        nDesvio = pnDesvio;
+        try {
+            double vnCorregido = 0.0;
+            nGrados = pnGrados;
+            nDesvio = pnDesvio;
+        }catch (Exception e) {
+            Log.e("GPS-O", "Error corrigiendo lectura", e);
+        }
         return corregirLectura ();
     }
 
@@ -80,7 +86,7 @@ public class Conversor {
                 vnCorregido = 360.0 - vnCorregido;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error corrigiendo lectura", e);
             vnCorregido = 0.0;
         }
         return vnCorregido;
@@ -96,7 +102,7 @@ public class Conversor {
         try {
             vnCent = (pnValor * 400.0) / 360.0;
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error convirtiendo a centesimal", e);
             vnCent = 0.0;
         }
         return vnCent;
@@ -112,7 +118,7 @@ public class Conversor {
         try {
             vnSexa = (pnValor * 360.0) / 400.0;
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error convirtiendo a sexagesimal", e);
             vnSexa = 0.0;
         }
         return vnSexa;

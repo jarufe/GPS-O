@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.util.Log;
 
 /**
  * Clase que sirve para encapsular la utilización básica del sensor de rotación disponible
@@ -67,6 +68,7 @@ public class Rotacion implements SensorEventListener {
                 vbResul = true;
             }
         } catch (Exception e) {
+            Log.e("GPS-O", "Error iniciando sensor de rotación", e);
             vbResul = false;
         }
         bRotacion = vbResul;
@@ -80,6 +82,7 @@ public class Rotacion implements SensorEventListener {
             }
             vbResul = true;
         } catch (Exception e) {
+            Log.e("GPS-O", "Error parando sensor de rotación", e);
             vbResul = false;
         }
         bRotacion = false;
@@ -88,10 +91,14 @@ public class Rotacion implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_ROTATION_VECTOR) {
-            nX = event.values[0];
-            nY = event.values[1];
-            nZ = event.values[2];
+        try {
+            if (event.sensor.getType() == Sensor.TYPE_ROTATION_VECTOR) {
+                nX = event.values[0];
+                nY = event.values[1];
+                nZ = event.values[2];
+            }
+        }catch(Exception e) {
+            Log.e("GPS-O", "Error en evento de cambio de valores del sensor de rotación", e);
         }
     }
     @Override

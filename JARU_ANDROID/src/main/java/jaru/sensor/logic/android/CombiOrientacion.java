@@ -1,6 +1,7 @@
 package jaru.sensor.logic.android;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -129,7 +130,7 @@ public class CombiOrientacion {
             }
             vnGrados = new BigDecimal(vnGrados).setScale(2, RoundingMode.HALF_UP).doubleValue();
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error leyendo grados de brújula o rotación", e);
             vnGrados = 0.0;
         }
         return vnGrados;

@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.util.Log;
 
 /**
  * Clase que sirve para encapsular la utilización básica de la brújula electrónica disponible
@@ -48,6 +49,7 @@ public class Brujula implements SensorEventListener {
                 vbResul = true;
             }
         } catch (Exception e) {
+            Log.e("GPS-O", "Error iniciando sensor brújula", e);
             vbResul = false;
         }
         bBrujula = vbResul;
@@ -61,6 +63,7 @@ public class Brujula implements SensorEventListener {
             }
             vbResul = true;
         } catch (Exception e) {
+            Log.e("GPS-O", "Error parando sensor brújula", e);
             vbResul = false;
         }
         bBrujula = false;
@@ -69,8 +72,12 @@ public class Brujula implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_ORIENTATION) {
-            nGrados = event.values[0];
+        try {
+            if (event.sensor.getType() == Sensor.TYPE_ORIENTATION) {
+                nGrados = event.values[0];
+            }
+        }catch(Exception e) {
+            Log.e("GPS-O", "Error capturando evento de cambio de valores de sensor brújula", e);
         }
     }
     @Override

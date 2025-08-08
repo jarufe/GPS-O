@@ -1,9 +1,9 @@
 package jaru.sensor.gui.android;
 
 import android.app.Activity;
-import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,7 +18,7 @@ import jaru.ori.gui.gpslog.android.*;
 import jaru.sensor.logic.android.*;
 import jaru.ori.utils.android.UtilsAndroid;
 
-/*
+/**
  * Actividad que muestra una brújula en pantalla. Sirve tanto para calibrar como para mostrar.
  * Calibrar la brújula supone que se muestra la brújula, con la aguja en el cero y el usuario
  * tiene que mover el dispositivo hasta que el norte coincida con el de una brújula real. Cuando
@@ -57,40 +57,42 @@ public class ABrujula extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        //Establece la orientación según el dispositivo sea más ancho (horizontal) o alto (vertical)
-        if(UtilsAndroid.esPantallaAncha(this.getResources())) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        try {
+            // Se inicializan las variables con valores que están escritos en la actividad principal.
+            // Este es un metodo sencillo de compartir valores a lo largo de la ejecución.
+            nOpcion = APrincipal.getNOpcionEntrada();
+            oCombi = APrincipal.getOCombi();
+            oLimbo = BitmapFactory.decodeResource(this.getResources(), R.drawable.ori_glbruj);
+            oAguja = BitmapFactory.decodeResource(this.getResources(), R.drawable.ori_glaguj);
+        }catch(Exception e1) {
+            Log.e("GPS-O", "Error inicializando parámetros", e1);
         }
-        // Se inicializan las variables con valores que están escritos en la actividad principal.
-        // Este es un método sencillo de compartir valores a lo largo de la ejecución.
-        nOpcion = APrincipal.getNOpcionEntrada();
-        oCombi = APrincipal.getOCombi();
-        oLimbo = BitmapFactory.decodeResource(this.getResources(), R.drawable.ori_glbruj);
-        oAguja = BitmapFactory.decodeResource(this.getResources(), R.drawable.ori_glaguj);
-        //Crea el objeto que representa al panel gráfico
-        this.iPanel = new ABrujulaView(this);
-        this.iPanel.setNOpcion(nOpcion);
-        this.iPanel.setOLimbo(oLimbo);
-        this.iPanel.setOAguja(oAguja);
-        if (oCombi!=null) {
-            this.iPanel.setNDesvio(oCombi.getNDesvio());
-            //Se establece un texto que indica qué sensor existe: brújula, rotación o ninguno
-            if (oCombi.existeBrujula())
-                this.iPanel.setCSensor(this.getApplicationContext().getString(R.string.ORI_ML00135));
-            else if (oCombi.existeRotacion())
-                this.iPanel.setCSensor(this.getApplicationContext().getString(R.string.ORI_ML00207));
-            else
+        try {
+            //Crea el objeto que representa al panel gráfico
+            this.iPanel = new ABrujulaView(this);
+            this.iPanel.setNOpcion(nOpcion);
+            this.iPanel.setOLimbo(oLimbo);
+            this.iPanel.setOAguja(oAguja);
+            if (oCombi != null) {
+                this.iPanel.setNDesvio(oCombi.getNDesvio());
+                //Se establece un texto que indica qué sensor existe: brújula, rotación o ninguno
+                if (oCombi.existeBrujula())
+                    this.iPanel.setCSensor(this.getApplicationContext().getString(R.string.ORI_ML00135));
+                else if (oCombi.existeRotacion())
+                    this.iPanel.setCSensor(this.getApplicationContext().getString(R.string.ORI_ML00207));
+                else
+                    this.iPanel.setCSensor(this.getApplicationContext().getString(R.string.ORI_ML00206));
+            } else {
                 this.iPanel.setCSensor(this.getApplicationContext().getString(R.string.ORI_ML00206));
-        } else {
-            this.iPanel.setCSensor(this.getApplicationContext().getString(R.string.ORI_ML00206));
+            }
+            if (nOpcion == 1) {
+                this.iPanel.setCTexto(this.getApplicationContext().getString(R.string.ORI_ML00204));
+                this.iPanel.setNDesvio(0.0);
+            }
+            this.setContentView(this.iPanel);
+        }catch(Exception e2) {
+            Log.e("GPS-O", "Error inicializando vista de la brújula", e2);
         }
-        if (nOpcion==1) {
-            this.iPanel.setCTexto(this.getApplicationContext().getString(R.string.ORI_ML00204));
-            this.iPanel.setNDesvio(0.0);
-        }
-        this.setContentView(this.iPanel);
         //Realiza primera lectura de datos
         oThread = new Thread(new BrujulaRun());
         oThread.start();
@@ -178,7 +180,7 @@ public class ABrujula extends Activity {
             }
             iPanel.invalidate();
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error repintando brújula", e);
         }
     }
 

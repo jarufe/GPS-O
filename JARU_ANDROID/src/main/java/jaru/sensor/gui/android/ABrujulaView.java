@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Rect;
+import android.util.Log;
 import android.view.View;
 import android.graphics.Paint;
 
@@ -161,7 +162,7 @@ public class ABrujulaView extends View {
             int vnCentroY = (int)(getHeight()*0.95) + (int)(voLim.height()/2.0);
             canvas.drawText(vcTexto, vnCentroX, vnCentroY, voTexto2);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error en onDraw de la vista de la brújula", e);
         }
     }
     private void calcularCoordenadasImagenes (int pnAnchoPant, int pnAltoPant,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="jaru.ori.GpsLogOri"
-    android:versionCode="22"
-    android:versionName="0.22" >
+    android:versionCode="23"
+    android:versionName="0.23" >
 
     <uses-sdk
         android:minSdkVersion="26"
@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
@@ -55,6 +57,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="jaru.ori.gui.gpslog.android.LocalizacionService"
+            android:foregroundServiceType="location" />
+
         <activity
             android:name="jaru.ori.gui.gpslog.android.ACambiaParametros"
             android:exported="true"

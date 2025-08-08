@@ -326,6 +326,8 @@
     <string name="ORI_MI00023">Autorisation de localisation en arrière-plan refusée</string>
     <string name="ORI_MI00024">Autorisation de localisation en arrière-plan</string>
     <string name="ORI_MI00025">Pour enregistrer votre position même lorsque l\'application n\'est pas à l\'écran, nous avons besoin d\'une autorisation de localisation en arrière-plan.</string>
+    <string name="ORI_MI00026">Enregistrement des localisations</string>
+    <string name="ORI_MI00027">Le service est actif</string>
 
     <string name="ORI_ML00990">1300</string>
     <string name="ORI_ML00991">1311</string>

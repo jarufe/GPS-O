@@ -1020,6 +1020,31 @@ public class APrincipal extends Activity {
     }
 
     private void realizarGrabarLoc() {
+        //Realizando la grabación de registros en el servicio para funcionamiento en segundo plano
+        Intent serviceIntent = new Intent(this, LocalizacionService.class);
+        try {
+            if (!bGrabaLoc) {
+                //Prepara y lanza la grabación de nuevos registros de localización
+                RegistroLocalizacion voRegLoc = new RegistroLocalizacion();
+                voRegLoc.setEve2cod(oConfLocaliza.getnEvento());
+                voRegLoc.setCat2cod(oConfLocaliza.getnCategoria());
+                voRegLoc.setLoccdor(oConfLocaliza.getcDorsal());
+                voRegLoc.setLoccnom(oConfLocaliza.getcNombre());
+                //Primero pide confirmación para borrar los registros existentes
+                pedirConfirmacionBorradoPrevios();
+                AppDataForService.oParametro = oParametro;
+                AppDataForService.oGpsInterno = oGpsInterno;
+                AppDataForService.oRegistroLoc = voRegLoc;
+                AppDataForService.nRetardo = oConfLocaliza.nRetardo*1000;
+                startForegroundService(serviceIntent);
+            } else {
+                stopService(serviceIntent);
+            }
+            bGrabaLoc = !bGrabaLoc;
+        } catch (Exception e1) {
+            Log.e("GPS-O", "Error en grabar/parar localizaciones", e1);
+        }
+        /*
         try {
             if (!bGrabaLoc) {
                 //Prepara y lanza la grabación de nuevos registros de localización
@@ -1034,7 +1059,6 @@ public class APrincipal extends Activity {
                 oTickerLoc = new TickerLoc();
                 oTickerLoc.setOParametro(oParametro);
                 oTickerLoc.setOGpsInterno(oGpsInterno);
-                //oTickerLoc.setoConfLocaliza(oConfLocaliza);
                 oTickerLoc.setORegistro(voRegLoc);
                 oTickerLoc.setNRetardo(oConfLocaliza.nRetardo*1000);
                 oTickerLoc.start();
@@ -1045,6 +1069,7 @@ public class APrincipal extends Activity {
         } catch (Exception e1) {
             Log.e("GPS-O", "Error en grabar/parar localizaciones", e1);
         }
+         */
     }
 
     /**

@@ -336,6 +336,8 @@
     <string name="ORI_MI00023">Background location permission denied</string>
     <string name="ORI_MI00024">Background location permission</string>
     <string name="ORI_MI00025">To record your location even when the app is not on screen, we need background location permission.</string>
+    <string name="ORI_MI00026">Recording localizations</string>
+    <string name="ORI_MI00027">The service is active</string>
 
     <string name="ORI_ML00990">1300</string>
     <string name="ORI_ML00991">1311</string>

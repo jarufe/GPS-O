@@ -325,6 +325,8 @@
     <string name="ORI_MI00023">Permiso de ubicación en segundo plano denegado</string>
     <string name="ORI_MI00024">Permiso de ubicación en segundo plano</string>
     <string name="ORI_MI00025">Para registrar tu ubicación incluso cuando la app no está en pantalla, necesitamos permiso de ubicación en segundo plano.</string>
+    <string name="ORI_MI00026">Grabando localizaciones</string>
+    <string name="ORI_MI00027">El servicio está activo</string>
 
     <string name="ORI_ML00990">1300</string>
     <string name="ORI_ML00991">1311</string>

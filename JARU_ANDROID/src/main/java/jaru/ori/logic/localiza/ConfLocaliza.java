@@ -29,8 +29,8 @@ public class ConfLocaliza {
         cDorsal = "";
         cNombre = "";
         cServidor = "jaruori.es";
-        nPuerto = 80;
-        cServlet = "LocalizacionController";
+        nPuerto = 443;
+        cServlet = "servlet/LocalizacionController";
         nRetardo = 20;
     }
     /**

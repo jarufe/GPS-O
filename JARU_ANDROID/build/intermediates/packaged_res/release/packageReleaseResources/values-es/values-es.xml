@@ -81,6 +81,8 @@
     <string name="ORI_MI00025">Para registrar tu ubicación incluso cuando la app no está en pantalla, necesitamos permiso de ubicación en segundo plano.</string>
     <string name="ORI_MI00026">Grabando localizaciones</string>
     <string name="ORI_MI00027">El servicio está activo</string>
+    <string name="ORI_MI00028">Permiso de escritura concedido</string>
+    <string name="ORI_MI00029">Permiso de escritura denegado. No almacenamiento externo.</string>
     <string name="ORI_ML00000">Gestión de Prueba</string>
     <string name="ORI_ML00001">Sí</string>
     <string name="ORI_ML00002">No</string>

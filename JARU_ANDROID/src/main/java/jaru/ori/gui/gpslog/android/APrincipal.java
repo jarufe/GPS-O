@@ -611,7 +611,7 @@ public class APrincipal extends Activity {
 
             for (int i = 0; i < permissions.length; i++) {
                 if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, R.string.ORI_MI00021 + ": " + permissions[i], Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getString(R.string.ORI_MI00021) + ": " + permissions[i], Toast.LENGTH_LONG).show();
                 } else if (permissions[i].equals(Manifest.permission.ACCESS_FINE_LOCATION)) {
                     ubicacionConcedida = true;
                 }
@@ -630,6 +630,19 @@ public class APrincipal extends Activity {
                         Toast.makeText(this, R.string.ORI_MI00022, Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(this, R.string.ORI_MI00023, Toast.LENGTH_LONG).show();
+                        PermisosUtil.abrirConfiguracionApp(this);
+                    }
+                }
+            }
+        }
+
+        if (requestCode == PermisosUtil.CODIGO_SOLICITUD_WRITE_STORAGE) {
+            for (int i = 0; i < permissions.length; i++) {
+                if (permissions[i].equals(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(this, R.string.ORI_MI00028, Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, R.string.ORI_MI00029, Toast.LENGTH_LONG).show();
                         PermisosUtil.abrirConfiguracionApp(this);
                     }
                 }

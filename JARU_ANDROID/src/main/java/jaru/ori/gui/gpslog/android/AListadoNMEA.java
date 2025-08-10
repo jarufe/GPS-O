@@ -130,16 +130,23 @@ public class AListadoNMEA extends AppCompatActivity {
                 //Llama a un metodo para descomponer las sentencias NMEA y añadirlas a la lista resultante
                 Utilidades.descomponerVariasSentenciasNMEA(vcTexto, oLista);
             } else {
+                Log.d("GPS-O", "Iniciando el GPS interno");
                 //Si se usa GPS interno, se crea una nueva instancia y se lee
-                if (oGpsInterno==null)
+                if (oGpsInterno==null) {
                     oGpsInterno = new GpsInterno(this);
+                }
+                /*
                 if (!oGpsInterno.getBPuedoObtenerPosicion()) {
                     oGpsInterno.mostrarAlertaConfiguracion();
                 } else {
+                 */
+                Log.d("GPS-O", "Convirtiendo lectura del GPS interno");
                     vcTextoParcial = Utilidades.obtenerHoraNMEADesdeMilisecs(oGpsInterno.getNHora()) + ": " +
                             oGpsInterno.getNLatitud() + ";" + oGpsInterno.getNLongitud();
                     oLista.add(vcTextoParcial);
+                /*
                 }
+                 */
             }
 
             if (oLista.isEmpty()) {
@@ -155,7 +162,7 @@ public class AListadoNMEA extends AppCompatActivity {
                 recyclerView.setAdapter(adapter);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("GPS-O", "Error realizando lectura del GPS", e);
         }
     }
 

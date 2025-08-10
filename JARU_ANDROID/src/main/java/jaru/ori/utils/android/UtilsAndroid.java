@@ -124,42 +124,46 @@ public class UtilsAndroid {
         Log.i("GPS-O", "Archivos encontrados en el sistema de archivos:");
         for (File archivo : archivos) {
             Log.i("GPS-O", " - " + archivo.getName());
-
-            // Forzar indexación en MediaStore
-            MediaScannerConnection.scanFile(
-                    context,
-                    new String[] { archivo.getAbsolutePath() },
-                    null,
-                    (path, uri) -> Log.i("GPS-O", "Indexado en MediaStore: " + path)
-            );
-        }
-
-        // Comprobación en MediaStore
-        Uri collection = MediaStore.Files.getContentUri("external");
-        String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=?";
-        String[] selectionArgs = new String[] { relativePath };
-
-        Cursor cursor = context.getContentResolver().query(
-                collection,
-                new String[] {
-                        MediaStore.MediaColumns.DISPLAY_NAME,
-                        MediaStore.MediaColumns.RELATIVE_PATH
-                },
-                selection,
-                selectionArgs,
-                null
-        );
-
-        if (cursor != null) {
-            Log.i("GPS-O", "Archivos registrados en MediaStore:");
-            while (cursor.moveToNext()) {
-                String nombre = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME));
-                String ruta = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.RELATIVE_PATH));
-                Log.i("GPS-O", " - " + ruta + nombre);
+            //Solo fuerzo MediaStore si versión Android 9 o anterior
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                // Forzar indexación en MediaStore
+                MediaScannerConnection.scanFile(
+                        context,
+                        new String[]{archivo.getAbsolutePath()},
+                        null,
+                        (path, uri) -> Log.i("GPS-O", "Indexado en MediaStore: " + path)
+                );
             }
-            cursor.close();
-        } else {
-            Log.i("GPS-O", "No se encontraron archivos en MediaStore para: " + relativePath);
+        }
+        //Solo fuerzo MediaStore si versión Android 9 o anterior
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            // Comprobación en MediaStore
+            Uri collection = MediaStore.Files.getContentUri("external");
+            String selection = MediaStore.MediaColumns.RELATIVE_PATH + "=?";
+            String[] selectionArgs = new String[]{relativePath};
+
+            Cursor cursor = context.getContentResolver().query(
+                    collection,
+                    new String[]{
+                            MediaStore.MediaColumns.DISPLAY_NAME,
+                            MediaStore.MediaColumns.RELATIVE_PATH
+                    },
+                    selection,
+                    selectionArgs,
+                    null
+            );
+
+            if (cursor != null) {
+                Log.i("GPS-O", "Archivos registrados en MediaStore:");
+                while (cursor.moveToNext()) {
+                    String nombre = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME));
+                    String ruta = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.RELATIVE_PATH));
+                    Log.i("GPS-O", " - " + ruta + nombre);
+                }
+                cursor.close();
+            } else {
+                Log.i("GPS-O", "No se encontraron archivos en MediaStore para: " + relativePath);
+            }
         }
     }
     public static void depurarArchivosEnDocumentsJARU(Context context) {
@@ -229,45 +233,31 @@ public class UtilsAndroid {
      * @return Cursor Cursor apuntando al fichero o ficheros encontrados
      */
     public static Cursor buscarFicheroEnCarpeta(Context context, String nombreCarpeta, String nombreArchivo) {
-        Cursor cursor = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            // Android 10+: usar MediaStore
+            try {
+                Uri collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
+                String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+                String selection = MediaStore.Files.FileColumns.RELATIVE_PATH + "=? AND " +
+                        MediaStore.Files.FileColumns.DISPLAY_NAME + "=?";
+                String[] selectionArgs = new String[]{relativePath + "/", nombreArchivo};
+                String[] projection = new String[]{MediaStore.Files.FileColumns._ID};
 
-        Log.i("GPS-O", "Comienza búsqueda de fichero " + nombreArchivo);
-        try {
-            ContentResolver resolver = context.getContentResolver();
-            Uri collection;
-            // Definir la URI base según la versión de Android
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
-            } else {
-                collection = Uri.parse("content://media/external/file");
+                return context.getContentResolver().query(collection, projection, selection, selectionArgs, null);
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error buscando fichero con MediaStore", e);
+                return null;
             }
-            // Construir la ruta de búsqueda
-            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
-            Log.i("GPS-O", "Buscando archivo en: " + relativePath + "/" + nombreArchivo);
-            String selection = MediaStore.Files.FileColumns.RELATIVE_PATH + "=? AND " +
-                    MediaStore.Files.FileColumns.DISPLAY_NAME + "=?";
-            String[] selectionArgs = new String[]{relativePath + "/", nombreArchivo};
-            // Columnas que queremos recuperar (solo necesitamos saber si existe)
-            String[] projection = new String[]{MediaStore.Files.FileColumns._ID};
-
-            cursor = resolver.query(
-                    collection,
-                    projection,
-                    selection,
-                    selectionArgs,
-                    null);
-            if (cursor == null) {
-                Log.e("GPS-O", "Cursor nulo: la consulta falló");
-            } else if (cursor.getCount()<=0) {
-                Log.e("GPS-O", "Cursor vacío: no se encontró el archivo");
+        } else {
+            // Android 9 o inferior: usar File
+            File archivo = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta), nombreArchivo);
+            if (archivo.exists()) {
+                Log.i("GPS-O", "Archivo encontrado con File: " + archivo.getAbsolutePath());
             } else {
-                Log.i("GPS-O", "Total resultados: " + cursor.getCount());
+                Log.i("GPS-O", "Archivo no encontrado con File");
             }
-        } catch (Exception e) {
-            Log.e("GPS-O", "Error buscando fichero", e);
+            return null; // No hay Cursor en este caso
         }
-
-        return cursor;
     }
 
     /**
@@ -284,27 +274,39 @@ public class UtilsAndroid {
         }
         return collection;
     }
-    public static boolean borrarArchivosEnCarpeta (Context context, Cursor cursor) {
-        boolean vbResul = true;
-        try {
-            Log.i("GPS-O", "Comienza proceso de borrado de fichero");
-            Uri collection = UtilsAndroid.componerUriSegunAndroid();
-            if (cursor != null && cursor.moveToFirst()) {
-                do {
-                    int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
-                    long id = cursor.getLong(idColumn);
-                    Uri uriExistente = ContentUris.withAppendedId(collection, id);
-                    context.getContentResolver().delete(uriExistente, null, null);
-                    Log.i("GPS-O", "Archivo existente borrado: " + uriExistente.toString());
-                } while (cursor.moveToNext());
-
-                cursor.close();
+    public static boolean borrarArchivosEnCarpeta(Context context, Cursor cursor, String nombreCarpeta, String nombreArchivo) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            try {
+                Uri collection = componerUriSegunAndroid();
+                if (cursor != null && cursor.moveToFirst()) {
+                    do {
+                        int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
+                        long id = cursor.getLong(idColumn);
+                        Uri uriExistente = ContentUris.withAppendedId(collection, id);
+                        context.getContentResolver().delete(uriExistente, null, null);
+                        Log.i("GPS-O", "Archivo borrado con MediaStore: " + uriExistente.toString());
+                    } while (cursor.moveToNext());
+                    cursor.close();
+                }
+                return true;
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error borrando fichero con MediaStore", e);
+                return false;
             }
-        }catch (Exception e) {
-            Log.e("GPS-O", "Error borrando fichero", e);
-            vbResul = false;
+        } else {
+            // Android 9 o inferior: usar File
+            try {
+                File archivo = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta), nombreArchivo);
+                if (archivo.exists()) {
+                    boolean borrado = archivo.delete();
+                    Log.i("GPS-O", "Archivo borrado con File: " + borrado);
+                    return borrado;
+                }
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error borrando fichero con File", e);
+            }
+            return false;
         }
-        return vbResul;
     }
     /**
      * Crea un archivo de tipo XML usando MediaStore, dentro de la carpeta Documents y subcarpeta indicada en el parámetro
@@ -313,71 +315,83 @@ public class UtilsAndroid {
      * @param nombreArchivo String Nombre del archivo XML
      * @return Uri Apunta al archivo creado
      */
-    public static Uri crearArchivoXml (Context context, String nombreCarpeta, String nombreArchivo) {
-        Uri uri;
-        try {
-            Log.i("GPS-O", "Comienza proceso de creación de fichero " + nombreArchivo);
-            Uri collection;
-            // Definir la URI base según la versión de Android
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
-            } else {
-                collection = Uri.parse("content://media/external/file");
-            }
-            // Construir la ruta de búsqueda
-            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
-            ContentValues values = new ContentValues();
-            values.put(MediaStore.MediaColumns.DISPLAY_NAME, nombreArchivo);
-            values.put(MediaStore.MediaColumns.MIME_TYPE, "text/xml");
-            values.put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath);
+    public static Uri crearArchivoXml(Context context, String nombreCarpeta, String nombreArchivo) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            // Android 10+: usar MediaStore
+            try {
+                Log.i("GPS-O", "Creando archivo con MediaStore: " + nombreArchivo);
+                Uri collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
+                String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
 
-            uri = context.getContentResolver().insert(collection, values);
-            Log.i("GPS-O", "Fichero creado");
-        }catch (Exception e) {
-            Log.e("GPS-O", "Error creando fichero", e);
-            uri = null;
+                ContentValues values = new ContentValues();
+                values.put(MediaStore.MediaColumns.DISPLAY_NAME, nombreArchivo);
+                values.put(MediaStore.MediaColumns.MIME_TYPE, "text/xml");
+                values.put(MediaStore.MediaColumns.RELATIVE_PATH, relativePath);
+
+                return context.getContentResolver().insert(collection, values);
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error creando archivo con MediaStore", e);
+                return null;
+            }
+        } else {
+            // Android 9 o inferior: usar File
+            try {
+                File directorio = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), nombreCarpeta);
+                if (!directorio.exists()) {
+                    directorio.mkdirs();
+                }
+
+                File archivo = new File(directorio, nombreArchivo);
+                if (!archivo.exists()) {
+                    archivo.createNewFile();
+                }
+
+                return Uri.fromFile(archivo);
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error creando archivo con File", e);
+                return null;
+            }
         }
-        return uri;
     }
     public static boolean existeFicheroPublico(Context context, String nombreCarpeta, String nombreArchivo) {
         boolean existe = false;
-        Cursor cursor = null;
 
-        try {
-            ContentResolver resolver = context.getContentResolver();
-            Uri collection;
-            // Definir la URI base según la versión de Android
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
-            } else {
-                collection = Uri.parse("content://media/external/file");
-            }
-            // Construir la ruta de búsqueda
-            String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
-            Log.i("GPS-O", "Buscando archivo en: " + relativePath + "/" + nombreArchivo);
-            String selection = MediaStore.Files.FileColumns.RELATIVE_PATH + "=? AND " +
-                    MediaStore.Files.FileColumns.DISPLAY_NAME + "=?";
-            String[] selectionArgs = new String[]{relativePath + "/", nombreArchivo};
-            // Columnas que queremos recuperar (solo necesitamos saber si existe)
-            String[] projection = new String[]{MediaStore.Files.FileColumns._ID};
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            // Android 10+: usar MediaStore
+            Cursor cursor = null;
+            try {
+                ContentResolver resolver = context.getContentResolver();
+                Uri collection = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL);
+                String relativePath = Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta;
+                Log.i("GPS-O", "Buscando archivo en: " + relativePath + "/" + nombreArchivo);
 
-            cursor = resolver.query(
-                    collection,
-                    projection,
-                    selection,
-                    selectionArgs,
-                    null);
-            if (cursor == null) {
-                Log.e("GPS-O", "Cursor nulo: la consulta falló");
-            } else if (cursor.getCount()<=0) {
-                Log.e("GPS-O", "Cursor vacío: no se encontró el archivo");
-            } else {
-                Log.i("GPS-O", "Total resultados: " + cursor.getCount());
-                existe = true;
-                cursor.close();
+                String selection = MediaStore.Files.FileColumns.RELATIVE_PATH + "=? AND " +
+                        MediaStore.Files.FileColumns.DISPLAY_NAME + "=?";
+                String[] selectionArgs = new String[]{relativePath + "/", nombreArchivo};
+                String[] projection = new String[]{MediaStore.Files.FileColumns._ID};
+
+                cursor = resolver.query(collection, projection, selection, selectionArgs, null);
+                if (cursor != null && cursor.moveToFirst()) {
+                    Log.i("GPS-O", "Archivo encontrado con MediaStore");
+                    existe = true;
+                } else {
+                    Log.i("GPS-O", "Archivo no encontrado con MediaStore");
+                }
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error buscando fichero con MediaStore", e);
+            } finally {
+                if (cursor != null) cursor.close();
             }
-        } catch (Exception e) {
-            Log.e("GPS-O", "Error general buscando fichero", e);
+        } else {
+            // Android 9 o inferior: usar File directamente
+            try {
+                File archivo = new File(Environment.getExternalStoragePublicDirectory(
+                        Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta), nombreArchivo);
+                existe = archivo.exists();
+                Log.i("GPS-O", "Archivo " + (existe ? "encontrado" : "no encontrado") + " con File");
+            } catch (Exception e) {
+                Log.e("GPS-O", "Error buscando fichero con File", e);
+            }
         }
 
         return existe;

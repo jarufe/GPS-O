@@ -11,6 +11,7 @@ import android.os.IBinder;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
+import jaru.gps.logic.GpsInterno;
 import jaru.ori.logic.gpslog.AppDataForService;
 import jaru.ori.logic.gpslog.TickerLoc;
 
@@ -40,11 +41,14 @@ public class LocalizacionService extends Service {
 
         startForeground(1, notification);
 
+        // Crear nueva instancia de GpsInterno usando el contexto del servicio
+        GpsInterno gpsInterno = new GpsInterno(this);
+
         // Iniciar el hilo de localización
         oTickerLoc = new TickerLoc();
 
         oTickerLoc.setOParametro(AppDataForService.oParametro);
-        oTickerLoc.setOGpsInterno(AppDataForService.oGpsInterno);
+        oTickerLoc.setOGpsInterno(gpsInterno);
         oTickerLoc.setORegistro(AppDataForService.oRegistroLoc);
         oTickerLoc.setNRetardo(AppDataForService.nRetardo);
         oTickerLoc.start();

@@ -22,6 +22,7 @@ public class PermisosUtil {
 
     public static final int CODIGO_SOLICITUD_PERMISOS = 100;
     public static final int CODIGO_SOLICITUD_BACKGROUND = 101;
+    public static final int CODIGO_SOLICITUD_WRITE_STORAGE = 102;
 
     // Lista de permisos que deben solicitarse en tiempo de ejecución
     public static String[] obtenerPermisosNecesarios() {
@@ -35,11 +36,9 @@ public class PermisosUtil {
             permisos.add(Manifest.permission.BLUETOOTH_CONNECT);
         }
 
-        // Almacenamiento externo
+        // Lectura de almacenamiento externo (solo en Android 10+)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             permisos.add(Manifest.permission.READ_EXTERNAL_STORAGE);
-        } else {
-            permisos.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         }
 
         return permisos.toArray(new String[0]);
@@ -56,6 +55,14 @@ public class PermisosUtil {
         // Verifica también ACCESS_BACKGROUND_LOCATION si aplica
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_BACKGROUND_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+
+        // Verifica WRITE_EXTERNAL_STORAGE en Android 9 o inferior
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+            if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     != PackageManager.PERMISSION_GRANTED) {
                 return false;
             }
@@ -89,6 +96,16 @@ public class PermisosUtil {
                         CODIGO_SOLICITUD_BACKGROUND);
             }
         }
+
+        // Solicita WRITE_EXTERNAL_STORAGE por separado si aplica
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+            if (ContextCompat.checkSelfPermission(actividad, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(actividad,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        CODIGO_SOLICITUD_WRITE_STORAGE);
+            }
+        }
     }
 
     // Redirige al usuario a la configuración de la app si ha denegado permisos
@@ -98,6 +115,7 @@ public class PermisosUtil {
         intent.setData(uri);
         actividad.startActivity(intent);
     }
+
     public static void solicitarPermisoBackgroundSiAplica(Activity actividad) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             if (ContextCompat.checkSelfPermission(actividad, Manifest.permission.ACCESS_BACKGROUND_LOCATION)
@@ -116,5 +134,4 @@ public class PermisosUtil {
             }
         }
     }
-
 }

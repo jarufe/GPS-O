@@ -81,6 +81,8 @@
     <string name="ORI_MI00025">Pour enregistrer votre position même lorsque l\'application n\'est pas à l\'écran, nous avons besoin d\'une autorisation de localisation en arrière-plan.</string>
     <string name="ORI_MI00026">Enregistrement des localisations</string>
     <string name="ORI_MI00027">Le service est actif</string>
+    <string name="ORI_MI00028">Permission d\'écriture accordée</string>
+    <string name="ORI_MI00029">Autorisation d\'écriture refusée. Aucun stockage externe.</string>
     <string name="ORI_ML00000">Gestion d\'événements</string>
     <string name="ORI_ML00001">Oui</string>
     <string name="ORI_ML00002">Non</string>

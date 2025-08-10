@@ -13,6 +13,8 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 
@@ -348,13 +350,28 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
         Vector<Registro> vvResul = new Vector<>();
         Log.i("GPS-O", "Comienza carga de parámetros en XML");
         try {
-            Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
-            Uri collection = UtilsAndroid.componerUriSegunAndroid();
-            if (cursor!=null && cursor.moveToFirst()) {
-                int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
-                long id = cursor.getLong(idColumn);
-                Uri uri = ContentUris.withAppendedId(collection, id);
+            Uri uri = null;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                // Android 10+: usar MediaStore
+                Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
+                Uri collection = UtilsAndroid.componerUriSegunAndroid();
 
+                if (cursor != null && cursor.moveToFirst()) {
+                    int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID);
+                    long id = cursor.getLong(idColumn);
+                    uri = ContentUris.withAppendedId(collection, id);
+                    cursor.close();
+                }
+            } else {
+                // Android 9 o inferior: usar File directamente
+                File archivo = new File(Environment.getExternalStoragePublicDirectory(
+                        Environment.DIRECTORY_DOCUMENTS + "/" + nombreCarpeta), nombreArchivo);
+                if (archivo.exists()) {
+                    uri = Uri.fromFile(archivo);
+                }
+            }
+            // Si se obtuvo una URI válida, abrir el archivo
+            if (uri != null) {
                 SAXParserFactory spf = SAXParserFactory.newInstance();
                 spf.setValidating(false);
                 spf.setNamespaceAware(true);
@@ -383,8 +400,9 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
                 vvResul = handler.getVRegistros();
                 Log.i("GPS-O", "Archivo procesado. Registros: " + (vvResul != null ? vvResul.size() : 0));
                 if (inputStream!=null) inputStream.close();
+            } else {
+                Log.e("GPS-O", "No se pudo obtener URI del archivo XML");
             }
-            if (cursor != null) cursor.close();
         }
         catch (Exception e) {
             Log.e("GPS-O", "Error cargando XML", e);
@@ -425,7 +443,7 @@ public class RegistrosGpxXMLHandler extends DefaultHandler
         try {
             //Busca si existe el fichero y lo borra antes de crearlo de nuevo
             Cursor cursor = UtilsAndroid.buscarFicheroEnCarpeta(context, nombreCarpeta, nombreArchivo);
-            UtilsAndroid.borrarArchivosEnCarpeta(context, cursor);
+            UtilsAndroid.borrarArchivosEnCarpeta(context, cursor, nombreCarpeta, nombreArchivo);
             //Crea el archivo de nuevo
             Uri uri = UtilsAndroid.crearArchivoXml(context, nombreCarpeta, nombreArchivo);
             //Si se ha creado el archivo, se exporta el contenido XML
